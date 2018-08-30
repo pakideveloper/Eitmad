@@ -13,6 +13,17 @@ class CreateCompaniesTable extends Migration
      */
     public function up()
     {
+         Schema::create('companies', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('company_name'); 
+            $table->string('company_logo'); 
+             $table->string('company_address'); 
+              $table->string('company_phone'); 
+               $table->string('company_ceo_info'); 
+             $table->integer('industry_id')->nullable()->unsigned();
+            $table->foreign('industry_id')->references('id')->on('industries')->onUpdate('SET NULL')            
+            $table->timestamps();
+        });
         
         //
     }
