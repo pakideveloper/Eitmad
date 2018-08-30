@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/testroute', 'HomeController@index')->name('home');
+
+Route::get('/hsmtestroute', 'HomeController@index')->name('home');
