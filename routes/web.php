@@ -24,3 +24,9 @@ Route::get('/admin2', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+=======
+Route::get('/testroute', 'HomeController@index')->name('home');
+
+Route::get('/hsmtestroute', 'HomeController@index')->name('home');
+>>>>>>> 4a4455a6fbc630052e7284c13e6954b25e5354db
