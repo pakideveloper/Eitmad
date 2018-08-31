@@ -6,7 +6,7 @@
                         <div class="user-details">
                             <div class="overlay"></div>
                             <div class="text-center">
-                                <img src="{{URL::to('public/admin/ecommerce')}}/\assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
+                                <img src="{{URL::to('public/admin/ecommerce')}}/assets/images/users/avatar-1.jpg" alt="" class="thumb-md img-circle">
                             </div>
                             <div class="user-info">
                                 <div>
@@ -25,7 +25,7 @@
                         </div>
 
                         <ul>
-                        	<li class="menu-title">Navigation</li>
+                            <li class="menu-title">Navigation</li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span class="badge badge-success pull-right">2</span> <span> Dashboard </span> </a>
@@ -113,7 +113,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                	<li><a href="tables-basic.html">Basic Tables</a></li>
+                                    <li><a href="tables-basic.html">Basic Tables</a></li>
                                     <li><a href="tables-layouts.html">Tables Layouts</a></li>
                                     <li><a href="tables-datatable.html">Data Table</a></li>
                                     <li><a href="tables-responsive.html">Responsive Table</a></li>
@@ -141,7 +141,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-map"></i> <span> Maps </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                	<li><a href="maps-google.html">Google Maps</a></li>
+                                    <li><a href="maps-google.html">Google Maps</a></li>
                                     <li><a href="maps-vector.html">Vector Maps</a></li>
                                     <li><a href="maps-mapael.html">Mapael Maps</a></li>
                                 </ul>
@@ -224,4 +224,3 @@
                 <!-- Sidebar -left -->
 
             </div>
-            <!-- Left Sidebar End -->

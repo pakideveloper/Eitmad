@@ -1,4 +1,4 @@
-  <div class="side-bar right-bar">
+<div class="side-bar right-bar">
                 <a href="javascript:void(0);" class="right-bar-toggle">
                     <i class="mdi mdi-close-circle-outline"></i>
                 </a>

@@ -1,4 +1,4 @@
-  <div class="topbar">
+<div class="topbar">
 
                 <!-- LOGO -->
                 <div class="topbar-left">
@@ -6,10 +6,10 @@
                     <!-- Image logo -->
                     <!--<a href="index.html" class="logo">-->
                         <!--<span>-->
-                            <!--<img src="{{URL::to('public/admin/ecommerce')}}/\assets/images/logo.png" alt="" height="30">-->
+                            <!--<img src="{{URL::to('public/admin/ecommerce')}}/assets/images/logo.png" alt="" height="30">-->
                         <!--</span>-->
                         <!--<i>-->
-                            <!--<img src="{{URL::to('public/admin/ecommerce')}}/\assets/images/logo_sm.png" alt="" height="28">-->
+                            <!--<img src="{{URL::to('public/admin/ecommerce')}}/assets/images/logo_sm.png" alt="" height="28">-->
                         <!--</i>-->
                     <!--</a>-->
                 </div>
@@ -111,7 +111,7 @@
                                     <li>
                                         <a href="#" class="user-list-item">
                                             <div class="avatar">
-                                                <img src="{{URL::to('public/admin/ecommerce')}}/\assets/images/users/avatar-2.jpg" alt="">
+                                                <img src="{{URL::to('public/admin/ecommerce')}}/assets/images/users/avatar-2.jpg" alt="">
                                             </div>
                                             <div class="user-desc">
                                                 <span class="name">Patricia Beach</span>
@@ -123,7 +123,7 @@
                                     <li>
                                         <a href="#" class="user-list-item">
                                             <div class="avatar">
-                                                <img src="{{URL::to('public/admin/ecommerce')}}/\assets/images/users/avatar-3.jpg" alt="">
+                                                <img src="{{URL::to('public/admin/ecommerce')}}/assets/images/users/avatar-3.jpg" alt="">
                                             </div>
                                             <div class="user-desc">
                                                 <span class="name">Connie Lucas</span>
@@ -135,7 +135,7 @@
                                     <li>
                                         <a href="#" class="user-list-item">
                                             <div class="avatar">
-                                                <img src="{{URL::to('public/admin/ecommerce')}}/\assets/images/users/avatar-4.jpg" alt="">
+                                                <img src="{{URL::to('public/admin/ecommerce')}}/assets/images/users/avatar-4.jpg" alt="">
                                             </div>
                                             <div class="user-desc">
                                                 <span class="name">Margaret Becker</span>
@@ -158,7 +158,7 @@
 
                             <li class="dropdown user-box">
                                 <a href="#" class="dropdown-toggle waves-effect waves-light user-link" data-toggle="dropdown" aria-expanded="true">
-                                    <img src="{{URL::to('public/admin/ecommerce')}}/\assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
+                                    <img src="{{URL::to('public/admin/ecommerce')}}/assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle user-img">
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right arrow-dropdown-menu arrow-menu-right user-list notify-list">
