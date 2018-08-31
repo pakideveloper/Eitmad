@@ -21,7 +21,9 @@ Route::get('/admin2', function () {
     return view('admin/ecommerce/modules/index2');
 });
 
-
+Route::get('/jobportal', function () {
+    return view('frontend/JobPortal/index');
+});
 
 Auth::routes();
 
