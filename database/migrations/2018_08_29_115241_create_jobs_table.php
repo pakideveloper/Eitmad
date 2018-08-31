@@ -20,26 +20,25 @@ class CreateJobsTable extends Migration
             $table->string('job_skills');
             $table->string('job_career_level'); 
             $table->string('job_no_of_position');  
-             $table->string('job_year_of_experience'); 
-             $table->string('job_degree_level_type');  
-              $table->string('job_salary_range');
-               $table->string('job_gender_preference'); 
-                $table->string('job_oath_status');     
-            
-             $table->integer('company_id')->nullable()->unsigned();
-            $table->foreign('company_id')->references('id')->on('companies')->onUpdate('SET NULL')   
+            $table->string('job_year_of_experience'); 
+            $table->string('job_degree_level_type');  
+            $table->string('job_salary_range');
+            $table->string('job_gender_preference'); 
+            $table->string('job_oath_status');           
+            $table->integer('company_id')->nullable()->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies')->onUpdate('SET NULL');
             $table->integer('job_type_id')->nullable()->unsigned();
-            $table->foreign('job_type_id')->references('id')->on('job_types')->onUpdate('SET NULL') 
+            $table->foreign('job_type_id')->references('id')->on('job_types')->onUpdate('SET NULL'); 
             $table->integer('job_sub_category_id')->nullable()->unsigned();
-            $table->foreign('job_sub_category_id')->references('id')->on('job_sub_categories')->onUpdate('SET NULL') 
+            $table->foreign('job_sub_category_id')->references('id')->on('job_sub_categories')->onUpdate('SET NULL'); 
             $table->integer('city_id')->nullable()->unsigned();
             $table->foreign('city_id')->references('id')->on('cities')->onUpdate('SET NULL')
             $table->integer('degree_level_id')->nullable()->unsigned();
-            $table->foreign('degree_level_id')->references('id')->on('degree_levels')->onUpdate('SET NULL')
-             $table->integer('degree_type_id')->nullable()->unsigned();
-            $table->foreign('degree_type_id')->references('id')->on('degree_types')->onUpdate('SET NULL')
+            $table->foreign('degree_level_id')->references('id')->on('degree_levels')->onUpdate('SET NULL');
+            $table->integer('degree_type_id')->nullable()->unsigned();
+            $table->foreign('degree_type_id')->references('id')->on('degree_types')->onUpdate('SET NULL');
             $table->integer('area_id')->nullable()->unsigned();
-            $table->foreign('area_id')->references('id')->on('areas')->onUpdate('SET NULL')            
+            $table->foreign('area_id')->references('id')->on('areas')->onUpdate('SET NULL');      
             $table->timestamps();
         });
         //
