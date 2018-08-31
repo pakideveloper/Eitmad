@@ -13,6 +13,14 @@ class CreateJobSubCategoriesTable extends Migration
      */
     public function up()
     {
+        Schema::create('job_sub_categories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('job_sub_category_name');
+             $table->integer('job_category_id')->nullable()->unsigned();
+            $table->foreign('job_category_id')->references('id')->on('job_categories')->onUpdate('SET NULL')   
+                      
+            $table->timestamps();
+        });
         //
     }
 

@@ -13,6 +13,15 @@ class CreateDegreeTypesTable extends Migration
      */
     public function up()
     {
+        Schema::create('degree_types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('degree_type_name'); 
+             $table->integer('degree_level_id')->nullable()->unsigned();
+            $table->foreign('degree_level_id')->references('id')->on('degree_levels')->onUpdate('SET NULL')
+           
+                
+            $table->timestamps();
+        });
         //
     }
 

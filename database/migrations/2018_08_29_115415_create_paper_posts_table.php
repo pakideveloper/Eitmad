@@ -13,6 +13,19 @@ class CreatePaperPostsTable extends Migration
      */
     public function up()
     {
+        Schema::create('paper_posts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('paper_post_title'); 
+            $table->string('paper_logo'); 
+             $table->string('paper_name'); 
+              $table->string('paper_ad');
+               $table->string('paper_ad_size'); 
+              $table->string('paper_ad_type');
+               $table->string('paper_ad_extension');
+                $table->string('posted_by');
+                  
+            $table->timestamps();
+        });
         //
     }
 
