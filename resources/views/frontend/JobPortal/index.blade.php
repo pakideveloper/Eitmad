@@ -207,7 +207,7 @@
 					<div class="product-box">
 						<div class="image">
 							<a href="jobs.html">
-								<img class="img-responsive" src="images/p1.jpg" alt="p1" title="p1"/>
+								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="p1" title="p1"/>
 							</a>	
 								<div class="buttons">
 									<div class="open-down">
@@ -241,7 +241,7 @@
 					<div class="product-box">
 						<div class="image">
 							<a href="jobs.html">
-								<img class="img-responsive" src="images/p2.jpg" alt="p2" title="p2"/>
+								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p2.jpg" alt="p2" title="p2"/>
 							</a>	
 								<div class="buttons">
 									<div class="open-down">
@@ -275,7 +275,7 @@
 					<div class="product-box">
 						<div class="image">
 							<a href="jobs.html">
-								<img class="img-responsive" src="images/p3.jpg" alt="p3" title="p3"/>
+								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p3.jpg" alt="p3" title="p3"/>
 							</a>	
 								<div class="buttons">
 									<div class="open-down">
@@ -309,7 +309,7 @@
 					<div class="product-box">
 						<div class="image">
 							<a href="jobs.html">
-								<img class="img-responsive" src="images/p4.jpg" alt="p4" title="p4"/>
+								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p4.jpg" alt="p4" title="p4"/>
 							</a>	
 								<div class="buttons">
 									<div class="open-down">
@@ -459,7 +459,7 @@
 					<div class="item">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="photo">
-								<img src="images/pic-1.png" class="img-responsive" alt="pic-1" title="pic-1" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/pic-1.png" class="img-responsive" alt="pic-1" title="pic-1" />
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 								<p>There are many variations of passages of Lorem Ipsum available, temporary  type  words </p>
 								<span class="fa fa-quote-right" aria-hidden="true"></span>
@@ -469,7 +469,7 @@
 					<div class="item">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="photo">
-								<img src="images/pic-2.png" class="img-responsive" alt="pic-2" title="pic-2" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/pic-2.png" class="img-responsive" alt="pic-2" title="pic-2" />
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 								<p>There are many variations of passages of Lorem Ipsum available, temporary  type  words </p>
 								<span class="fa fa-quote-right" aria-hidden="true"></span>
@@ -479,7 +479,7 @@
 					<div class="item">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="photo">
-								<img src="images/pic-3.png" class="img-responsive" alt="pic-3" title="pic-3" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/pic-3.png" class="img-responsive" alt="pic-3" title="pic-3" />
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 								<p>There are many variations of passages of Lorem Ipsum available, temporary  type  words </p>
 								<span class="fa fa-quote-right" aria-hidden="true"></span>
@@ -489,7 +489,7 @@
 					<div class="item">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="photo">
-								<img src="images/pic-1.png" class="img-responsive" alt="pic-1" title="pic-1" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/pic-1.png" class="img-responsive" alt="pic-1" title="pic-1" />
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 								<p>There are many variations of passages of Lorem Ipsum available, temporary  type  words </p>
 								<span class="fa fa-quote-right" aria-hidden="true"></span>
@@ -499,7 +499,7 @@
 					<div class="item">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="photo">
-								<img src="images/pic-2.png" class="img-responsive" alt="pic-2" title="pic-2" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/pic-2.png" class="img-responsive" alt="pic-2" title="pic-2" />
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 								<p>There are many variations of passages of Lorem Ipsum available, temporary  type  words </p>
 								<span class="fa fa-quote-right" aria-hidden="true"></span>
@@ -509,7 +509,7 @@
 					<div class="item">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<div class="photo">
-								<img src="images/pic-3.png" class="img-responsive" alt="pic-3" title="pic-3" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/pic-3.png" class="img-responsive" alt="pic-3" title="pic-3" />
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 								<p>There are many variations of passages of Lorem Ipsum available, temporary  type  words </p>
 								<span class="fa fa-quote-right" aria-hidden="true"></span>
@@ -538,7 +538,7 @@
 					<!-- box start here -->
 					<div class="box">
 						<a href="blog.html">
-							<img src="images/b1.jpg" alt="b1" title="b1" class="img-responsive" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/b1.jpg" alt="b1" title="b1" class="img-responsive" />
 						</a>
 						<div class="matter">
 							<h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
@@ -555,7 +555,7 @@
 					<!-- box start here -->
 					<div class="box">
 						<a href="blog.html">
-							<img src="images/b2.jpg" alt="b2" title="b2" class="img-responsive" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/b2.jpg" alt="b2" title="b2" class="img-responsive" />
 						</a>
 						<div class="matter">
 							<h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
@@ -572,7 +572,7 @@
 					<!-- box start here -->
 					<div class="box">
 						<a href="blog.html">
-							<img src="images/b3.jpg" alt="b3" title="b3" class="img-responsive" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/b3.jpg" alt="b3" title="b3" class="img-responsive" />
 						</a>
 						<div class="matter">
 							<h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
@@ -589,7 +589,7 @@
 					<!-- box start here -->
 					<div class="box">
 						<a href="blog.html">
-							<img src="images/b4.jpg" alt="b4" title="b4" class="img-responsive" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/b4.jpg" alt="b4" title="b4" class="img-responsive" />
 						</a>
 						<div class="matter">
 							<h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
@@ -622,7 +622,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-1.png" class="img-responsive" alt="cand-1" title="cand-1" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-1.png" class="img-responsive" alt="cand-1" title="cand-1" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -631,7 +631,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-2.png" class="img-responsive" alt="cand-2" title="cand-2" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-2.png" class="img-responsive" alt="cand-2" title="cand-2" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -640,7 +640,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-3.png" class="img-responsive" alt="cand-3" title="cand-3" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-3.png" class="img-responsive" alt="cand-3" title="cand-3" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -649,7 +649,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-4.png" class="img-responsive" alt="cand-4" title="cand-4" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-4.png" class="img-responsive" alt="cand-4" title="cand-4" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -658,7 +658,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-5.png" class="img-responsive" alt="cand-5" title="cand-5" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-5.png" class="img-responsive" alt="cand-5" title="cand-5" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -667,7 +667,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-6.png" class="img-responsive" alt="cand-6" title="cand-6" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-6.png" class="img-responsive" alt="cand-6" title="cand-6" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -676,7 +676,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-1.png" class="img-responsive" alt="cand-1" title="cand-1" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-1.png" class="img-responsive" alt="cand-1" title="cand-1" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -685,7 +685,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-2.png" class="img-responsive" alt="cand-2" title="cand-2" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-2.png" class="img-responsive" alt="cand-2" title="cand-2" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -694,7 +694,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-3.png" class="img-responsive" alt="cand-3" title="cand-3" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-3.png" class="img-responsive" alt="cand-3" title="cand-3" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -703,7 +703,7 @@
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 							<div class="candidate">
-								<img src="images/cand-4.png" class="img-responsive" alt="cand-4" title="cand-4" />
+								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-4.png" class="img-responsive" alt="cand-4" title="cand-4" />
 								<h1>John Doe</h1>
 								<p>Web Designer </p>
 							</div>
@@ -731,37 +731,37 @@
 				<div id="partners" class="owl-carousel">
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="images/l1.jpg" class="img-responsive" alt="l1" title="l1" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l1.jpg" class="img-responsive" alt="l1" title="l1" />
 						</div>
 					</div>
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
 					</div>
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="images/l3.jpg" class="img-responsive" alt="l3" title="l3" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l3.jpg" class="img-responsive" alt="l3" title="l3" />
 						</div>
 					</div>
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="images/l4.jpg" class="img-responsive" alt="l4" title="l4" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l4.jpg" class="img-responsive" alt="l4" title="l4" />
 						</div>
 					</div>
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="images/l5.jpg" class="img-responsive" alt="l5" title="l5" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l5.jpg" class="img-responsive" alt="l5" title="l5" />
 						</div>
 					</div>
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="images/l1.jpg" class="img-responsive" alt="l1" title="l1" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l1.jpg" class="img-responsive" alt="l1" title="l1" />
 						</div>
 					</div>
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
 					</div>
 				</div>
