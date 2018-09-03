@@ -15,15 +15,15 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!--Master Slider Styles-->
-    <link href="{{URL::to('public/Ecommerce_Frontend/assets')}}/masterslider/style/masterslider.css" rel="stylesheet" media="screen">
+    <link href="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/style/masterslider.css" rel="stylesheet" media="screen">
     <!--Styles-->
-    <link href="{{URL::to('public/Ecommerce_Frontend/assets')}}/css/styles.css" rel="stylesheet" media="screen">
+    <link href="{{URL::to('public/frontend/ecommerce/assets')}}/css/styles.css" rel="stylesheet" media="screen">
     <!--Color Scheme-->
-    <link class="color-scheme" href="{{URL::to('public/Ecommerce_Frontend/assets')}}/css/colors/color-default.css" rel="stylesheet" media="screen">
+    <link class="color-scheme" href="{{URL::to('public/frontend/ecommerce/assets')}}/css/colors/color-default.css" rel="stylesheet" media="screen">
     <!--Color Switcher-->
-    <link href="{{URL::to('public/Ecommerce_Frontend/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
+    <link href="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
     <!--Modernizr-->
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/libs/modernizr.custom.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/modernizr.custom.js"></script>
     <!--Adding Media Queries Support for IE8-->
     <!--[if lt IE 9]>
       <script src="js/plugins/respond.js"></script>
@@ -111,7 +111,7 @@
     	<div class="right-bg"></div>
       
     	<div class="container">
-      	<a class="logo" href="index.html"><img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/logo.png" alt="Bushido"/></a>
+      	<a class="logo" href="index.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a>
         
         <!--Language / Currency Switchers-->
        <!--  <ul class="switchers">
@@ -282,7 +282,7 @@
         	<!--Slide 1-->
         	<div class="ms-slide" data-delay="7">
           	<div class="overlay"></div>
-          	<img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/hero/slideshow/slide_1.jpg" alt="Nikon D4S"/>
+          	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/hero/slideshow/slide_1.jpg" alt="Nikon D4S"/>
             <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="top(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">Nikon D4S</h2>
             <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="back(500)" data-duration="700" data-delay="500" data-ease="easeOutQuad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
             <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="bottom(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1845$</span>Buy it now</a></div>
@@ -291,7 +291,7 @@
         	<!--Slide 2-->
         	<div class="ms-slide" data-delay="7">
             <span class="overlay"></span>
-          	<img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/hero/slideshow/slide_2.jpg" alt="Nest"/>
+          	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/hero/slideshow/slide_2.jpg" alt="Nest"/>
             <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="bottom(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">Nest</h2>
             <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="bottom(50,true)" data-duration="700" data-delay="500" data-ease="easeOutQuad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
             <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="rotatebottom(30|90,long,br,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1640$</span>Buy it now</a></div>
@@ -300,7 +300,7 @@
         	<!--Slide 3-->
         	<div class="ms-slide" data-delay="7">
           	<div class="overlay"></div>
-          	<img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/hero/slideshow/slide_3.jpg" alt="3D Printer"/>
+          	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/hero/slideshow/slide_3.jpg" alt="3D Printer"/>
             <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="left(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">3D Printer</h2>
             <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="left(50,true)" data-duration="700" data-delay="500" data-ease="easeOutQuad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
             <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="left(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>2500$</span>Buy it now</a></div>
@@ -331,7 +331,7 @@
         	<!--Member-->
         	<div class="col-lg-3 col-md-3 col-sm-6">
           	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/about/team/davis.jpg" alt="Susanna Davis"/></div>
+            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/davis.jpg" alt="Susanna Davis"/></div>
               <h4>Susanna Davis</h4>
               <h5>CEO, Founder</h5>
               <div class="social">
@@ -345,7 +345,7 @@
         	<!--Member-->
         	<div class="col-lg-3 col-md-3 col-sm-6">
           	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/about/team/roe.jpg" alt="Alexander Roe"/></div>
+            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/roe.jpg" alt="Alexander Roe"/></div>
               <h4>Alexander Roe</h4>
               <h5>CEO, Founder</h5>
               <div class="social">
@@ -359,7 +359,7 @@
         	<!--Member-->
         	<div class="col-lg-3 col-md-3 col-sm-6">
           	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/about/team/doe.jpg" alt="Jonathan Doe"/></div>
+            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/doe.jpg" alt="Jonathan Doe"/></div>
               <h4>Jonathan Doe</h4>
               <h5>CEO, Founder</h5>
               <div class="social">
@@ -373,7 +373,7 @@
         	<!--Member-->
         	<div class="col-lg-3 col-md-3 col-sm-6">
           	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/about/team/dirk.jpg" alt="Dexter Dirk"/></div>
+            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/dirk.jpg" alt="Dexter Dirk"/></div>
               <h4>Dexter Dirk</h4>
               <h5>CEO, Founder</h5>
               <div class="social">
@@ -457,7 +457,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-3 col-md-3 col-sm-4">
-                        <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/people/1.png" width="192" height="192" alt="Dexter Dirk"/>
+                        <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/people/1.png" width="192" height="192" alt="Dexter Dirk"/>
                       </div>
                       <div class="col-lg-8 col-md-9 col-sm-8">
                         <blockquote>
@@ -472,7 +472,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-3 col-md-3 col-sm-4">
-                        <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/people/2.png" width="192" height="192" alt="Richard Roe"/>
+                        <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/people/2.png" width="192" height="192" alt="Richard Roe"/>
                       </div>
                       <div class="col-lg-8 col-md-9 col-sm-8">
                         <blockquote>
@@ -487,7 +487,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-lg-3 col-md-3 col-sm-4">
-                        <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/people/3.png" width="192" height="192" alt="Jonathan Doe"/>
+                        <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/people/3.png" width="192" height="192" alt="Jonathan Doe"/>
                       </div>
                       <div class="col-lg-8 col-md-9 col-sm-8">
                         <blockquote>
@@ -684,7 +684,7 @@
       	<div class="row">
         	<div class="col-lg-5 col-md-5 col-sm-5">
           	<div class="info">
-              <a class="logo" href="index.html"><img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/logo.png" alt="Bushido"/></a>
+              <a class="logo" href="index.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
               <div class="social">
               	<a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -723,11 +723,11 @@
             </div>
           	<div class="col-lg-5 col-md-5 col-sm-5">
             	<div class="payment">
-                <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/payment/visa.png" alt="Visa"/>
-                <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/payment/paypal.png" alt="PayPal"/>
-                <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/payment/master.png" alt="Master Card"/>
-                <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/payment/discover.png" alt="Discover"/>
-                <img src="{{URL::to('public/Ecommerce_Frontend/assets')}}/img/payment/amazon.png" alt="Amazon"/>
+                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/payment/visa.png" alt="Visa"/>
+                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/payment/paypal.png" alt="PayPal"/>
+                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/payment/master.png" alt="Master Card"/>
+                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/payment/discover.png" alt="Discover"/>
+                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/payment/amazon.png" alt="Amazon"/>
               </div>
             </div>
           </div>
@@ -736,23 +736,23 @@
     </footer><!--Footer Close-->
     
     <!--Javascript (jQuery) Libraries and Plugins-->
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/libs/jquery.easing.min.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/bootstrap.min.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/smoothscroll.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.validate.min.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/icheck.min.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.placeholder.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.stellar.min.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.shuffle.min.js"></script>
-    <script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/lightGallery.min.js"></script>
-    <script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/owl.carousel.min.js"></script>
-    <script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/plugins/masterslider.min.js"></script>
-    <script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/mailer/mailer.js"></script>
-		<script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/js/scripts.js"></script>
-    <script src="{{URL::to('public/Ecommerce_Frontend/assets')}}/color-switcher/color-switcher.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery.easing.min.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/bootstrap.min.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/smoothscroll.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.validate.min.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/icheck.min.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.placeholder.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.stellar.min.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.shuffle.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/lightGallery.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/owl.carousel.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/masterslider.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
+		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
 
     
   </body><!--Body Close-->
