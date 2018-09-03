@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('frontend/ecommerce/modules/index');
+    return view('index');
 });
 Route::get('regist', function () {
     return view('frontend/pages/register');
