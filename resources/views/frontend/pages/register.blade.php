@@ -133,6 +133,18 @@
           <!--Registration-->
           <div class="col-lg-7 col-md-7 col-sm-7">
             <form method="post" class="registr-form">
+<div class="form-group group">
+                <label for="log-fname">First_Name</label>
+                <input type="text" class="form-control" name="log-fname" id="log-fname" placeholder="Enter your First_Name" required>
+              </div>
+
+              <div class="form-group group">
+                <label for="log-lname">Last_Name</label>
+                <input type="text" class="form-control" name="log-lname" id="log-lname" placeholder="Enter your Last_Name" required>
+              </div>
+
+
+
               <div class="form-group group">
                 <label for="rf-email">Email</label>
                 <input type="email" class="form-control" name="rf-email" id="rf-email" placeholder="Enter email" required>
