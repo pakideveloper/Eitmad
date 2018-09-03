@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 Route::get('/admin', function () {
     return view('admin/ecommerce/modules/index');
@@ -24,6 +24,10 @@ Route::get('/admin2', function () {
 Route::get('/jobportal', function () {
     return view('frontend/JobPortal/index');
 });
+
+// Route::get('/Home', function () {
+//     return view('index');
+// });
 
 Auth::routes();
 
