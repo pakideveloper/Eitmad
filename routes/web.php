@@ -25,7 +25,7 @@ Route::get('/admin2', function () {
 Route::get('/jobportal', function () {
     return view('frontend/JobPortal/index');
 });
-Route::get('register', function () {
+Route::get('signup', function () {
     return view('frontend/ecommerce/modules/registration/register');
 });
 

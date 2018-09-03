@@ -260,7 +260,7 @@
         <div class="toolbar group">
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
           <div class="middle-btns">
-            <a class="btn-outlined-invert" href="{{ url('register') }}"><i class="icon-heart"></i> <span>Sign Up</span></a>
+            <a class="btn-outlined-invert" href="{{ url('signup') }}"><i class="icon-heart"></i> <span>Sign Up</span></a>
             
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
           </div>
