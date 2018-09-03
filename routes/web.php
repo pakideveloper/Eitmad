@@ -29,7 +29,6 @@ Route::get('register', function () {
     return view('frontend/ecommerce/modules/registration/register');
 });
 
-
 // Route::get('/Home', function () {
 //     return view('index');
 // });
