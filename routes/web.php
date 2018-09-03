@@ -25,6 +25,10 @@ Route::get('/jobportal', function () {
     return view('frontend/JobPortal/index');
 });
 
+Route::get('/regist', function () {
+    return view('frontend/pages/register');
+});
+
 // Route::get('/Home', function () {
 //     return view('index');
 // });
