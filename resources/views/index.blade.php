@@ -260,11 +260,8 @@
         <div class="toolbar group">
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
           <div class="middle-btns">
-<<<<<<< HEAD
             <a class="btn-outlined-invert" href="{{ url('register') }}"><i class="icon-heart"></i> <span>Sign Up</span></a>
-=======
-            <a class="btn-outlined-invert" href="wishlist.html"><i class="icon-heart"></i> <span>Sign Up</span></a>
->>>>>>> parent of 51a738d... REGISTER PAGE
+            
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
           </div>
          
