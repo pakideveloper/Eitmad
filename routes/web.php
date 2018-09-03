@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('frontend/ecommerce/modules/index');
 });
+Route::get('regist', function () {
+    return view('frontend/pages/register');
+});
 Route::get('/admin', function () {
     return view('admin/ecommerce/modules/index');
 });
@@ -25,9 +28,7 @@ Route::get('/jobportal', function () {
     return view('frontend/JobPortal/index');
 });
 
-Route::get('/regist', function () {
-    return view('frontend/pages/register');
-});
+
 
 // Route::get('/Home', function () {
 //     return view('index');
