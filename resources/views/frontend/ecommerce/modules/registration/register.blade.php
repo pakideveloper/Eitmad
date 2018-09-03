@@ -15,15 +15,15 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!--Master Slider Styles-->
-    <link href="{{url::to('public/Ecommerce_Frontend/assets')}}/masterslider/style/masterslider.css" rel="stylesheet" media="screen">
+    <link href="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/style/masterslider.css" rel="stylesheet" media="screen">
     <!--Styles-->
-    <link href="{{url::to('public/Ecommerce_Frontend/assets')}}/css/styles.css" rel="stylesheet" media="screen">
+    <link href="{{url::to('public/frontend/ecommerce/assets')}}/css/styles.css" rel="stylesheet" media="screen">
     <!--Color Scheme-->
-    <link class="color-scheme" href="{{url::to('public/Ecommerce_Frontend/assets')}}/css/colors/color-default.css" rel="stylesheet" media="screen">
+    <link class="color-scheme" href="{{url::to('public/frontend/ecommerce/assets')}}/css/colors/color-default.css" rel="stylesheet" media="screen">
     <!--Color Switcher-->
-    <link href="{{url::to('public/Ecommerce_Frontend/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
+    <link href="{{url::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
     <!--Modernizr-->
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/libs/modernizr.custom.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/libs/modernizr.custom.js"></script>
     <!--Adding Media Queries Support for IE8-->
     <!--[if lt IE 9]>
       <script src="js/plugins/respond.js"></script>
@@ -171,12 +171,12 @@
         <div class="container">
           <h2>Brands in our shop</h2>
           <div class="inner">
-            <a class="item" href="#"><img src="{{url::to('public/Ecommerce_Frontend/assets')}}/img/brands/jquery.png" alt="jQuery"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/Ecommerce_Frontend/assets')}}/img/brands/wp.png" alt="WordPress"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/Ecommerce_Frontend/assets')}}/img/brands/woo.png" alt="WooCommerce"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/Ecommerce_Frontend/assets')}}/img/brands/android.png" alt="Android"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/Ecommerce_Frontend/assets')}}/img/brands/macgasm.png" alt="Macgasm"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/Ecommerce_Frontend/assets')}}/img/brands/dropbox.png" alt="Dropbox"/></a>
+            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/jquery.png" alt="jQuery"/></a>
+            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/wp.png" alt="WordPress"/></a>
+            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/woo.png" alt="WooCommerce"/></a>
+            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/android.png" alt="Android"/></a>
+            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/macgasm.png" alt="Macgasm"/></a>
+            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/dropbox.png" alt="Dropbox"/></a>
           </div>
         </div>
       </section><!--Brands Carousel Close-->
@@ -243,24 +243,24 @@
       
     @include('frontend/include/footer')
     <!--Javascript (jQuery) Libraries and Plugins-->
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/libs/jquery.easing.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/bootstrap.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/smoothscroll.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.validate.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/icheck.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.placeholder.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.stellar.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.shuffle.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/lightGallery.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/owl.carousel.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/masterslider.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/plugins/jquery.nouislider.min.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/mailer/mailer.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/js/scripts.js"></script>
-    <script src="{{url::to('public/Ecommerce_Frontend/assets')}}/color-switcher/color-switcher.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/libs/jquery.easing.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/bootstrap.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/smoothscroll.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.validate.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/icheck.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.placeholder.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.stellar.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.shuffle.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/lightGallery.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/owl.carousel.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/masterslider.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.nouislider.min.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
+    <script src="{{url::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
 
     
   </body><!--Body Close-->
