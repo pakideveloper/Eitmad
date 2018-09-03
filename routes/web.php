@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('frontend/ecommerce/modules/index');
 });
 Route::get('/admin', function () {
     return view('admin/ecommerce/modules/index');
