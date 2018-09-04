@@ -132,7 +132,7 @@
           </div>
           <!--Registration-->
           <div class="col-lg-7 col-md-7 col-sm-7">
-            <form method="post" class="registr-form" action="{{route('register')}}">
+            <form method="post" class="registr-form" action="{{url('register')}}">
               {{ csrf_field() }}
 <div class="form-group group">
                 <label for="log-fname">First_Name</label>
