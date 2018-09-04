@@ -33,7 +33,7 @@ Route::get('/signup', function () {
 // Route::get('/Home', function () {
 //     return view('index');
 // });
-Route::get('/user', 'Auth\RegisterController');
+Route::get('/register', 'Auth\RegisterController');
 Auth::routes();
 
 
