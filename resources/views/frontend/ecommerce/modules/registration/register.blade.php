@@ -136,27 +136,27 @@
               {{ csrf_field() }}
 <div class="form-group group">
                 <label for="log-fname">First_Name</label>
-                <input type="text" class="form-control" name="log-fname" id="log-fname" placeholder="Enter your First_Name" required>
+                <input type="text" class="form-control" name="first_name" id="log-fname" placeholder="Enter your First_Name" required>
               </div>
 
               <div class="form-group group">
                 <label for="log-lname">Last_Name</label>
-                <input type="text" class="form-control" name="log-lname" id="log-lname" placeholder="Enter your Last_Name" required>
+                <input type="text" class="form-control" name="last_name" id="log-lname" placeholder="Enter your Last_Name" required>
               </div>
 
 
                      
               <div class="form-group group">
                 <label for="rf-email">Email</label>
-                <input type="email" class="form-control" name="rf-email" id="rf-email" placeholder="Enter email" required>
+                <input type="email" class="form-control" name="email" id="rf-email" placeholder="Enter email" required>
               </div>
               <div class="form-group group">
                 <label for="rf-password">Password</label>
-                <input type="password" class="form-control" name="rf-password" id="rf-password" placeholder="Enter password" required>
+                <input type="password" class="form-control" name="password" id="rf-password" placeholder="Enter password" required>
               </div>
               <div class="form-group group">
                 <label for="rf-password-repeat">Repeat password</label>
-                <input type="password" class="form-control" name="rf-password-repeat" id="rf-password-repeat" placeholder="Repeat password" required>
+                <input type="password" class="form-control" name="password-repeat" id="rf-password-repeat" placeholder="Repeat password" required>
               </div>
               <div class="checkbox">
                 <label><input type="checkbox" name="remember"> I have read and agree with the terms</label>
