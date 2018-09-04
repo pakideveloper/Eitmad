@@ -76,12 +76,12 @@ class RegisterController extends Controller
           'first_name' => $request->get('first_name'),
           'last_name' => $request->get('last_name'),
           'email' => $request->get('email'),
-          'password' => $request->get('password'),
+          'password' => $request->get('password')
 
         ]);
 
         $user->save();
-        return redirect('/signup');
+        return redirect('/');
     }
     public function showRegistrationForm()
     {
