@@ -26,14 +26,14 @@ Route::get('/jobportal', function () {
     return view('frontend/JobPortal/index');
 });
 
-Route::get('/register', function () {
-    return view('frontend/ecommerce/modules/registration/register');
-});
+// Route::get('/register', function () {
+//     return view('frontend/ecommerce/modules/registration/register');
+// });
 
 // Route::get('/Home', function () {
 //     return view('index');
 // });
- Route::get('/register', 'Auth\RegisterController');
+ Route::get('/register', 'Auth\RegisterController@register');
 Auth::routes();
 
 

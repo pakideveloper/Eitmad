@@ -6,6 +6,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -70,7 +71,7 @@ class RegisterController extends Controller
         $user->password=bcrypt($data['password']);
         return $User;
     }
-    public function store(Request $request)
+    public function register(Request $request)
     {
         $user = new User([
           'first_name' => $request->get('first_name'),
@@ -81,8 +82,9 @@ class RegisterController extends Controller
         ]);
 
         $user->save();
-        return redirect('/');
+        return redirect('/register');
     }
+
     public function showRegistrationForm()
     {
         return view('frontend.ecommerce.modules.registration.register');
