@@ -132,7 +132,8 @@
           </div>
           <!--Registration-->
           <div class="col-lg-7 col-md-7 col-sm-7">
-            <form method="post" class="registr-form">
+            <form method="post" class="registr-form" action="{{route('register')}}">
+              {{ csrf_field() }}
 <div class="form-group group">
                 <label for="log-fname">First_Name</label>
                 <input type="text" class="form-control" name="log-fname" id="log-fname" placeholder="Enter your First_Name" required>
