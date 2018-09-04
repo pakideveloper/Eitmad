@@ -33,8 +33,9 @@ Route::get('/signup', function () {
 // Route::get('/Home', function () {
 //     return view('index');
 // });
-
+Route::get('/user', 'Auth\RegisterController');
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
