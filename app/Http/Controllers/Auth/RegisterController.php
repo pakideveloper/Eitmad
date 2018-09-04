@@ -70,6 +70,19 @@ class RegisterController extends Controller
         $user->password=bcrypt($data['password']);
         return $User;
     }
+    public function store(Request $request)
+    {
+        $user = new User([
+          'first_name' => $request->get('first_name'),
+          'last_name' => $request->get('last_name'),
+          'email' => $request->get('email'),
+          'password' => $request->get('password'),
+
+        ]);
+
+        $user->save();
+        return redirect('/signup');
+    }
     public function showRegistrationForm()
     {
         return view('frontend.ecommerce.modules.registration.register');
