@@ -29,6 +29,12 @@ Route::get('/ecommerce', function () {
     return view('frontend/ecommerce/modules/index');
 });
 
+Route::group(['middleware'=>'role:admin'], function(){
+
+});
+
+Route::resource('/brands','admin\ecommerce\BrandController');
+
 // Route::get('/register', function () {
 //     return view('frontend/ecommerce/modules/registration/register');
 // });
