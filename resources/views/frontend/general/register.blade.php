@@ -290,26 +290,37 @@
         <div class="row">
           <!--Login-->
           <div class="col-lg-5 col-md-5 col-sm-5">
-            <form method="post" class="login-form">
-              <div class="form-group group">
+            <form method="POST" action="{{ route('login') }}" class="login-form">
+              {{ csrf_field() }}
+              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} group>
                 <label for="log-email2">Email</label>
-                <input type="email" class="form-control" name="log-email2" id="log-email2" placeholder="Enter your email" required>
+                <input type="email" class="form-control" name="email" id="log-email2" placeholder="Enter your email" required value="{{ old('email') }}">
+                @if ($errors->has('email'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
                 <a class="help-link" href="#">Forgot email?</a>
               </div>
-              <div class="form-group group">
+              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} group">
                 <label for="log-password2">Password</label>
-                <input type="text" class="form-control" name="log-password2" id="log-password2" placeholder="Enter your password" required>
+                <input type="text" class="form-control" name="password" id="log-password2" placeholder="Enter your password" required>
+                @if ($errors->has('password'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
                 <a class="help-link" href="#">Forgot password?</a>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
+                <label><input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember me</label>
               </div>
               <input class="btn btn-success" type="submit" value="Login">
             </form>
           </div>
           <!--Registration-->
           <div class="col-lg-7 col-md-7 col-sm-7">
-            <form method="post" class="registr-form" action="{{route("register")}}">
+            <form class="registr-form" method="POST" action="{{ route('register') }}">
               {{ csrf_field() }}
 <div class="form-group group">
                 <label for="log-fname">First_Name</label>

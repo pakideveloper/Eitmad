@@ -73,16 +73,8 @@ class RegisterController extends Controller
     }
     public function register(Request $request)
     {
-        $user = new User([
-          'first_name' => $request->get('first_name'),
-          'last_name' => $request->get('last_name'),
-          'email' => $request->get('email'),
-          'password' => $request->get('password')
-
-        ]);
-
-        $user->save();
-        return redirect('/register');
+        $this->validator($request->all())->validate();
+        return redirect('/login');
     }
 
     public function showRegistrationForm()

@@ -33,8 +33,8 @@ Route::get('/jobportal', function () {
 // Route::get('/Home', function () {
 //     return view('index');
 // });
- Route::get('/register', 'Auth\RegisterController@register');
- Route::get('/login', 'Auth\LoginController@login');
+ // Route::get('/register', 'Auth\RegisterController@register');
+ // Route::get('/login', 'Auth\LoginController@login');
 Auth::routes();
 
 
