@@ -35,6 +35,7 @@ Route::group(['middleware'=>'role:admin'], function(){
 
 Route::resource('/brands','admin\ecommerce\BrandController');
 Route::resource('/products','admin\ecommerce\ProductController');
+Route::resource('/categories','admin\ecommerce\CategoryController');
 
 // Route::get('/register', function () {
 //     return view('frontend/ecommerce/modules/registration/register');

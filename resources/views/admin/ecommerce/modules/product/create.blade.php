@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{URL::to('public/admin/ecommerce')}}/assets/images/favicon.ico">
         <!-- App title -->
-        <title>Zircos - Responsive Admin Dashboard Template</title>
+        <title>Eitmad</title>
 
         <!-- App css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -77,16 +77,16 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Form Validation </h4>
+                                    <h4 class="page-title">Add Product</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Zircos</a>
+                                            <a href="#">Eitmad</a>
                                         </li>
                                         <li>
-                                            <a href="#">Forms </a>
+                                            <a href="#">product </a>
                                         </li>
                                         <li class="active">
-                                            Form Validation
+                                            Add product
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -103,27 +103,24 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-xs-12 col-md-6">
 
-                                            <h4 class="header-title m-t-0">Basic Form</h4>
-                                            <p class="text-muted font-13 m-b-10">
-                                                Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.
-                                            </p>
+                                            
 
                                             <div class="p-20">
                                                 <form action="#" data-parsley-validate novalidate>
                                                     <div class="form-group">
-                                                        <label for="userName">User Name<span class="text-danger">*</span></label>
+                                                        <label for="product-name">Product Name<span class="text-danger">*</span></label>
                                                         <input type="text" name="nick" parsley-trigger="change" required
-                                                               placeholder="Enter user name" class="form-control" id="userName">
+                                                               placeholder="Enter product name" class="form-control" id="userName">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="emailAddress">Email address<span class="text-danger">*</span></label>
-                                                        <input type="email" name="email" parsley-trigger="change" required
-                                                               placeholder="Enter email" class="form-control" id="emailAddress">
+                                                        <label for="product-price">Product Price<span class="text-danger">*</span></label>
+                                                        <input type="text" name="price" parsley-trigger="change" required
+                                                               placeholder="Enter product price" class="form-control" id="price">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="pass1">Password<span class="text-danger">*</span></label>
-                                                        <input id="pass1" type="password" placeholder="Password" required
-                                                               class="form-control">
+                                                        <label for="product-colour">Product Colour<span class="text-danger">*</span></label>
+                                                        <input  type="text" placeholder="" data-role="tagsinput" required
+                                                               class="form-control" id="colour">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="passWord2">Confirm Password <span class="text-danger">*</span></label>
@@ -152,10 +149,7 @@
                                         </div>
 
                                         <div class="col-sm-12 col-xs-12 col-md-6">
-                                            <h4 class="header-title m-t-0">Horizontal Form</h4>
-                                            <p class="text-muted font-13 m-b-10">
-                                                Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.
-                                            </p>
+                                            
 
                                             <div class="p-20">
                                                 <form data-parsley-validate novalidate>
@@ -215,314 +209,11 @@
                                     </div>
                                     <!-- end row -->
 
-                                    <div class="row m-t-50">
-                                        <div class="col-sm-6 col-xs-12 m-t-20">
-                                            <h4 class="header-title m-t-0">Validation type</h4>
-                                            <p class="text-muted font-13 m-b-10">
-                                                Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.
-                                            </p>
-
-                                            <div class="p-20">
-                                                <form class="form-horizontal " action="#">
-                                                    <div class="form-group">
-                                                        <label>Required</label>
-                                                        <input type="text" class="form-control" required
-                                                                   placeholder="Type something"/>
-                                                    </div>
-
-
-                                                    <div class="form-group">
-                                                        <label>Equal To</label>
-                                                        <div>
-                                                            <input type="password" id="pass2" class="form-control" required
-                                                                   placeholder="Password"/>
-                                                        </div>
-                                                        <div class="m-t-10">
-                                                            <input type="password" class="form-control" required
-                                                                   data-parsley-equalto="#pass2"
-                                                                   placeholder="Re-Type Password"/>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label>E-Mail</label>
-                                                        <div>
-                                                            <input type="email" class="form-control" required
-                                                                   parsley-type="email" placeholder="Enter a valid e-mail"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>URL</label>
-                                                        <div>
-                                                            <input parsley-type="url" type="url" class="form-control"
-                                                                   required placeholder="URL"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Digits</label>
-                                                        <div>
-                                                            <input data-parsley-type="digits" type="text"
-                                                                   class="form-control" required
-                                                                   placeholder="Enter only digits"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Number</label>
-                                                        <div>
-                                                            <input data-parsley-type="number" type="text"
-                                                                   class="form-control" required
-                                                                   placeholder="Enter only numbers"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Alphanumeric</label>
-                                                        <div>
-                                                            <input data-parsley-type="alphanum" type="text"
-                                                                   class="form-control" required
-                                                                   placeholder="Enter alphanumeric value"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Textarea</label>
-                                                        <div>
-                                                            <textarea required class="form-control"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div>
-                                                            <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                                Submit
-                                                            </button>
-                                                            <button type="reset" class="btn btn-default waves-effect m-l-5">
-                                                                Cancel
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="col-sm-6 col-xs-12 m-t-20">
-                                            <h4 class="header-title m-t-0">Range validation</h4>
-                                            <p class="text-muted font-13 m-b-10">
-                                                Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.
-                                            </p>
-
-                                            <div class="p-20">
-                                                <form action="#">
-
-                                                    <div class="form-group">
-                                                        <label>Min Length</label>
-                                                        <div>
-                                                            <input type="text" class="form-control" required
-                                                                   data-parsley-minlength="6" placeholder="Min 6 chars."/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Max Length</label>
-                                                        <div>
-                                                            <input type="text" class="form-control" required
-                                                                   data-parsley-maxlength="6" placeholder="Max 6 chars."/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Range Length</label>
-                                                        <div>
-                                                            <input type="text" class="form-control" required
-                                                                   data-parsley-length="[5,10]"
-                                                                   placeholder="Text between 5 - 10 chars length"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Min Value</label>
-                                                        <div>
-                                                            <input type="text" class="form-control" required
-                                                                   data-parsley-min="6" placeholder="Min value is 6"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Max Value</label>
-                                                        <div>
-                                                            <input type="text" class="form-control" required
-                                                                   data-parsley-max="6" placeholder="Max value is 6"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Range Value</label>
-                                                        <div>
-                                                            <input class="form-control" required type="text range" min="6"
-                                                                   max="100" placeholder="Number between 6 - 100"/>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Regular Exp</label>
-                                                        <div>
-                                                            <input type="text" class="form-control" required
-                                                                   data-parsley-pattern="#[A-Fa-f0-9]{6}"
-                                                                   placeholder="Hex. Color"/>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <label>Min check</label>
-                                                        <div>
-                                                            <div class="checkbox checkbox-custom">
-                                                                <input id="checkbox1" type="checkbox"
-                                                                       data-parsley-multiple="groups"
-                                                                       data-parsley-mincheck="2">
-                                                                <label for="checkbox1"> And this </label>
-                                                            </div>
-                                                            <div class="checkbox checkbox-pink">
-                                                                <input id="checkbox2" type="checkbox"
-                                                                       data-parsley-multiple="groups"
-                                                                       data-parsley-mincheck="2">
-                                                                <label for="checkbox2"> Can't check this </label>
-                                                            </div>
-                                                            <div class="checkbox checkbox-success">
-                                                                <input id="checkbox3" type="checkbox"
-                                                                       data-parsley-multiple="groups"
-                                                                       data-parsley-mincheck="2" required>
-                                                                <label for="checkbox3"> This too </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Max check</label>
-                                                        <div>
-                                                            <div class="checkbox checkbox-pink">
-                                                                <input id="checkbox4" type="checkbox"
-                                                                       data-parsley-multiple="group1">
-                                                                <label for="checkbox4"> And this </label>
-                                                            </div>
-                                                            <div class="checkbox checkbox-primary">
-                                                                <input id="checkbox5" type="checkbox"
-                                                                       data-parsley-multiple="group1">
-                                                                <label for="checkbox5"> Can't check this </label>
-                                                            </div>
-                                                            <div class="checkbox checkbox-success">
-                                                                <input id="checkbox6" type="checkbox"
-                                                                       data-parsley-multiple="group1"
-                                                                       data-parsley-maxcheck="1">
-                                                                <label for="checkbox6"> This too </label>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group m-b-0">
-                                                        <div>
-                                                            <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                                Submit
-                                                            </button>
-                                                            <button type="reset" class="btn btn-default waves-effect m-l-5">
-                                                                Cancel
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
+                                   
                                     <!-- end row -->
 
 
-                                    <div class="row m-t-50">
-                                        <div class="col-sm-12">
-                                            <h4 class="header-title m-t-0">Parsley Examples</h4>
-                                            <p class="text-muted font-13 m-b-10">
-                                                Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.
-                                            </p>
-
-                                            <div class="alert alert-warning hidden fade in">
-                                                <h4>Oh snap!</h4>
-                                                <p>This form seems to be invalid :(</p>
-                                            </div>
-
-                                            <div class="alert alert-info hidden fade in">
-                                                <h4>Yay!</h4>
-                                                <p>Everything seems to be ok :)</p>
-                                            </div>
-
-                                            <form id="demo-form" data-parsley-validate="">
-                                                <div class="form-group">
-                                                    <label for="fullname">Full Name * :</label>
-                                                    <input type="text" class="form-control" name="fullname" id="fullname" required="">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="email">Email * :</label>
-                                                    <input type="email" id="email" class="form-control" name="email"
-                                                           data-parsley-trigger="change" required="">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Gender *:</label>
-
-                                                    <div class="radio">
-                                                        <input type="radio" name="gender" id="genderM" value="Male" required="">
-                                                        <label for="genderM">
-                                                            Male
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio">
-                                                        <input type="radio" name="gender" id="genderF" value="Female">
-                                                        <label for="genderF">
-                                                            Female
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Hobbies (Optional, but 2 minimum):</label>
-
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input type="checkbox" name="hobbies[]" id="hobby1"
-                                                                      value="ski" data-parsley-mincheck="2">
-                                                        <label for="hobby1"> Skiing </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input type="checkbox" name="hobbies[]" id="hobby2"
-                                                                       value="run">
-                                                        <label for="hobby2"> Running </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-pink">
-                                                        <input type="checkbox" name="hobbies[]" id="hobby3"
-                                                                      value="eat">
-                                                        <label for="hobby3"> Eating </label>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="heard">Heard about us via *:</label>
-                                                    <select id="heard" class="form-control" required="">
-                                                        <option value="">Choose..</option>
-                                                        <option value="press">Press</option>
-                                                        <option value="net">Internet</option>
-                                                        <option value="mouth">Word of mouth</option>
-                                                        <option value="other">Other..</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="message">Message (20 chars min, 100 max) :</label>
-                                                    <textarea id="message" class="form-control" name="message"
-                                                              data-parsley-trigger="keyup" data-parsley-minlength="20"
-                                                              data-parsley-maxlength="100"
-                                                              data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
-                                                              data-parsley-validation-threshold="10"></textarea>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <input type="submit" class="btn btn-success" value="validate">
-                                                </div>
-
-                                            </form>
-                                        </div>
-                                    </div>
+                                    
 
                         		</div> <!-- end ard-box -->
                             </div><!-- end col-->

@@ -44,14 +44,12 @@
                             </li>
 
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span> Admin UI </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Categories</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="admin-sweet-alert.html">Sweet Alert</a></li>
-                                    <li><a href="admin-widgets.html">Widgets</a></li>
-                                    <li><a href="admin-nestable.html">Nestable List</a></li>
-                                    <li><a href="admin-rangeslider.html">Range Slider</a></li>
-                                    <li><a href="admin-ratings.html">Ratings</a></li>
-                                    <li><a href="admin-animation.html">Animation</a></li>
+                                    
+                                    <li><a href="{{url('categories')}}/create">add parent category</a></li>
+                                    <li><a href="admin-ratings.html">add sub category</a></li>
+                                    <li><a href="admin-animation.html">View All</a></li>
                                 </ul>
                             </li>
 
