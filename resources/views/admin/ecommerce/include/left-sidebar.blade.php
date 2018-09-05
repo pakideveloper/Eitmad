@@ -1,4 +1,4 @@
-<div class="left side-menu">
+ <div class="left side-menu">
                 <div class="sidebar-inner slimscrollleft">
 
                     <!--- Sidemenu -->
