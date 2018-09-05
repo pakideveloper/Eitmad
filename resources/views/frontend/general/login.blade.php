@@ -304,7 +304,7 @@
               </div>
               <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} group">
                 <label for="log-password2">Password</label>
-                <input type="text" class="form-control" name="password" id="log-password2" placeholder="Enter your password" required>
+                <input type="password" class="form-control" name="password" id="log-password2" placeholder="Enter your password" required>
                 @if ($errors->has('password'))
                     <span class="help-block">
                         <strong>{{ $errors->first('password') }}</strong>
