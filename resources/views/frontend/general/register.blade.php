@@ -291,12 +291,12 @@
           <!--Login-->
           
           <!--Registration-->
-          <div class="col-lg-7 col-md-7 col-sm-7">
+          <div class="col-lg-12 col-md-12 col-sm-12">
             <form class="registr-form" method="POST" action="{{ route('register') }}">
               {{ csrf_field() }}
-<div class="form-group group{{ $errors->has('first_name') ? ' has-error' : '' }}">
+<div class="form-group group{{ $errors->has('first_name') ? ' has-error' : '' }} col-lg-16 col-md-6 col-sm-12">
                 <label for="log-fname">First_Name</label>
-                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter your First_Name" required>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter your First_Name" value="{{ old('first_name') }}" required autofocus>
                 @if ($errors->has('first_name'))
                     <span class="help-block">
                         <strong>{{ $errors->first('first_name') }}</strong>
@@ -304,7 +304,7 @@
                 @endif
               </div>
 
-              <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }} group">
+              <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }} group  col-md-6 col-sm-12">
                 <label for="log-lname">Last_Name</label>
                 <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter your Last_Name" value="{{ old('last_name') }}" required>
                 @if ($errors->has('last_name'))
@@ -316,16 +316,16 @@
 
 
                      
-              <div class="form-group group{{ $errors->has('email') ? ' has-error' : '' }}">
+              <div class="form-group group{{ $errors->has('email') ? ' has-error' : '' }} col-md-12 col-sm-12">
                 <label for="rf-email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" value="{{ old('last_name') }}" required>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" value="{{ old('email') }}" required >
                 @if ($errors->has('email'))
                     <span class="help-block">
                         <strong>{{ $errors->first('email') }}</strong>
                     </span>
                 @endif
               </div>
-              <div class="form-group group{{ $errors->has('password') ? ' has-error' : '' }}">
+              <div class="form-group group{{ $errors->has('password') ? ' has-error' : '' }} col-md-6 col-sm-12">
                 <label for="rf-password">Password</label>
                 <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" value="{{ old('password') }}" required>
                 @if ($errors->has('password'))
@@ -334,19 +334,14 @@
                     </span>
                 @endif
               </div>
-              <div class="form-group group{{ $errors->has('password-repeat') ? ' has-error' : '' }}">
+              <div class="form-group group col-md-6 col-sm-12">
                 <label for="rf-password-repeat">Repeat password</label>
-                <input type="password" class="form-control" name="password-repeat" id="rf-password-repeat" placeholder="Repeat password" value="{{ old('password-repeat') }}" required>
-                @if ($errors->has('password-repeat'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('password-repeat') }}</strong>
-                    </span>
-                @endif
+                <input type="password" class="form-control" name="password_confirmation" id="rf-password-repeat" placeholder="Repeat password" required>
               </div>
-              <div class="checkbox">
+              <div class="checkbox col-md-12 col-sm-12">
                 <label><input type="checkbox" name="remember"> I have read and agree with the terms</label>
               </div>
-              <input class="btn btn-success" type="submit" value="Register">
+              <center><input class="btn btn-success " type="submit" value="Register"></center>
             </form>
           </div>
         </div>
