@@ -13,15 +13,15 @@
             </div>
           </div>
           <div class="modal-body">
-          <form class="login-form">
+          <form class="login-form" method="post" action = "{{route('login')}}">
             <div class="form-group group">
             	<label for="log-email">Email</label>
-              <input type="email" class="form-control" name="log-email" id="log-email" placeholder="Enter your email" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email"  required>
               <a class="help-link" href="#">Forgot email?</a>
             </div>
             <div class="form-group group">
             	<label for="log-password">Password</label>
-              <input type="text" class="form-control" name="log-password" id="log-password" placeholder="Enter your password" required>
+              <input type="text" class="form-control" name="password" id="password" placeholder="Enter your password" required>
               <a class="help-link" href="#">Forgot password?</a>
             </div>
             <div class="checkbox">

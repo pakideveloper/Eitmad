@@ -34,6 +34,7 @@ Route::get('/jobportal', function () {
 //     return view('index');
 // });
  Route::get('/register', 'Auth\RegisterController@register');
+ Route::get('/login', 'Auth\LoginController@login');
 Auth::routes();
 
 
