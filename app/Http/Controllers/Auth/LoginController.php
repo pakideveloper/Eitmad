@@ -36,6 +36,13 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm()
+    {
+        // Alert::success('Success Title', 'Success Message');
+
+        return view('frontend.general.login');
+    }
 //  public function login(Request $request)
 // {
 //     echo "hello";

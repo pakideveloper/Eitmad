@@ -69,6 +69,7 @@ class RegisterController extends Controller
 
         $user->email=$data['email'];
         $user->password=bcrypt($data['password']);
+        $user->save();
         return $User;
     }
     public function register(Request $request)

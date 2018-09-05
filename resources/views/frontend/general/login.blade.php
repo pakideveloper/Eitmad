@@ -289,66 +289,37 @@
         </div>
         <div class="row">
           <!--Login-->
-          
-          <!--Registration-->
-          <div class="col-lg-7 col-md-7 col-sm-7">
-            <form class="registr-form" method="POST" action="{{ route('register') }}">
+          <div class="col-lg-5 col-md-5 col-sm-5">
+            <form method="POST" action="{{ route('login') }}" class="login-form">
               {{ csrf_field() }}
-<div class="form-group group{{ $errors->has('first_name') ? ' has-error' : '' }}">
-                <label for="log-fname">First_Name</label>
-                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter your First_Name" required>
-                @if ($errors->has('first_name'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('first_name') }}</strong>
-                    </span>
-                @endif
-              </div>
-
-              <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }} group">
-                <label for="log-lname">Last_Name</label>
-                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter your Last_Name" value="{{ old('last_name') }}" required>
-                @if ($errors->has('last_name'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('last_name') }}</strong>
-                    </span>
-                @endif
-              </div>
-
-
-                     
-              <div class="form-group group{{ $errors->has('email') ? ' has-error' : '' }}">
-                <label for="rf-email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" value="{{ old('last_name') }}" required>
+              <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} group>
+                <label for="log-email2">Email</label>
+                <input type="email" class="form-control" name="email" id="log-email2" placeholder="Enter your email" required value="{{ old('email') }}">
                 @if ($errors->has('email'))
                     <span class="help-block">
                         <strong>{{ $errors->first('email') }}</strong>
                     </span>
                 @endif
+                <a class="help-link" href="#">Forgot email?</a>
               </div>
-              <div class="form-group group{{ $errors->has('password') ? ' has-error' : '' }}">
-                <label for="rf-password">Password</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" value="{{ old('password') }}" required>
+              <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} group">
+                <label for="log-password2">Password</label>
+                <input type="text" class="form-control" name="password" id="log-password2" placeholder="Enter your password" required>
                 @if ($errors->has('password'))
                     <span class="help-block">
                         <strong>{{ $errors->first('password') }}</strong>
                     </span>
                 @endif
-              </div>
-              <div class="form-group group{{ $errors->has('password-repeat') ? ' has-error' : '' }}">
-                <label for="rf-password-repeat">Repeat password</label>
-                <input type="password" class="form-control" name="password-repeat" id="rf-password-repeat" placeholder="Repeat password" value="{{ old('password-repeat') }}" required>
-                @if ($errors->has('password-repeat'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('password-repeat') }}</strong>
-                    </span>
-                @endif
+                <a class="help-link" href="#">Forgot password?</a>
               </div>
               <div class="checkbox">
-                <label><input type="checkbox" name="remember"> I have read and agree with the terms</label>
+                <label><input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember me</label>
               </div>
-              <input class="btn btn-success" type="submit" value="Register">
+              <input class="btn btn-success" type="submit" value="Login">
             </form>
           </div>
+          <!--Registration-->
+          
         </div>
       </section><!--Login / Register Close-->
       
