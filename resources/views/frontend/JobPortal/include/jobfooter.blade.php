@@ -52,7 +52,7 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-3 col-md-3 col-xs-12 matter">
-					<img src="images/foot-logo.png"  class="img-responsive footerlogochange" alt="foot-logo" title="foot-logo" />
+					<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/foot-logo.png"  class="img-responsive footerlogochange" alt="foot-logo" title="foot-logo" />
 					<p>Aliquam hendrit rutrum iaculis nullam ondimentum mal uada velit beum donec sit amet tristique erosam amet risus mollis malesuada quis quis nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultr amet tristique erosam.</p>
 						
 				</div>

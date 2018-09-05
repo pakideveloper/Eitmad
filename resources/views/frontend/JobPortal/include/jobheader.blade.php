@@ -1,41 +1,4 @@
-<!-- top start here -->
-	<div id="top">
-		<!-- top container start here-->
-		<div class="container">
-			<div id="top-links">
-				<ul class="list-inline pull-left button">
-					<li>
-						<a href="about.html"><span>ABOUT US</span></a>
-					</li>
-					<li>
-						<a href="contact.html"><span>CONTACT US</span></a>
-					</li>
-					<li>
-						<a href="contact.html"><span>EMAIL : INFO@JOBPORTAL.COM</span></a>
-					</li>
-				</ul>
-				<ul class="list-inline pull-right icon">
-					<li>
-						<a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-					</li>
-					<li>
-						<a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					</li>
-					<li>
-						<a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-					</li>
-					<li>
-						<a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-					</li>
-					<li>
-						<a href="https://in.pinterest.com/" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<!-- top container end here-->
-	</div>
-<!-- top end here -->
+
 	
 <!-- header start here-->
 	<header>
@@ -70,36 +33,7 @@
 							<ul class="nav navbar-nav pull-left">
 								<li class="dropdown">
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#">HOME</a>
-									<div class="dropdown-menu animated fadeInDown">
-										<div class="dropdown-inner">
-											<ul class="list-unstyled">
-												<li>
-													<a href="index.html">Header layout 1</a>
-												</li>
-												<li>
-													<a href="header2.html">Header layout 2</a>
-												</li>
-												<li>
-													<a href="header3.html">Header layout 3</a>
-												</li>
-												<li>
-													<a href="header4.html">Header layout 4</a>
-												</li>
-												<li>
-													<a href="index.html">Footer layout 1</a>
-												</li>
-												<li>
-													<a href="header2.html">Footer layout 2</a>
-												</li>
-												<li>
-													<a href="header3.html">Footer layout 3</a>
-												</li>
-												<li>
-													<a href="header4.html">Footer layout 4</a>
-												</li>
-											</ul>
-										</div>
-									</div>
+									
 								</li>
 								<li class="dropdown">
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#">JOBS</a>
@@ -125,7 +59,7 @@
 										</div>
 									</div>
 								</li>
-								<li class="dropdown">
+								<!-- <li class="dropdown">
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#">CANDIDATES</a>
 									<div class="dropdown-menu animated fadeInDown">
 										<div class="dropdown-inner">
@@ -145,7 +79,7 @@
 											</ul>
 										</div>
 									</div>
-								</li>
+								</li> -->
 								<li class="dropdown">
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#">EMPLOYERS</a>
 									<div class="dropdown-menu animated fadeInDown">
@@ -164,7 +98,7 @@
 										</div>
 									</div>
 								</li>
-								<li class="dropdown">
+								<!-- <li class="dropdown">
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#">BLOG</a>
 									<div class="dropdown-menu animated fadeInDown">
 										<div class="dropdown-inner">
@@ -178,8 +112,26 @@
 											</ul>
 										</div>
 									</div>
+								</li> -->
+								<li class="dropdown">
+									<a data-toggle="dropdown" class="dropdown-toggle" href="contact.html">Contact us</a>
+									<div class="dropdown-menu animated fadeInDown">
+										<div class="dropdown-inner">
+											<ul class="list-unstyled">
+												<li>
+													<a href="about.html">About Portal</a>
+									
+												</li>
+								
+											</ul>
+										</div>
+									</div>
 								</li>
 								<li class="dropdown">
+									<a href="register.html">Sign Up</a>
+									
+								</li>
+								<!-- <li class="dropdown">
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#">PAGES
 										<span class="fa fa-angle-down"></span>
 									</a>
@@ -201,7 +153,7 @@
 											</ul>
 										</div>
 									</div>
-								</li>
+								</li> -->
 							</ul>
 						</div>
 					</nav>
@@ -219,4 +171,4 @@
 		</div>
 		<!-- header container end here -->
 	</header>
-<!-- header end here -->
+<!-- header end here

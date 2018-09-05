@@ -605,115 +605,7 @@
 <!-- blog end here -->
 
 
-<!-- latest start here -->
-	<div id="latest">
-		<div class="container">
-			<div class="row">
-				<!-- latest-candidate start here -->
-				<div class="latest-candidate">
-					<h1>OUR LATEST CANDIDATES</h1>
-					<div class="border"></div>
-					<div class="border1"></div>
-				</div>
-				<!-- latest-candidate end here -->
-				
-				
-				<div id="latests" class="owl-carousel">
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-1.png" class="img-responsive" alt="cand-1" title="cand-1" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-2.png" class="img-responsive" alt="cand-2" title="cand-2" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-3.png" class="img-responsive" alt="cand-3" title="cand-3" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-4.png" class="img-responsive" alt="cand-4" title="cand-4" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-5.png" class="img-responsive" alt="cand-5" title="cand-5" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-6.png" class="img-responsive" alt="cand-6" title="cand-6" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-1.png" class="img-responsive" alt="cand-1" title="cand-1" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-2.png" class="img-responsive" alt="cand-2" title="cand-2" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-3.png" class="img-responsive" alt="cand-3" title="cand-3" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
-							<div class="candidate">
-								<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-4.png" class="img-responsive" alt="cand-4" title="cand-4" />
-								<h1>John Doe</h1>
-								<p>Web Designer </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- latest end here -->
+
 
 
 <!-- partner start here -->
@@ -722,7 +614,7 @@
 			<div class="row">
 				<!-- our-partner start here -->
 				<div class="our-partner">
-					<h1>OUR PARTNERS</h1>
+					<h1>TOP EMPLOYERS</h1>
 					<div class="border"></div>
 					<div class="border1"></div>
 				</div>
@@ -777,11 +669,11 @@
 <!-- jquery -->
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/jquery.2.1.1.min.js" type="text/javascript"></script>
 <!-- bootstrap js -->
-<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/{{URL::to('public/JobPortal_Frontend/assets')}}/{{URL::to('public/JobPortal_Frontend/assets')}}/{{URL::to('public/JobPortal_Frontend/assets')}}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <!--bootstrap select-->
-<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/{{URL::to('public/JobPortal_Frontend/assets')}}/{{URL::to('public/JobPortal_Frontend/assets')}}/js/dist/js/bootstrap-select.js" type="text/javascript"></script>
+<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/dist/js/bootstrap-select.js" type="text/javascript"></script>
 <!-- owlcarousel js -->
-<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/{{URL::to('public/JobPortal_Frontend/assets')}}/js/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 <!--internal js-->
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/internal.js" type="text/javascript"></script>
 <!-- color switcher-->
