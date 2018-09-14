@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     
@@ -6,7 +5,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A fully categoryd admin theme which can be used to build CRM, CMS, etc.">
+        <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
 
         <!-- App favicon -->
@@ -14,15 +13,9 @@
         <!-- App title -->
         <title>Eitmad</title>
 
-        <!-- Jquery filer css -->
-
-        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css" rel="stylesheet" />
-       
-
-
-
-        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+        <!-- Table Responsive css -->
+        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/responsive-table/css/rwd-table.min.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/custombox/css/custombox.min.css" rel="stylesheet">
 
         <!-- App css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -32,7 +25,7 @@
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.css">
+        <link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.css">
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,12 +33,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
+
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/modernizr.min.js"></script>
         <style type="text/css">
-            .error{
-                color: red
+            .fa-trash-o{
+                padding-left: 10px;
+    color: red
             }
         </style>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/modernizr.min.js"></script>
 
     </head>
 
@@ -69,7 +64,7 @@
         <!-- Begin page -->
         <div id="wrapper">
 
-            <!-- Top Bar Start -->
+             <!-- Top Bar Start -->
             @include('admin.ecommerce.include.navbar')
             <!-- Top Bar End -->
 
@@ -77,7 +72,6 @@
             <!-- ========== Left Sidebar Start ========== -->
              @include('admin.ecommerce.include.left-sidebar')
             <!-- Left Sidebar End -->
-
 
 
             <!-- ============================================================== -->
@@ -90,88 +84,88 @@
 
 
                         <div class="row">
-							<div class="col-xs-12">
-								<div class="page-title-box">
-                                    <h4 class="page-title">Add Sub category</h4>
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">SubCategories</h4>
                                     <ol class="breadcrumb p-0 m-0">
-                                        <!-- <li>
-                                            <a href="#">Zircos</a>
-                                        </li> -->
                                         <li>
                                             <a href="#">Eitmad</a>
                                         </li>
+                                        <li>
+                                            <a href="#">SubCategories </a>
+                                        </li>
                                         <li class="active">
-                                            Create Sub category
+                                            All Sub Categories
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
-							</div>
-						</div>
+                            </div>
+                        </div>
                         <!-- end row -->
 
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-sm-12">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0">Sub Category Form</h4>
-										 <div class="row">
-										 	<div class="col-sm-12 col-xs-12 col-md-6">
-										 	 	<div class="p-20">
-                                    <form action="{{url('subcategories')}}" method="post">
-                                        {{ csrf_field()}}
-                                        <div class="form-group">
-                                                    <label for="parentcategory">Choose Parent Category *:</label>
-                                                    <select id="parentcategory" name="pcategory" class="form-control" required="">
-                                                        @foreach($categories as $category)
-                                                        
-                                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                       <div class="form-group">
-                                                        <label for="subcategory">Sub Category Name<span class="text-danger">*</span></label>
-                                                        <input type="text" name="scategory" parsley-trigger="change" required
-                                                               placeholder="Enter Sub category name" class="form-control" id="pcategory">
-                                                    </div>
 
-                                            
-                                                    <div class="form-group m-b-20">
-                                                        <label for="featuressInput">Add Features</label>
+                                    <div class="table-rep-plugin">
+                                        <h4 class="m-t-0 header-title"><b>All Sub Categories</b></h4>
+                                        <p class="text-muted m-b-30 font-13">
+                                        just start typing to edit, or move around with arrow keys or mouse clicks!
+                                    </p>
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table  table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th data-priority="1">Sub_Category_Name</th>
+                                                        <th data-priority="1">Parent_Category_Name</th>
+                                                        <th data-priority="3">Created at</th>
+                                                        <th data-priority="1">Updated at</th>
+                                                        <th data-priority="3">Actions</th>                           
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach($subcategories as $subcategory)
+                                                    <tr>
                                                         
-                                                        <input type="text" value="" id="featuresInput" name="feature_names" data-role="tagsinput" placeholder="Enter feature Names"/>
+                                                        <td>{{$subcategory->id}}</td>
+                                                        <th>{{$subcategory->sub_category_name}}</th>
+                                                        <th>{{$subcategory->product_category_id}}</th>
+                                                        <th>{{$subcategory->feature_names}}</th>
+                                                        <td>{{$subcategory->created_at}}</td>
+                                                        <td>{{$subcategory->updated_at}}</td>
+                                                        <td>
+                                                            <a href="" data-toggle="modal" data-target="#con-close-modal{{$subcategory->id}}" style="float: left;">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </a>
+                                                            <i  onclick="return deleteFeature({{$subcategory->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                            
+                                                           
+                                                        </td>                              
                                                         
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required"></li></ul>
-                                                    
-                                                        <p class="text-muted m-b-20 font-13">
-                                                            Just press <code>"Enter"</code>if you add more than one.
-                                                        </p>
-                                                    </div>           
-
-                                                                                              
-                                                 
-                                           
-                                       
-                                        <div class="text-center">
-                                            <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
-                                            
+                                                    </tr>
+                                                    @endforeach                                                   
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    </form>
-                                </div>
+
+                                    </div>
+
                                 </div>
                             </div>
-                                    <!-- end form -->
-
-                                </div> <!-- end card-box -->
-                            </div> <!-- end col -->
                         </div>
+
                         <!-- end row -->
+                        
+
 
                     </div> <!-- container -->
 
                 </div> <!-- content -->
 
-                @include('admin.ecommerce.include.footer')
+               @include('admin.ecommerce.include.footer')
 
             </div>
 
@@ -204,20 +198,25 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.slimscroll.js"></script>
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.scrollTo.min.js"></script>
         <script src="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js"></script>
-        <!-- Jquery filer js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/js/jquery.filer.min.js"></script>
 
-        <!-- page specific js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/pages/jquery.property-add.init.js"></script>
-
+        <!-- responsive-table-->
+        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/responsive-table/js/rwd-table.min.js"></script>
+          <!-- Modal-Effect -->
+        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/custombox/js/custombox.min.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/custombox/js/legacy.min.js"></script>
         <!-- App js -->
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.core.js"></script>
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
-        <!-- sweet Alert -->
+        <script type="text/javascript">
+            var deleteFeature = function(id){
+            if (confirm('Are you sure you want to delete this?')) {
+        event.preventDefault();
+        document.getElementById('delete-form'+id).submit(); 
+        }           
+}
+        </script>
         <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-        
-
+       
     </body>
 
 <!-- Mirrored from coderthemes.com/zircos/material-design/real-estate-add.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:49:17 GMT -->

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\admin\ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Product_Category;
 
-class CategoryController extends Controller
+class ProductCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Product_Category::all();
+        return view('admin/ecommerce/modules/categories/viewCategories',compact('categories'));
+        
     }
 
     /**
@@ -23,8 +26,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        echo 'string';
+        return view('admin/ecommerce/modules/categories/create-parent');
     }
+   
 
     /**
      * Store a newly created resource in storage.
@@ -34,7 +38,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     $pcategory = new Product_Category();
+        $pcategory->category_name = $request->category_name;
+        $pcategory->save();
+       return redirect('/admin');
     }
 
     /**
@@ -79,6 +86,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Product_Category::find($id);
+      $categories->delete();
+
+      return redirect('/categories');
     }
 }
