@@ -81,22 +81,8 @@
 									</div>
 								</li> -->
 								<li class="dropdown">
-									<a data-toggle="dropdown" class="dropdown-toggle" href="#">EMPLOYERS</a>
-									<div class="dropdown-menu animated fadeInDown">
-										<div class="dropdown-inner">
-											<ul class="list-unstyled">
-												<li>
-													<a href="employers.html">employers</a>
-												</li>
-												<li>
-													<a href="employer-detail.html">employer detail</a>
-												</li>
-												<li>
-													<a href="submit-job.html">Submit Job</a>
-												</li>
-											</ul>
-										</div>
-									</div>
+									<a  href="{{ url('employers') }}">EMPLOYERS</a>
+									
 								</li>
 								<!-- <li class="dropdown">
 									<a data-toggle="dropdown" class="dropdown-toggle" href="#">BLOG</a>
@@ -114,12 +100,12 @@
 									</div>
 								</li> -->
 								<li class="dropdown">
-									<a data-toggle="dropdown" class="dropdown-toggle" href="contact.html">Contact us</a>
+									<a  class="dropdown-toggle" href="{{ url('contactus') }}">Contact us</a>
 									<div class="dropdown-menu animated fadeInDown">
 										<div class="dropdown-inner">
 											<ul class="list-unstyled">
 												<li>
-													<a href="about.html">About Portal</a>
+													<a href="{{ url('aboutportal') }}">About Portal</a>
 									
 												</li>
 								
@@ -163,7 +149,7 @@
 					<!-- button-login start here -->
 					<div class="button-login pull-right">
 						<button type="button" class="btn btn-default btn-lg" onclick="location.href='login.html'">Login</button>
-						<button type="button" class="btn btn-primary btn-lg" onclick="location.href='submit-job.html'">Submit Job</button>
+						<button type="button" class="btn btn-primary btn-lg" onclick="location.href='{{ url('addjob') }}'">Submit Job</button>
 					</div>
 					<!-- button-login end here -->
 				</div>
