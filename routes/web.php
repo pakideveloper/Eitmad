@@ -22,7 +22,6 @@ Route::get('/admin2', function () {
     return view('admin/ecommerce/modules/index2');
 });
 
-
 Route::get('/ecommerce', function () {
     return view('frontend/ecommerce/modules/index');
 });
