@@ -60,6 +60,17 @@
                                 </ul>
                             </li>
 
+                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Discounts</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                    <li><a href="{{url('/admin/discount')}}/create">Add Discount</a></li>
+                                    <li><a href="admin-ratings.html">add sub category</a></li>
+                                    <li><a href="admin-animation.html">View All</a></li>
+                                </ul>
+                            </li>
+
+
                             <li>
                                 <a href="calendar.html" class="waves-effect"><i class="mdi mdi-calendar"></i><span> Calendar </span></a>
                             </li>

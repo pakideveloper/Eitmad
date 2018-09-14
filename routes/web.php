@@ -39,6 +39,10 @@ Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController')
 // });
 
 
+// Discount
+Route::resource('admin/discount','admin\ecommerce\DiscountController');
+//Discount end
+
 // Route::get('/register', function () {
 //     return view('frontend/ecommerce/modules/registration/register');
 // });

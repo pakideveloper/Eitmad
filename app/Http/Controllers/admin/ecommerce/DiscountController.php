@@ -1,0 +1,111 @@
+<?php
+
+namespace App\Http\Controllers\admin\ecommerce;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Discount;
+
+class DiscountController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin/ecommerce/modules/discounts/create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+       $this->validation($request);
+      
+       
+        $discount= new Discount();
+        $discount->discount_name =$request -> Input('discount_name');
+        $discount->discount_percent =$request -> Input('discount_percent');
+         $discount->discount_type =$request -> Input('discount_type');
+
+        $discount ->save();
+
+        
+          //Alert::success('Inserted', 'Record Inserted successfully');    
+        return Redirect()->back();
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+     public function validation(Request $request)
+    {
+         $messages = [
+            'discount_name.required' => 'please insert discount name.',
+            'discount_percent.required' => 'please enter discount percentage%.'
+            
+        ];
+        $this->validate($request, [
+            'discount_name' => 'required',
+            'discount_percent' => 'required'          
+        ],$messages);
+
+    }
+}
