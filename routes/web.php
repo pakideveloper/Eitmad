@@ -35,6 +35,10 @@ Route::resource('/brands','admin\ecommerce\BrandController');
 Route::resource('/products','admin\ecommerce\ProductController');
 Route::resource('/categories','admin\ecommerce\CategoryController');
 
+// Discount
+Route::resource('admin/discount','admin\ecommerce\DiscountController');
+//Discount end
+
 // Route::get('/register', function () {
 //     return view('frontend/ecommerce/modules/registration/register');
 // });
