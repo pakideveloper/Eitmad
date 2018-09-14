@@ -121,6 +121,7 @@
                                                         <th>Id</th>
                                                         <th data-priority="1">Sub_Category_Name</th>
                                                         <th data-priority="1">Parent_Category_Name</th>
+                                                        <th data-priority="1">Feature_Names</th>
                                                         <th data-priority="3">Created at</th>
                                                         <th data-priority="1">Updated at</th>
                                                         <th data-priority="3">Actions</th>                           
@@ -132,15 +133,22 @@
                                                         
                                                         <td>{{$subcategory->id}}</td>
                                                         <th>{{$subcategory->sub_category_name}}</th>
-                                                        <th>{{$subcategory->product_category_id}}</th>
+                                                        <th>{{$subcategory->parent->category_name}}</th>
                                                         <th>{{$subcategory->feature_names}}</th>
                                                         <td>{{$subcategory->created_at}}</td>
                                                         <td>{{$subcategory->updated_at}}</td>
                                                         <td>
-                                                            <a href="" data-toggle="modal" data-target="#con-close-modal{{$subcategory->id}}" style="float: left;">
+                                                            <a href="{{url('subcategories')}}/{{$subcategory->id}}/edit"  style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
-                                                            <i  onclick="return deleteFeature({{$subcategory->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                           <form id="delete-form{{$subcategory->id}}" 
+                                                                action="{{url('subcategories')}}/{{$subcategory->id}}" method="post">
+                                                                {{csrf_field() }}
+                                                                {{ method_field('DELETE') }}
+                                                                 
+                                                                <i  onclick="return deleteSubCategory({{$subcategory->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                            
+                                                            </form>
                                                             
                                                            
                                                         </td>                              
@@ -208,7 +216,7 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.core.js"></script>
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
         <script type="text/javascript">
-            var deleteFeature = function(id){
+            var deleteSubCategory = function(id){
             if (confirm('Are you sure you want to delete this?')) {
         event.preventDefault();
         document.getElementById('delete-form'+id).submit(); 

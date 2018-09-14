@@ -134,7 +134,7 @@
                                                         <td>{{$category->created_at}}</td>
                                                         <td>{{$category->updated_at}}</td> 
                                                         <td>
-                                                            <a href="" data-toggle="modal" data-target="#con-close-modal{{$category->id}}" style="float: left;">
+                                                            <a href="{{url('categories')}}/{{$category->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$category->id}}" 
@@ -142,7 +142,7 @@
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  
-                                                                <i  onclick="return deleteFeature({{$category->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                                <i  onclick="return deleteCategory({{$category->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
                                                             
                                                             </form>
                                                             
@@ -212,7 +212,7 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.core.js"></script>
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
         <script type="text/javascript">
-            var deleteFeature = function(id){
+            var deleteCategory = function(id){
             if (confirm('Are you sure you want to delete this?')) {
         event.preventDefault();
         document.getElementById('delete-form'+id).submit(); 

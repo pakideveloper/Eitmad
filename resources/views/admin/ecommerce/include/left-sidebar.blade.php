@@ -54,7 +54,7 @@
                                 <ul class="list-unstyled">
                                     
                                     <li><a href="{{url('categories')}}/create">add parent category</a></li>
-                                    <li><a href="{{url('subcategories')}}">add sub category</a></li>
+                                    <li><a href="{{url('subcategories')}}/create">add sub category</a></li>
                                     <li><a href="{{url('categories')}}">View All Categories</a></li>
                                     <li><a href="{{url('subcategories')}}">View All SubCategories</a></li>
                                 </ul>

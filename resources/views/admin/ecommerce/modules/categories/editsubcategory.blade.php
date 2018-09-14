@@ -92,7 +92,7 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Add Sub category</h4>
+                                    <h4 class="page-title">Edit Sub category</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <!-- <li>
                                             <a href="#">Zircos</a>
@@ -101,7 +101,7 @@
                                             <a href="#">Eitmad</a>
                                         </li>
                                         <li class="active">
-                                            Create Sub category
+                                            Edit Sub category
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -114,12 +114,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0">Sub Category Form</h4>
+                                    <h4 class="header-title m-t-0">Edit Sub Category Form</h4>
 										 <div class="row">
 										 	<div class="col-sm-12 col-xs-12 col-md-6">
 										 	 	<div class="p-20">
-                                    <form action="{{url('subcategories')}}" method="post">
+                                    <form action="{{url('subcategories')}}/{{$subcategories->id}}" method="post">
                                         {{ csrf_field()}}
+                                        {{ method_field('PUT')}}
                                         <div class="form-group">
                                                     <label for="parentcategory">Choose Parent Category *:</label>
                                                     <select id="parentcategory" name="pcategory" class="form-control" required="">
@@ -135,7 +136,7 @@
                                        <div class="form-group">
                                                         <label for="subcategory">Sub Category Name<span class="text-danger">*</span></label>
                                                         <input type="text" name="scategory" parsley-trigger="change" required
-                                                               placeholder="Enter Sub category name" class="form-control" id="pcategory" >
+                                                               placeholder="Enter Sub category name" class="form-control" id="pcategory" value="{{$subcategories->sub_category_name}}">
                                                                 @if ($errors->has('sub_category_name'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('sub_category_name') }}.</li></ul>
                                                         @endif
@@ -145,7 +146,7 @@
                                                     <div class="form-group m-b-20">
                                                         <label for="featuressInput">Add Features</label>
                                                         
-                                                        <input type="text" value="" id="featuresInput" name="feature_names" data-role="tagsinput" placeholder="Enter feature Names"  />
+                                                        <input type="text" value="" id="featuresInput" name="feature_names" data-role="tagsinput" placeholder="Enter feature Names" value="{{$subcategories->feature_names}}" />
                                                         
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required"></li></ul>
                                                     
@@ -162,7 +163,7 @@
                                            
                                        
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+                                            <button type="submit" class="btn btn-success waves-effect waves-light">Update</button>
                                             
                                         </div>
                                     </form>

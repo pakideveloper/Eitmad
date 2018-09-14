@@ -112,18 +112,23 @@
 
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="card-box">
                                     <h4 class="header-title m-t-0">Parent Category Form</h4>
 										 <div class="row">
 										 	<div class="col-sm-12 col-xs-12 col-md-6">
 										 	 	<div class="p-20">
-                                    <form action="{{url('categories')}}" method="post">
+                                    <form action="{{url('categories')}}" method="post"  >
                                         {{ csrf_field()}}
-                                       <div class="form-group">
+                                       <div class="form-group ">
                                                         <label for="userName">Parent Category Name<span class="text-danger">*</span></label>
+                                                        
                                                         <input type="text" name="category_name" parsley-trigger="change" required
-                                                               placeholder="Enter parent category name" class="form-control" id="pcategory">
+                                                               placeholder="Enter parent category name" class="form-control" value="{{ old('category_name') }}" id="pcategory">
+                                                        @if ($errors->has('category_name'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('category_name') }}.</li></ul>
+                                                        @endif
+                                                             
                                                     </div>
                                                                                               
                                                  
@@ -193,7 +198,21 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
         <!-- sweet Alert -->
         <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-        
+       <script type="text/javascript">
+            $(document).ready(function() {
+                $('form').parsley();
+            });
+            $(function () {
+                $('#demo-form').parsley().on('field:validated', function () {
+                    var ok = $('.parsley-error').length === 0;
+                    $('.alert-info').toggleClass('hidden', !ok);
+                    $('.alert-warning').toggleClass('hidden', ok);
+                })
+                .on('form:submit', function () {
+                    return false; // Don't submit form for this demo
+                });
+            });
+        </script> 
 
     </body>
 

@@ -22,8 +22,7 @@ class ProductSubCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Product_Category::all();
-        return view('admin/ecommerce/modules/categories/create-sub',compact('categories'));
+        
         $subcategories = Product_Sub_Category::all();
         return view('admin/ecommerce/modules/categories/viewSubCategories',compact('subcategories')); 
     }
@@ -35,7 +34,8 @@ class ProductSubCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin/ecommerce/modules/categories/create-sub');
+        $categories = Product_Category::all();
+        return view('admin/ecommerce/modules/categories/create-sub',compact('categories'));
     }
 
     /**
@@ -80,7 +80,13 @@ class ProductSubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+
+
+        $subcategories = Product_Sub_Category::find($id);
+         $categories = Product_Category::all();
+         // print_r($subcategories);
+         // die();
+        return view('admin/ecommerce/modules/categories/editsubcategory', compact('subcategories','categories'));
     }
 
     /**
@@ -92,7 +98,23 @@ class ProductSubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $subcategories = Product_Sub_Category::find($id);
+        $subcategories->product_category_id = $request->pcategory;
+         $subcategories->sub_category_name = $request->scategory;
+          $features = $request->input('feature_names'); 
+        $myArray = explode(',', $features);
+        $subcategories->feature_names = json_encode($myArray);
+        // foreach ($myArray as $key => $value) {
+        //     Product_Sub_Category::create([
+        //         'feature_names' => strtolower($value),                
+        //     ]);
+        // }
+        
+        $subcategories->update();
+        return redirect('/categories');
+
+        Alert::success('Updated', 'Record Updated successfully');  
+       return Redirect()->back();
     }
 
     /**
@@ -103,6 +125,9 @@ class ProductSubCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $subcategories = Product_Sub_Category::find($id);
+      $subcategories->delete();
+
+      return redirect('/subcategories');
     }
 }
