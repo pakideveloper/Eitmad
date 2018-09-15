@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{URL::to('public/admin/ecommerce')}}/assets/images/favicon.ico">
         <!-- App title -->
-        <title>Zircos - Responsive Admin Dashboard Template</title>
+        <title>Eitmad</title>
         <!-- Jquery filer css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
         <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
@@ -73,31 +73,31 @@
             <!-- ============================================================== -->
             <div class="content-page">
                 <!-- Start content -->
+                <!-- Start content -->
                 <div class="content">
                     <div class="container">
 
 
                         <div class="row">
-							<div class="col-xs-12">
-								<div class="page-title-box">
-                                    <h4 class="page-title">Brands </h4>
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">Edit Brand</h4>
                                     <ol class="breadcrumb p-0 m-0">
+                                        <!-- <li>
+                                            <a href="#">Zircos</a>
+                                        </li> -->
                                         <li>
-                                            <a href="#">Admin</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Brands </a>
+                                            <a href="#">Eitmad</a>
                                         </li>
                                         <li class="active">
-                                            Create New Brand
+                                            Edit Brand
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
-							</div>
-						</div>
+                            </div>
+                        </div>
                         <!-- end row -->
-
 
                         <div class="row">
                             <div class="col-xs-12">
@@ -106,19 +106,26 @@
                                     <div class="row">
                                         
 
-                                            <h4 class="header-title m-t-0">Create New Brand</h4>
+                                            <h4 class="header-title m-t-0">Edit Brand</h4>
                                             
-                                                <form action="{{url('/admin/brands')}}" method="post" enctype="multipart/form-data" >
+                                            <form action="{{url('admin/brands/')}}/{{$brand->id}}" method="post" enctype="multipart/form-data" >
                                                     {{csrf_field()}}
+                                                    {{ method_field('PUT')}}
                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('brand_name') ? 'has-error' : ''}}">
-                                                        <label for="Brand Name">Brand Name<span class="text-danger">*</span></label>
-                                                        <input type="text" name="brand_name" parsley-trigger="change"
-                                                               placeholder="Enter Brand Name" class="form-control" value="{{ old('brand_name') }}">
+                                                    <label for="Brand Name">Brand Name<span class="text-danger">*</span></label>
+                                                    <input type="text" name="brand_name" parsley-trigger="change"
+                                                    placeholder="Enter Brand Name" class="form-control" value="{{$brand->brand_name}}">
                                                         @if ($errors->has('brand_name'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('brand_name') }}.</li></ul>
                                                         @endif
                                                     </div>
-                                                    
+                                                    <div class="images">
+                                                        <div></div>
+                                                        <div class="col-md-6">
+                                                            <!-- copy -->
+                                                            <img class="image{{$brand->id}}" src="{{URL::to('public/admin')}}/upload/brands/{{$brand->brand_logo}}" style="width: 162px; padding-bottom: 30px;">
+                                                        </div>                       
+                                                    </div>                        
                                               
                                            
                             <div class="row m-t-50">
@@ -126,12 +133,10 @@
                                             <div class="p-20">
                                                 <div class="form-group clearfix">
                                                      <label for="Brand Logo size">Brand Logo<span class="text-danger">*</span></label>
-                                                    <div class="col-sm-12 padding-left-0 padding-right-0">
                                                             <input type="file" name="file" id="filer_input2"  multiple="multiple">
                                                              @if ($errors->has('file'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('file') }}.</li></ul>
                                                             @endif
-                                                    </div>
                                                 </div>
 
                                             </div>
@@ -140,14 +145,10 @@
                                         </div>
 
                                     </div>
-                                    <div class="form-group text-left m-b-0">
-                                                        <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit">
-                                                            Submit
-                                                        </button>
-                                                        <button type="reset" class="btn btn-default waves-effect m-l-5">
-                                                            Cancel
-                                                        </button>
-                                                    </div>
+                                    <div class="text-center">
+                                            <button type="submit" class="btn btn-success waves-effect waves-light">Update</button>
+                                            
+                                    </div>
                                   </form>
                  
                                     <!-- end row -->
@@ -155,16 +156,18 @@
                                    
                                     <!-- end row -->
 
-                        		</div> <!-- end ard-box -->
+                                </div> <!-- end ard-box -->
                             </div><!-- end col-->
 
                         </div>
+                        
                         <!-- end row -->
 
+                    </div> 
+                    <!-- container -->
 
-                    </div> <!-- container -->
+                </div>  <!-- content -->
 
-                </div> <!-- content -->
 
                 @include('admin.ecommerce.include.footer')
             </div>
@@ -205,7 +208,6 @@
 
         <!-- page specific js -->
         <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.brands.init.js"></script>
-        
     </body>
 
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->
