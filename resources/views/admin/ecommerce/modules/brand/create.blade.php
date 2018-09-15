@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
     
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->
@@ -73,13 +73,20 @@
             <!-- ============================================================== -->
             <div class="content-page">
                 <!-- Start content -->
+
                 <div class="content">
+                    @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
+
                                     <h4 class="page-title">Brands </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
@@ -100,7 +107,9 @@
 
 
                         <div class="row">
+
                             <div class="col-xs-12">
+
                                 <div class="card-box">
 
                                     <div class="row">

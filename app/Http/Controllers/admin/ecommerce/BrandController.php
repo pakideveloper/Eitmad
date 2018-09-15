@@ -57,7 +57,7 @@ class BrandController extends Controller
         // print_r($brand);
         // die();
         $brand->save();
-        return Redirect()->back();
+        return Redirect()->back()->with('status', 'Brand created successfully!');;
     }
 
     /**
