@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
         <!-- App title -->
-        <title>ADMIN PANEL - EITMAD</title>
+        <title>DISCOUNTS-ADMIN PANEL-EITMAD</title>
 
         <!-- App css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -124,7 +124,7 @@
 	                                            </div>
                                                  <div class="form-group{{ $errors->has('discount_percent') ? ' has-error' : '' }}">
                                                     <label for="exampleInputPassword1">Discount Percentage</label>
-                                                    <input type="number" class="form-control" name="discount_percent" id="exampleInputPassword1" placeholder="%" value="{{ old('discount_percent') }}">
+                                                    <input type="number" min="1" max="100" class="form-control" name="discount_percent" id="exampleInputPassword1" placeholder="%" value="{{ old('discount_percent') }}">
                                                     @if ($errors->has('discount_percent'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('discount_percent') }}</strong>

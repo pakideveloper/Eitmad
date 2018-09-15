@@ -14,7 +14,8 @@ class DiscountController extends Controller
      */
     public function index()
     {
-        //
+        $discounts = Discount::all();
+        return view('admin/ecommerce/modules/discounts/index', compact('discounts'));
     }
 
     /**
@@ -81,7 +82,15 @@ class DiscountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $discount=Discount::find($id);
+        $discount->discount_name=$request->input('discount_name');
+        $discount->discount_type=$request->input('discount_type');
+        $discount->discount_percent=$request->input('discount_percent');
+    
+        $discount->update();
+
+        // Alert::success('Updated', 'Record Updated successfully');  
+       return Redirect()->back();
     }
 
     /**
@@ -92,7 +101,11 @@ class DiscountController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $s= Discount::find($id);
+        
+        $s->delete();
+       // Alert::success('Deleted', 'Record deleted successfully');
+        return Redirect()->back();
     }
 
      public function validation(Request $request)

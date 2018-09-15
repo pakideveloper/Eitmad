@@ -66,7 +66,7 @@
                                     
                                     <li><a href="{{url('/admin/discount')}}/create">Add Discount</a></li>
                                     <li><a href="admin-ratings.html">add sub category</a></li>
-                                    <li><a href="admin-animation.html">View All</a></li>
+                                    <li><a href="{{url('/admin/discount')}}">View All</a></li>
                                 </ul>
                             </li>
 
