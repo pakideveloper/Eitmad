@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->
@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{URL::to('public/admin/ecommerce')}}/assets/images/favicon.ico">
         <!-- App title -->
-        <title>Zircos - Responsive Admin Dashboard Template</title>
+        <title>Eitmad</title>
         <!-- Jquery filer css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
         <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
@@ -73,20 +73,12 @@
             <!-- ============================================================== -->
             <div class="content-page">
                 <!-- Start content -->
-
+                <!-- Start content -->
                 <div class="content">
-                    @if (session('status'))
-                        <div class="alert alert-success" style="margin-bottom: 0px;">
-                            {{ session('status') }}
-                        </div>
-                    @endif
                     <div class="container">
-
-
-                        <div class="row">
-							<div class="col-xs-12">
-								<div class="page-title-box">
-
+                           <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
                                     <h4 class="page-title">Brands </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
@@ -96,84 +88,68 @@
                                             <a href="#">Brands </a>
                                         </li>
                                         <li class="active">
-                                            Create New Brand
+                                            Brands List
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
-							</div>
-						</div>
-                        <!-- end row -->
-
-
-                        <div class="row">
-
-                            <div class="col-xs-12">
-
-                                <div class="card-box">
-
-                                    <div class="row">
-                                        
-
-                                            <h4 class="header-title m-t-0">Create New Brand</h4>
-                                            
-                                                <form action="{{url('/admin/brands')}}" method="post" enctype="multipart/form-data" >
-                                                    {{csrf_field()}}
-                                                    <div class="form-group col-sm-6 col-md-6 {{$errors->has('brand_name') ? 'has-error' : ''}}">
-                                                        <label for="Brand Name">Brand Name<span class="text-danger">*</span></label>
-                                                        <input type="text" name="brand_name" parsley-trigger="change"
-                                                               placeholder="Enter Brand Name" class="form-control" value="{{ old('brand_name') }}">
-                                                        @if ($errors->has('brand_name'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('brand_name') }}.</li></ul>
-                                                        @endif
-                                                    </div>
-                                                    
-                                              
-                                           
-                            <div class="row m-t-50">
-                                        <div class="col-xs-12 col-sm-6 {{$errors->has('brand_logo') ? 'has-error' : ''}}">
-                                            <div class="p-20">
-                                                <div class="form-group clearfix">
-                                                     <label for="Brand Logo size">Brand Logo<span class="text-danger">*</span></label>
-                                                    <div class="col-sm-12 padding-left-0 padding-right-0">
-                                                            <input type="file" name="file" id="filer_input2"  multiple="multiple">
-                                                             @if ($errors->has('file'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('file') }}.</li></ul>
-                                                            @endif
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                             
-
-                                        </div>
-
-                                    </div>
-                                    <div class="form-group text-left m-b-0">
-                                                        <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit">
-                                                            Submit
-                                                        </button>
-                                                        <button type="reset" class="btn btn-default waves-effect m-l-5">
-                                                            Cancel
-                                                        </button>
-                                                    </div>
-                                  </form>
-                 
-                                    <!-- end row -->
-
-                                   
-                                    <!-- end row -->
-
-                        		</div> <!-- end ard-box -->
-                            </div><!-- end col-->
-
+                            </div>
                         </div>
                         <!-- end row -->
 
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box">
 
+                                    <div class="table-rep-plugin">
+                                        <h4 class="m-t-0 header-title"><b>All Brands</b></h4>
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table  table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th data-priority="1">Brand Name</th>
+                                                        <th data-priority="3">Created at</th>
+                                                        <th data-priority="1">Updated at</th>
+                                                        <th data-priority="3">Actions</th>                           
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                   @foreach($brand as $Vbrand)
+                                                    <tr>
+                                                        
+                                                        <td>{{$Vbrand->id}}</td>
+                                                        <th>{{$Vbrand->brand_name}}</th>
+                                                        <td>{{$Vbrand->created_at}}</td>
+                                                        <td>{{$Vbrand->updated_at}}</td> 
+                                                        <td>
+                                                             <a href="{{url('admin/brands')}}/{{$Vbrand->id}}/edit" style="float: left;">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </a>
+                                                            <form id="delete-form{{$Vbrand->id}}" 
+                                                                action="{{url('admin/brands')}}/{{$Vbrand->id}}" method="post">
+                                                                {{csrf_field() }}
+                                                                {{ method_field('DELETE') }}
+                                                                 
+                                                                <i  onclick="return deleteCategory({{$Vbrand->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                            </form>
+                                                        </td>                     
+                                                    </tr>
+                                                     @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
 
                 @include('admin.ecommerce.include.footer')
             </div>
@@ -214,7 +190,14 @@
 
         <!-- page specific js -->
         <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.brands.init.js"></script>
-        
+          <script type="text/javascript">
+        var deleteCategory = function(id){
+        if (confirm('Are you sure you want to delete this?')) {
+        event.preventDefault();
+        document.getElementById('delete-form'+id).submit(); 
+        }           
+}
+        </script>
     </body>
 
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->
