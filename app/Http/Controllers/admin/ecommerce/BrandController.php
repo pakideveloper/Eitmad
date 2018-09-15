@@ -124,17 +124,8 @@ class BrandController extends Controller
       $brand->delete();
       return redirect('/admin/brands');
     }
-    public function storeValidate(Request $request){$file_name = $request->file['0'] -> getClientOriginalName();
-        $file_name = uniqid().$file_name;
-        $file_name = preg_replace('/\s+/', '', $file_name);
-        $file_type = $request->file['0']->getClientOriginalExtension();
-        $request->file['0'] -> move(public_path().'/admin/upload/brands', $file_name);
-        $file_size = $request->file['0']->getClientSize();
-        $file_size = $file_size/1000;
-        $file_size = $file_size.' '.'kb';
-        $brand->brand_logo = $file_name;
-        $brand->brand_logo_size = $file_size;
-        $brand->brand_logo_file_type = $file_type;
+    public function storeValidate(Request $request){
+       
         $messages = [
             'brand_name.required' => 'please insert brand name',
             'file.required' => 'please upload brand logo',
