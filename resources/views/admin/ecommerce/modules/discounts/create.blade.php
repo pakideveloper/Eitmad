@@ -71,6 +71,11 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                     @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 

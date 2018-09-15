@@ -48,7 +48,7 @@ class DiscountController extends Controller
 
         
           //Alert::success('Inserted', 'Record Inserted successfully');    
-        return Redirect()->back();
+        return Redirect()->back()->with('status', 'Discount added successfully!');
     }
 
     /**
@@ -90,7 +90,7 @@ class DiscountController extends Controller
         $discount->update();
 
         // Alert::success('Updated', 'Record Updated successfully');  
-       return Redirect()->back();
+       return Redirect()->back()->with('status', 'Record updated successfully!');
     }
 
     /**
@@ -105,7 +105,7 @@ class DiscountController extends Controller
         
         $s->delete();
        // Alert::success('Deleted', 'Record deleted successfully');
-        return Redirect()->back();
+        return Redirect()->back()->with('status', 'Record deleted successfully!');
     }
 
      public function validation(Request $request)
