@@ -41,7 +41,7 @@ class ProductCategoryController extends Controller
      $pcategory = new Product_Category();
         $pcategory->category_name = $request->category_name;
         $pcategory->save();
-       return redirect()->back();
+        return Redirect()->back()->with('status', 'Category added successfully!');
     }
 
     /**
@@ -81,10 +81,9 @@ class ProductCategoryController extends Controller
         $categories->category_name = $request->category_name;
         
         $categories->update();
-        return redirect('/categories');
+         return Redirect()->back()->with('status', 'Category updated successfully!');
 
-        Alert::success('Updated', 'Record Updated successfully');  
-       return Redirect()->back();
+        
     }
 
     /**
@@ -98,6 +97,6 @@ class ProductCategoryController extends Controller
         $categories = Product_Category::find($id);
       $categories->delete();
 
-      return redirect('/categories');
+       return Redirect()->back()->with('status', 'Category Deleted successfully!');
     }
 }

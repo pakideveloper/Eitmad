@@ -39,7 +39,7 @@ class CountryController extends Controller
         $country = new country();
         $country->country_name = $request->c_name;
         $country->save();
-       return redirect('/admin');
+        return Redirect()->back()->with('status', 'Country added successfully!');
     }
 
     /**
@@ -79,10 +79,9 @@ class CountryController extends Controller
         $countries->country_name = $request->c_name;
         
         $countries->update();
-        return redirect('admin/countries');
+        return Redirect()->back()->with('status', 'Country updated successfully!');
 
-        Alert::success('Updated', 'Record Updated successfully');  
-       return Redirect()->back();
+        
     }
 
     /**
@@ -96,6 +95,6 @@ class CountryController extends Controller
          $countries = country::find($id);
       $countries->delete();
 
-      return redirect('admin/countries');
+       return Redirect()->back()->with('status', 'Country Deleted successfully!');
     }
 }

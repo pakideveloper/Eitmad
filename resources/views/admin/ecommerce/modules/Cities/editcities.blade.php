@@ -97,7 +97,7 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Edit Country</h4>
+                                    <h4 class="page-title">Edit City</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <!-- <li>
                                             <a href="#">Zircos</a>
@@ -106,7 +106,7 @@
                                             <a href="#">Eitmad</a>
                                         </li>
                                         <li class="active">
-                                            Edit Country
+                                            Edit City
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -119,18 +119,54 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0">Edit Country Form</h4>
+                                    <h4 class="header-title m-t-0">Edit City Form</h4>
 										 <div class="row">
 										 	<div class="col-sm-12 col-xs-12 col-md-6">
 										 	 	<div class="p-20">
-                                    <form action="{{url('admin/countries')}}/{{$countries->id}}" method="post">
+                                    <form action="{{url('admin/cities')}}/{{$cities->id}}" method="post">
                                         {{ csrf_field()}}
                                         {{ method_field('PUT')}}
                                        <div class="form-group">
-                                                        <label for="country">Country Name<span class="text-danger">*</span></label>
-                                                        <input type="text" name="c_name" parsley-trigger="change" required
-                                                            value = "{{$countries->country_name}}" class="form-control" id="country">
+                                                        <label for="country">City Name<span class="text-danger">*</span></label>
+                                                        <input type="text" name="city_name" parsley-trigger="change" required
+                                                            value = "{{$cities->city_name}}" class="form-control" id="country">
                                                     </div>
+
+                                                     <div class="form-group">
+                                                        <label for="citycode">City Code<span class="text-danger">*</span></label>
+                                                        <input type="text" name="city_code" parsley-trigger="change" required
+                                                            value = "{{$cities->city_code}}" class="form-control" id="country">
+                                                    </div>
+
+                                                     <div class="form-group">
+                                                    <label for="country">Country Name *:</label>
+                                                    <select id="country" name="c_name" class="form-control" required="">
+                                                        <option > Choose Country Name</option>
+                                                        @foreach($countries as $country)
+                                                        
+                                                        <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                     @if ($errors->has('country_name'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('country_name') }}.</li></ul>
+                                                        @endif
+                                                </div>
+
+
+
+                                                    <div class="form-group">
+                                                    <label for="region">Region Name *:</label>
+                                                    <select id="region" name="region" class="form-control" required="">
+                                                        @foreach($regions as $region)
+                                                        
+                                                        <option value="{{$region->id}}">{{$region->region_name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                     @if ($errors->has('region_name'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('region_name') }}.</li></ul>
+                                                        @endif
+                                                </div>
+                                
                                                                                               
                                                  
                                            
