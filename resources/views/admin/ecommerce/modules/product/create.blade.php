@@ -75,6 +75,11 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                    @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 
@@ -328,8 +333,9 @@
             $('#sub_category_id').change(function(){
                 $.get('http://localhost/Eitmad/admin/products/' + this.value + '/features', function(features){
                     $("#features_div").html(''); 
-                        $.each(features, function(index, feature) {                              
-                            var content = '<div class="form-group">                                                    <label for="product_'+feature+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature+'">                                                    </div>'                        
+                        $.each(features, function(index, feature) { 
+                        feature_s = feature.replace(/\s+/g, '');                             
+                            var content = '<div class="form-group">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'">                                                    </div>'                        
                             $("#features_div").append(content); 
                             console.log(content);                         
                         });
