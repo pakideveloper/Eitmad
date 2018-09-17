@@ -34,6 +34,8 @@ Route::resource('/brands','admin\ecommerce\BrandController');
 Route::resource('/products','admin\ecommerce\ProductController');
 Route::resource('/categories','admin\ecommerce\ProductCategoryController');
 Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController');
+Route::resource('admin/countries','admin\ecommerce\CountryController');
+Route::resource('admin/cities','admin\ecommerce\CityController');
 // Route::get('/viewcategory', function () {
 //     return view('admin/ecommerce/modules/categories/viewCategories');
 // });
