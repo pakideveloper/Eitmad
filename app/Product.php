@@ -16,4 +16,7 @@ class Product extends Model
     public function brand(){
     	return $this->hasOne('App\Brand', 'id', 'brand_id');
     }
+    public function files(){
+        return $this->hasMany('App\Product_File');
+    }
 }

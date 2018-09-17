@@ -4,6 +4,7 @@
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->
 <head>
         <meta charset="utf-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
@@ -86,7 +87,7 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Add Product</h4>
+                                    <h4 class="page-title">Edit Product</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Eitmad</a>
@@ -95,7 +96,7 @@
                                             <a href="#">product </a>
                                         </li>
                                         <li class="active">
-                                            Add product
+                                            Edit product
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -143,7 +144,25 @@
                                                         <label for="product_quantity">Product Quantity<span class="text-danger">*</span></label>
                                                         <input type="text" name="product_quantity" parsley-trigger="change"
                                                                placeholder="Enter product size" class="form-control" id="product_quantity" value="{{$product->product_quantity}}">
-                                                    </div>                                                                          
+                                                    </div> 
+
+                                                    <div class="form-group m-b-20">
+                                                        <div class="row">
+                                                        
+                                                        @foreach($product->files as $file)
+                                                        @if (strtolower($file->product_file_extension) == 'jpg' || strtolower($file->product_file_extension) == 'png' || strtolower($file->product_file_extension) == 'jpeg')
+                                                        <div class="col-xs-6">
+                                                           
+                                                            <!-- copy -->
+                                                            <center><img class="image{{$file->id}}" src="{{URL::to('public/admin')}}/upload/products/{{$file->product_file_name}}" style="width: 162px; height: 150px; padding-bottom: 19px;">
+                                                                </center>
+                                                            <center><span id="{{$file->id}}" class=" close-image faClose{{$file->id}}" style="cursor: pointer; color: red">Delete</span></center>
+                                                        </div>
+                                                        
+                                                        @endif
+                                                        @endforeach                        
+                                                    </div>
+                                                </div>                                                                         
                                                     
 
                                                 
@@ -343,6 +362,31 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/pages/jquery.fileuploads.init.js"></script>
 
         <script type="text/javascript">
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('.close-image').click(function(){
+                var file_id = this.id;                
+                var project_id = {{$product->id}};
+                if (confirm('Are you sure you want to delete this?')) {
+                $.ajax(
+                {
+                    url: '{{ url('/admin/products/deleteFile')}}',
+                    type: 'post',              
+                    data: {
+                        "file_id": file_id,
+                    },
+                    success: function(response){
+                        if(response.code ===200) {
+                            $('.faClose'+file_id).hide(500);
+                            $('.image'+file_id).hide(500);
+                        }                          
+                    },
+                });
+            }
+        });
             $('#sub_category_id').change(function(){
                 if (this.value == {{$product->sub_category_id}}) {
                     $("#features_div").html('');

@@ -74,6 +74,11 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                    @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 
@@ -134,7 +139,14 @@
                                                         <td>{{$product->brand->brand_name}}</td>
                                                         <td>{{$product->discount->discount_name}}</td>
 														<td><button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#full-width-modal{{$product->id}}">Click here</button></td>
-                                                        <td><a href="{{url('/admin/products')}}/{{$product->id}}/edit">Edit</a></td>
+                                                        <td><a href="{{url('/admin/products')}}/{{$product->id}}/edit">Edit</a><form id="delete-form{{$product->id}}" 
+                                                                action="{{url('admin/products')}}/{{$product->id}}" method="post">
+                                                                {{csrf_field() }}
+                                                                {{ method_field('DELETE') }}
+                                                                 
+                                                                <span  onclick="return deleteProduct({{$product->id}});"  style="cursor: pointer;     color: red;">Delete</span>
+                                                            </form>
+                                                        </td>
 													</tr>
                                                     
                                             	@endforeach
@@ -283,7 +295,16 @@
                     return false;
                 });
             });
-            </script>
+        </script>
+        <script type="text/javascript">
+            var deleteProduct = function(id){
+                if (confirm('Are you sure you want to delete this?')) {
+                    event.preventDefault();
+                    document.getElementById('delete-form'+id).submit(); 
+                }           
+            }
+        </script>
+
 
     </body>
 

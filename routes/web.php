@@ -33,6 +33,7 @@ Route::group(['middleware'=>'role:admin'], function(){
 Route::resource('/admin/brands','admin\ecommerce\BrandController');
 Route::resource('/admin/products','admin\ecommerce\ProductController');
 Route::get('/admin/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
+Route::post('/admin/products/deleteFile','admin\ecommerce\ProductController@deleteFile');
 Route::resource('/categories','admin\ecommerce\ProductCategoryController');
 Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController');
 Route::resource('admin/countries','admin\ecommerce\CountryController');

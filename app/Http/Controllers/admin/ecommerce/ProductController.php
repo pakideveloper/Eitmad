@@ -187,7 +187,39 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $files = Product_File::where('product_id', $id)->get();
+        foreach ($files as $key => $value) {
+            $dir = public_path()."/admin/upload/products/";
+            $dirHandle = opendir($dir);
+            // echo $dir;
+            // die();
+            while ($fil = readdir($dirHandle)) {
+                if($fil==$value->product_file_name) {
+                    unlink($dir.'/'.$fil);
+                 }
+            }
+        }
+    
+        $product->delete();
+        // $product = Product::find($id)->delete();
+
+        return Redirect()->back()->with('status', 'Product deleted successfully!');
+    }
+    public function deleteFile(Request $request)
+    {
+        $file = Product_File::find($request->file_id);
+        $file_name=$file->product_file_name;
+        $dir = public_path()."/admin/upload/products/";        
+        $dirHandle = opendir($dir);
+        while ($fil = readdir($dirHandle)) {
+            if($fil==$file_name) {
+                    unlink($dir.'/'.$fil);
+            }
+        }
+        $file->delete();
+      
+        return response()->json(['code'=>200,'success' => $request->id],200);
     }
     public function getFeatures($id){
         $sub_category = Product_Sub_Category::find($id);
