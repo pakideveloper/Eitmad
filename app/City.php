@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     protected $table = 'cities';
+
+     public function country()
+    {
+    	return $this->hasOne('App\country','id','country_id');
+    }
 }
