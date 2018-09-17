@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin\ecommerce;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\City;
 
 class CityController extends Controller
 {
@@ -13,7 +15,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+    
     }
 
     /**
@@ -23,7 +25,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        return view('admin/ecommerce/modules/Cities/addcity');
+        return view('admin/ecommerce/modules/Cities/addcities');
     }
 
     /**
