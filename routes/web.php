@@ -31,7 +31,8 @@ Route::group(['middleware'=>'role:admin'], function(){
 });
 
 Route::resource('/admin/brands','admin\ecommerce\BrandController');
-Route::resource('/products','admin\ecommerce\ProductController');
+Route::resource('/admin/products','admin\ecommerce\ProductController');
+Route::get('/admin/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
 Route::resource('/categories','admin\ecommerce\ProductCategoryController');
 Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController');
 // Route::get('/viewcategory', function () {

@@ -41,7 +41,7 @@ class ProductCategoryController extends Controller
      $pcategory = new Product_Category();
         $pcategory->category_name = $request->category_name;
         $pcategory->save();
-       return redirect('/admin');
+       return redirect()->back();
     }
 
     /**
