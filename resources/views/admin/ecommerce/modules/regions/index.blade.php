@@ -126,7 +126,7 @@
                                                     <tr>
                                                         <th>{{$region->id}}</th>
                                                         <th>{{$region->region_name}}</th>
-                                                        <td>{{$region->country_id}}</td>
+                                                        <td>{{$region->country->country_name}}</td>
                                                         
                                                         <td>
                                                              <a href="" data-toggle="modal" data-target="#con-close-modal{{$region-> id}}" style="float: left; ">
@@ -169,11 +169,10 @@
                                                             <div class="form-group">
                                                                 <label for="country_id">Select Country</label>
                                                                 <select class="form-control" name="country_id">
-                                                                    <option>1</option>
-                                                                    <option>2</option>
-                                                                    <option>3</option>
-                                                                    <option>4</option>
-                                                                    
+                                                                    @foreach($countries as $country)
+
+                                                                    <option value="{{$country->id}}"@if($country->id == $region->country_id)selected @endif>{{$country->country_name}}</option>
+                                                                   @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>

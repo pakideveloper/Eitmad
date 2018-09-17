@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin\ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Region;
+use App\country;
 
 class RegionController extends Controller
 {
@@ -15,7 +16,8 @@ class RegionController extends Controller
     public function index()
     {
          $regions = Region::all();
-        return view('admin/ecommerce/modules/regions/index', compact('regions'));
+          $countries = country::all();
+        return view('admin/ecommerce/modules/regions/index', compact('regions', 'countries'));
     }
 
     /**
@@ -25,7 +27,8 @@ class RegionController extends Controller
      */
     public function create()
     {
-         return view('admin/ecommerce/modules/regions/create');
+        $countries = country::all();
+         return view('admin/ecommerce/modules/regions/create', compact('countries'));
     }
 
     /**

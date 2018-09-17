@@ -121,10 +121,9 @@
 	                                            <div class="form-group">
                                                     <label for="country_id">Select Country</label>
                                                         <select class="form-control" name="country_id">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
+                                                            @foreach($countries as $country)
+                                                            <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                                            @endforeach
                                                             
                                                         </select>
                                                 </div>
