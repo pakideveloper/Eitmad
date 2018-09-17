@@ -58,7 +58,7 @@ class ProductSubCategoryController extends Controller
         //     ]);
         // }
         $scategory->save();
-        return redirect()->back();
+        return Redirect()->back()->with('status', 'SubCategory added successfully!');
     }
 
     /**
@@ -111,10 +111,9 @@ class ProductSubCategoryController extends Controller
         // }
         
         $subcategories->update();
-        return redirect('/categories');
+        return Redirect()->back()->with('status', 'SubCategory Updated successfully!');
 
-        Alert::success('Updated', 'Record Updated successfully');  
-       return Redirect()->back();
+        
     }
 
     /**
@@ -128,6 +127,6 @@ class ProductSubCategoryController extends Controller
         $subcategories = Product_Sub_Category::find($id);
       $subcategories->delete();
 
-      return redirect('/subcategories');
+      return Redirect()->back()->with('status', 'SubCategory Deleted successfully!');
     }
 }
