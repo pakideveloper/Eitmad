@@ -92,7 +92,7 @@
                         <div class="row">
 							<div class="col-xs-12">
 								<div class="page-title-box">
-                                    <h4 class="page-title">Add Sub category</h4>
+                                    <h4 class="page-title">Add Country</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <!-- <li>
                                             <a href="#">Zircos</a>
@@ -101,7 +101,7 @@
                                             <a href="#">Eitmad</a>
                                         </li>
                                         <li class="active">
-                                            Create Sub category
+                                            Add Country
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -112,52 +112,24 @@
 
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="card-box">
-                                    <h4 class="header-title m-t-0">Sub Category Form</h4>
+                                    <h4 class="header-title m-t-0">Add Country Form</h4>
 										 <div class="row">
 										 	<div class="col-sm-12 col-xs-12 col-md-6">
 										 	 	<div class="p-20">
-                                    <form action="{{url('subcategories')}}" method="post">
+                                    <form action="{{url('admin/countries')}}" method="post"  >
                                         {{ csrf_field()}}
-                                        <div class="form-group">
-                                                    <label for="parentcategory">Choose Parent Category *:</label>
-                                                    <select id="parentcategory" name="pcategory" class="form-control" required="">
-                                                        <option > Choose Parent Category</option>
-                                                        @foreach($categories as $category)
+                                       <div class="form-group ">
+                                                        <label for="userName">Country Name<span class="text-danger">*</span></label>
                                                         
-                                                        <option value="{{$category->id}}">{{$category->category_name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                     @if ($errors->has('sub_category_name'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('sub_category_name') }}.</li></ul>
+                                                        <input type="text" name="c_name" parsley-trigger="change" required
+                                                               placeholder="Enter country name" class="form-control" value="{{ old('c_name') }}" id="country">
+                                                        @if ($errors->has('c_name'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('c_name') }}.</li></ul>
                                                         @endif
-                                                </div>
-                                       <div class="form-group">
-                                                        <label for="subcategory">Sub Category Name<span class="text-danger">*</span></label>
-                                                        <input type="text" name="scategory" parsley-trigger="change" required
-                                                               placeholder="Enter Sub category name" class="form-control" id="pcategory" >
-                                                                @if ($errors->has('sub_category_name'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('sub_category_name') }}.</li></ul>
-                                                        @endif
+                                                             
                                                     </div>
-
-                                            
-                                                    <div class="form-group m-b-20">
-                                                        <label for="featuressInput">Add Features</label>
-                                                        
-                                                        <input type="text" value="" id="featuresInput" name="feature_names" data-role="tagsinput" placeholder="Enter feature Names"  />
-                                                        
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required"></li></ul>
-                                                    
-                                                        <p class="text-muted m-b-20 font-13">
-                                                            Just press <code>"Enter"</code>if you add more than one.
-                                                        </p>
-                                                         @if ($errors->has('sub_category_name'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('sub_category_name') }}.</li></ul>
-                                                        @endif
-                                                    </div>           
-
                                                                                               
                                                  
                                            
@@ -226,7 +198,21 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
         <!-- sweet Alert -->
         <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-        
+       <script type="text/javascript">
+            $(document).ready(function() {
+                $('form').parsley();
+            });
+            $(function () {
+                $('#demo-form').parsley().on('field:validated', function () {
+                    var ok = $('.parsley-error').length === 0;
+                    $('.alert-info').toggleClass('hidden', !ok);
+                    $('.alert-warning').toggleClass('hidden', ok);
+                })
+                .on('form:submit', function () {
+                    return false; // Don't submit form for this demo
+                });
+            });
+        </script> 
 
     </body>
 

@@ -35,6 +35,8 @@ Route::resource('/admin/products','admin\ecommerce\ProductController');
 Route::get('/admin/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
 Route::resource('/categories','admin\ecommerce\ProductCategoryController');
 Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController');
+Route::resource('admin/countries','admin\ecommerce\CountryController');
+Route::resource('admin/cities','admin\ecommerce\CityController');
 // Route::get('/viewcategory', function () {
 //     return view('admin/ecommerce/modules/categories/viewCategories');
 // });
@@ -43,6 +45,10 @@ Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController')
 // Discount
 Route::resource('admin/discount','admin\ecommerce\DiscountController');
 //Discount end
+
+// Region
+Route::resource('admin/region','admin\ecommerce\RegionController');
+//Region end
 
 // Route::get('/register', function () {
 //     return view('frontend/ecommerce/modules/registration/register');

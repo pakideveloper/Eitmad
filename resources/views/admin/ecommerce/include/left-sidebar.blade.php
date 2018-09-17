@@ -65,35 +65,42 @@
                                 <ul class="list-unstyled">
                                     
                                     <li><a href="{{url('/admin/discount')}}/create">Add Discount</a></li>
-                                   <!--  <li><a href="admin-ratings.html">add sub category</a></li> -->
+                                  
                                     <li><a href="{{url('/admin/discount')}}">View All</a></li>
                                 </ul>
                             </li>
-
-
-                            <li>
-                                <a href="calendar.html" class="waves-effect"><i class="mdi mdi-calendar"></i><span> Calendar </span></a>
-                            </li>
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-email"></i><span> Email </span> <span class="menu-arrow"></span></a>
+                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Regions</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="email-inbox.html"> Inbox</a></li>
-                                    <li><a href="email-read.html"> Read Mail</a></li>
-                                    <li><a href="email-compose.html"> Compose Mail</a></li>
+                                    
+                                    <li><a href="{{url('/admin/region')}}/create">Add Region</a></li>
+                                   
+                                    <li><a href="{{url('/admin/region')}}">View All</a></li>
                                 </ul>
                             </li>
 
+
+                           <!--  <li>
+                                <a href="calendar.html" class="waves-effect"><i class="mdi mdi-calendar"></i><span> Calendar </span></a>
+                            </li> -->
+
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-heart-outline"></i><span> Icons </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-email"></i><span> Country </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="icons-glyphicons.html">Glyphicons</a></li>
-                                    <li><a href="icons-colored.html">Colored Icons</a></li>
-                                    <li><a href="icons-materialdesign.html">Material Design</a></li>
-                                    <li><a href="icons-ionicons.html">Ion Icons</a></li>
-                                    <li><a href="icons-fontawesome.html">Font awesome</a></li>
-                                    <li><a href="icons-themifyicon.html">Themify Icons</a></li>
-                                    <li><a href="icons-typicons.html">Typicons</a></li>
+                                    <li><a href="{{url('admin/countries')}}/create">Add</a></li>
+                                    <li><a href="{{url('admin/countries')}}">View</a></li>
+                                    <!-- <li><a href="email-compose.html"> Compose Mail</a></li> -->
+                                </ul>
+                            </li>
+                             
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-heart-outline"></i><span> City </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{url('admin/cities')}}/create">Add</a></li>
+                                    <li><a href="{{url('admin/cities')}}">View</a></li>
+                                    
+                                    
                                 </ul>
                             </li>
 
