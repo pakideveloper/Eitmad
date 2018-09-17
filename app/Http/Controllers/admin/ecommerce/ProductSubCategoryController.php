@@ -58,7 +58,7 @@ class ProductSubCategoryController extends Controller
         //     ]);
         // }
         $scategory->save();
-        return $scategory;
+        return redirect()->back();
     }
 
     /**

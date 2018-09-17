@@ -75,6 +75,11 @@
                 <!-- Start content -->
                 <!-- Start content -->
                 <div class="content">
+                    @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
                            <div class="row">
                             <div class="col-xs-12">
@@ -120,8 +125,16 @@
                                                         
                                                         <td>{{$Vbrand->id}}</td>
                                                         <th>{{$Vbrand->brand_name}}</th>
-                                                        <td>{{$Vbrand->created_at}}</td>
-                                                        <td>{{$Vbrand->updated_at}}</td> 
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vbrand->created_at)->format('m');
+                                                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                                $monthName = $dateObj->format('F'); 
+                                                echo $monthName; // March?>
+                                                {{ Carbon\Carbon::parse($Vbrand->created_at)->format('d,Y') }}</td>
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vbrand->created_at)->format('m');
+                                                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                                $monthName = $dateObj->format('F'); 
+                                                echo $monthName; // March?>
+                                                {{ Carbon\Carbon::parse($Vbrand->updated_at)->format('d,Y') }}</td> 
                                                         <td>
                                                              <a href="{{url('admin/brands')}}/{{$Vbrand->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
@@ -131,7 +144,7 @@
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  
-                                                                <i  onclick="return deleteCategory({{$Vbrand->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                                <i  onclick="return deleteCategory({{$Vbrand->id}});" class="fa fa-trash-o" style="cursor: pointer;     margin-left: 10px;     color: red;"></i>
                                                             </form>
                                                         </td>                     
                                                     </tr>

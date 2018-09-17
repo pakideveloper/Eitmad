@@ -16,7 +16,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $brand = Brand::all();
+        $brand = Brand::latest()->get();
         return view('admin/ecommerce/modules/brand/index',compact('brand'));
     }
 
@@ -95,21 +95,22 @@ class BrandController extends Controller
     {
         $brand = Brand::find($id);
         $brand->brand_name = $request->brand_name;
-        $file_name = $request->file['0'] -> getClientOriginalName();
-        $file_name = uniqid().$file_name;
-        $file_name = preg_replace('/\s+/', '', $file_name);
-        $file_type = $request->file['0']->getClientOriginalExtension();
-        $request->file['0'] -> move(public_path().'/admin/upload/brands', $file_name);
-        $file_size = $request->file['0']->getClientSize();
-        $file_size = $file_size/1000;
-        $file_size = $file_size.' '.'kb';
-        $brand->brand_logo = $file_name;
-        $brand->brand_logo_size = $file_size;
-        $brand->brand_logo_file_type = $file_type;
+
+        if ($request->file['0']) {
+            $file_name = $request->file['0'] -> getClientOriginalName();
+            $file_name = uniqid().$file_name;
+            $file_name = preg_replace('/\s+/', '', $file_name);
+            $file_type = $request->file['0']->getClientOriginalExtension();
+            $request->file['0'] -> move(public_path().'/admin/upload/brands', $file_name);
+            $file_size = $request->file['0']->getClientSize();
+            $file_size = $file_size/1000;
+            $file_size = $file_size.' '.'kb';
+            $brand->brand_logo = $file_name;
+            $brand->brand_logo_size = $file_size;
+            $brand->brand_logo_file_type = $file_type;
+        }        
         $brand->update();
-        return redirect('/admin/brands');
-        Alert::success('Updated', 'Record Updated successfully');  
-       return Redirect()->back();
+        return redirect('/admin/brands')->with('status', 'Brand updated successfully!');
     }
 
     /**

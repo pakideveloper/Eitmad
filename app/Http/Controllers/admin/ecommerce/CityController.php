@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\City;
+use App\Region;
+use App\country;
 
 class CityController extends Controller
 {
@@ -15,7 +17,8 @@ class CityController extends Controller
      */
     public function index()
     {
-    
+    $cities =City::all();
+    return view('admin/ecommerce/modules/Cities/viewcities',compact('cities'));
     }
 
      public function cities($id){
@@ -30,7 +33,9 @@ class CityController extends Controller
      */
     public function create()
     {
-        return view('admin/ecommerce/modules/Cities/addcities');
+        $regions = Region::all();
+        $countries = country::all();
+        return view('admin/ecommerce/modules/Cities/addcities',compact('regions','countries'));
     }
 
     /**
@@ -41,7 +46,13 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cities = new City();
+        $cities->city_name = $request->city_name;
+        $cities->city_code = $request->city_code;
+        $cities->country_id = $request->c_name;
+        $cities->region_id = $request->region;
+        $cities->save();
+       return Redirect()->back()->with('status', 'City added successfully!');
     }
 
     /**
@@ -63,7 +74,10 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cities = City::find($id);
+        $regions = Region::all();
+         $countries = country::all();
+        return view('admin/ecommerce/modules/Cities/editcities', compact('cities','regions','countries'));
     }
 
     /**
@@ -75,7 +89,16 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cities = City::find($id);
+        $cities->city_name = $request->city_name;
+        $cities->city_code = $request->city_code;
+        $cities->region_id = $request->region;
+        
+        $cities->update();
+         return Redirect()->back()->with('status', 'City updated successfully!');
+
+        
+      
     }
 
     /**
@@ -86,6 +109,9 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cities = City::find($id);
+      $cities->delete();
+
+       return Redirect()->back()->with('status', 'City Deleted successfully!');
     }
 }

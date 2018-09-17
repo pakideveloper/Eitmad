@@ -13,6 +13,10 @@
         <!-- App title -->
         <title>Eitmad</title>
 
+         <!-- Jquery filer css -->
+        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
+        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+
         <!-- App css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/core.css" rel="stylesheet" type="text/css" />
@@ -71,6 +75,11 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                    @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 
@@ -101,111 +110,113 @@
                                 <div class="card-box">
 
                                     <div class="row">
+                                        <form action="{{url('/admin/products')}}" method="post" enctype="multipart/form-data">
+                                            {{csrf_field()}}
                                         <div class="col-sm-12 col-xs-12 col-md-6">
 
                                             
 
                                             <div class="p-20">
-                                                <form action="#" data-parsley-validate novalidate>
+                                                
                                                     <div class="form-group">
                                                         <label for="product-name">Product Name<span class="text-danger">*</span></label>
-                                                        <input type="text" name="nick" parsley-trigger="change" required
+                                                        <input type="text" name="product_name" parsley-trigger="change" 
                                                                placeholder="Enter product name" class="form-control" id="userName">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="product-price">Product Price<span class="text-danger">*</span></label>
-                                                        <input type="text" name="price" parsley-trigger="change" required
-                                                               placeholder="Enter product price" class="form-control" id="price">
+                                                        <label for="product_size">Product Size<span class="text-danger">*</span></label>
+                                                        <input type="text" name="product_size" parsley-trigger="change"
+                                                               placeholder="Enter product size" class="form-control" id="product_size">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="product-colour">Product Colour<span class="text-danger">*</span></label>
-                                                        <input  type="text" placeholder="" data-role="tagsinput" required
-                                                               class="form-control" id="colour">
+                                                        <label for="product_colour">Product Color<span class="text-danger">*</span></label>
+                                                        <input type="text" name="product_colour" parsley-trigger="change"
+                                                               placeholder="Enter product size" class="form-control" id="product_colour">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="passWord2">Confirm Password <span class="text-danger">*</span></label>
-                                                        <input data-parsley-equalto="#pass1" type="password" required
-                                                               placeholder="Password" class="form-control" id="passWord2">
+                                                        <label for="product_price">Product Price<span class="text-danger">*</span></label>
+                                                        <input type="text" name="product_price" parsley-trigger="change"
+                                                               placeholder="Enter product size" class="form-control" id="product_price">
                                                     </div>
                                                     <div class="form-group">
-                                                        <div class="checkbox">
-                                                            <input id="remember-1" type="checkbox">
-                                                            <label for="remember-1"> Remember me </label>
-                                                        </div>
-                                                    </div>
+                                                        <label for="product_quantity">Product Quantity<span class="text-danger">*</span></label>
+                                                        <input type="text" name="product_quantity" parsley-trigger="change"
+                                                               placeholder="Enter product size" class="form-control" id="product_quantity">
+                                                    </div>                                                                          
+                                                    
 
-                                                    <div class="form-group text-right m-b-0">
+                                                
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12 col-md-6">
+                                            <div class="p-20">
+                                                <div id="features_div">
+                                                    
+                                                </div>
+                                                <!-- @foreach($sub_categories  as $sub_category)
+                                                    @foreach(json_decode($sub_category->feature_names) as $input )
+                                                    {{$input}}
+                                                    <div class="form-group">
+                                                        <label for="product_{{$input}}">Product {{$input}}<span class="text-danger">*</span></label>
+                                                        <input type="text" name="product_{{$input}}" parsley-trigger="change"
+                                                               placeholder="Enter product size" class="form-control" id="product_{{$input}}">
+                                                    </div>
+                                                    @endforeach                                     
+                                                @endforeach  -->
+                                                <div class="form-group m-b-20">
+                                                    <label for="sub_category_id"></label>
+                                                    <select name="sub_category_id" id="sub_category_id" class="form-control">
+                                                        <option value="">Select Category</option>
+                                                        @foreach($categories  as $category)
+                                                            <optgroup label="{{$category->category_name}}">
+                                                                @foreach($sub_categories as $sub_category)
+                                                                    @if($category->id == $sub_category->id)
+                                                                    <option value="{{$sub_category->id}}">{{$sub_category->sub_category_name}}</option>
+                                                                    @endif
+                                                                @endforeach
+                                                                
+                                                            </optgroup>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="form-group m-b-20">
+                                                    <label for="brand"></label>
+                                                    <select name="brand_id" id="brand" class="form-control">
+                                                        <option value="">Select Brand</option>
+                                                        @foreach($brands as $brand)
+                                                        <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="form-group m-b-20">
+                                                    <label for="discount"></label>
+                                                    <select name="discount_id" id="discount" class="form-control">
+                                                        <option value="">Select Discount</option>
+                                                         @foreach($discounts as $discount)
+                                                        <option value="{{$discount->id}}">{{$discount->discount_name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="form-group m-b-20"">
+                                                    <label for="">Upload Images</label>
+                                                    <div class="col-sm-12 padding-left-0 padding-right-0">
+                                                            <input type="file" name="images[]" id="filer_input2"
+                                                               multiple="multiple">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-right m-b-0">
                                                         <button class="btn btn-primary waves-effect waves-light" type="submit">
                                                             Submit
                                                         </button>
                                                         <button type="reset" class="btn btn-default waves-effect m-l-5">
                                                             Cancel
                                                         </button>
-                                                    </div>
-
-                                                </form>
+                                                </div>
                                             </div>
-
                                         </div>
-
-                                        <div class="col-sm-12 col-xs-12 col-md-6">
-                                            
-
-                                            <div class="p-20">
-                                                <form data-parsley-validate novalidate>
-                                                    <div class="form-group row">
-                                                        <label for="inputEmail3" class="col-sm-4 form-control-label">Email<span class="text-danger">*</span></label>
-                                                        <div class="col-sm-7">
-                                                            <input type="email" required parsley-type="email" class="form-control"
-                                                                   id="inputEmail3" placeholder="Email">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="hori-pass1" class="col-sm-4 form-control-label">Password<span class="text-danger">*</span></label>
-                                                        <div class="col-sm-7">
-                                                            <input id="hori-pass1" type="password" placeholder="Password" required
-                                                                   class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <label for="hori-pass2" class="col-sm-4 form-control-label">Confirm Password
-                                                            <span class="text-danger">*</span></label>
-                                                        <div class="col-sm-7">
-                                                            <input data-parsley-equalto="#hori-pass1" type="password" required
-                                                                   placeholder="Password" class="form-control" id="hori-pass2">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group row">
-                                                        <label for="webSite" class="col-sm-4 form-control-label">Web Site<span class="text-danger">*</span></label>
-                                                        <div class="col-sm-7">
-                                                            <input type="url" required parsley-type="url" class="form-control"
-                                                                   id="webSite" placeholder="URL">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <div class="col-sm-8 col-sm-offset-4">
-                                                            <div class="checkbox">
-                                                                <input id="remember-2" type="checkbox">
-                                                                <label for="remember-2"> Remember me </label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group row">
-                                                        <div class="col-sm-8 col-sm-offset-4">
-                                                            <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                                Register
-                                                            </button>
-                                                            <button type="reset"
-                                                                    class="btn btn-default waves-effect m-l-5">
-                                                                Cancel
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                        </div>
+                                    </form>
+                                        
                                     </div>
                                     <!-- end row -->
 
@@ -308,25 +319,29 @@
 
         <script type="text/javascript" src="{{URL::to('public/admin/ecommerce')}}/plugins/parsleyjs/parsley.min.js"></script>
 
+        <!-- Jquery filer js -->
+        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/js/jquery.filer.min.js"></script>
+
         <!-- App js -->
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.core.js"></script>
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
 
+        <!-- page specific js -->
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/pages/jquery.fileuploads.init.js"></script>
+
         <script type="text/javascript">
-			$(document).ready(function() {
-				$('form').parsley();
-			});
-            $(function () {
-                $('#demo-form').parsley().on('field:validated', function () {
-                    var ok = $('.parsley-error').length === 0;
-                    $('.alert-info').toggleClass('hidden', !ok);
-                    $('.alert-warning').toggleClass('hidden', ok);
-                })
-                .on('form:submit', function () {
-                    return false; // Don't submit form for this demo
+            $('#sub_category_id').change(function(){
+                $.get('http://localhost/Eitmad/admin/products/' + this.value + '/features', function(features){
+                    $("#features_div").html(''); 
+                        $.each(features, function(index, feature) { 
+                        feature_s = feature.replace(/\s+/g, '');                             
+                            var content = '<div class="form-group">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'">                                                    </div>'                        
+                            $("#features_div").append(content); 
+                            console.log(content);                         
+                        });
                 });
             });
-		</script>
+        </script>
 
     </body>
 
