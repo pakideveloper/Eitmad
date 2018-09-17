@@ -37,8 +37,8 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Brand </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('brands')}}/create">Create</a></li>
-                                    <li><a href="ui-grid.html">View All</a></li>
+                                    <li><a href="{{url('admin/brands')}}/create">Create</a></li>
+                                    <li><a href="{{url('admin/brands')}}">View All</a></li>
                                 </ul>
                             </li>
                             <li class="has_sub">
@@ -65,8 +65,8 @@
                                 <ul class="list-unstyled">
                                     
                                     <li><a href="{{url('/admin/discount')}}/create">Add Discount</a></li>
-                                    <li><a href="admin-ratings.html">add sub category</a></li>
-                                    <li><a href="admin-animation.html">View All</a></li>
+                                   <!--  <li><a href="admin-ratings.html">add sub category</a></li> -->
+                                    <li><a href="{{url('/admin/discount')}}">View All</a></li>
                                 </ul>
                             </li>
 

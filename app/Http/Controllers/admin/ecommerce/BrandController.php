@@ -16,7 +16,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        echo "index";
+        $brand = Brand::all();
+        return view('admin/ecommerce/modules/brand/index',compact('brand'));
     }
 
     /**
@@ -56,7 +57,7 @@ class BrandController extends Controller
         // print_r($brand);
         // die();
         $brand->save();
-        return Redirect()->back();
+        return Redirect()->back()->with('status', 'Brand created successfully!');;
     }
 
     /**
@@ -67,7 +68,7 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        echo "show";
+       //
     }
 
     /**
@@ -78,7 +79,9 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        echo "edit";
+         $brand = Brand::find($id);
+        
+        return view('admin/ecommerce/modules/brand/edit', compact('brand'));
     }
 
     /**
@@ -90,7 +93,23 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $brand = Brand::find($id);
+        $brand->brand_name = $request->brand_name;
+        $file_name = $request->file['0'] -> getClientOriginalName();
+        $file_name = uniqid().$file_name;
+        $file_name = preg_replace('/\s+/', '', $file_name);
+        $file_type = $request->file['0']->getClientOriginalExtension();
+        $request->file['0'] -> move(public_path().'/admin/upload/brands', $file_name);
+        $file_size = $request->file['0']->getClientSize();
+        $file_size = $file_size/1000;
+        $file_size = $file_size.' '.'kb';
+        $brand->brand_logo = $file_name;
+        $brand->brand_logo_size = $file_size;
+        $brand->brand_logo_file_type = $file_type;
+        $brand->update();
+        return redirect('/admin/brands');
+        Alert::success('Updated', 'Record Updated successfully');  
+       return Redirect()->back();
     }
 
     /**
@@ -101,17 +120,20 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $brand = Brand::find($id);
+      $brand->delete();
+      return redirect('/admin/brands');
     }
     public function storeValidate(Request $request){
+       
         $messages = [
             'brand_name.required' => 'please insert brand name',
-            
+            'file.required' => 'please upload brand logo',
             
         ];
         $this->validate($request, [
             'brand_name' => 'required',
-                    
+             'file' => 'required',       
         ],$messages);
     }
 }

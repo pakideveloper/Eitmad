@@ -30,7 +30,7 @@ Route::group(['middleware'=>'role:admin'], function(){
 
 });
 
-Route::resource('/brands','admin\ecommerce\BrandController');
+Route::resource('/admin/brands','admin\ecommerce\BrandController');
 Route::resource('/products','admin\ecommerce\ProductController');
 Route::resource('/categories','admin\ecommerce\ProductCategoryController');
 Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController');
