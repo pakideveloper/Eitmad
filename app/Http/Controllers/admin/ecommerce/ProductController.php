@@ -20,7 +20,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        echo "string";
+        $products = Product::latest()->get();
+        return view ('admin/ecommerce/modules/product/index', compact('products'));
     }
 
     /**
@@ -46,15 +47,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        
         // $this->storeValidation();
         $product = new Product();
         $product->product_name = $request->product_name ;
         $product->product_size = $request->product_size ;
         $product->product_colour = $request->product_colour ;
-        $product->product_price = '333' ;
+        $product->product_price = $request->product_price ;
         $product->product_quantity = $request->product_quantity ;
         $product->sub_category_id = $request->sub_category_id ;
-        $product->product_discounted_price = '1' ;
+        $discount = Discount::find($request->discount_id);
+        $product->product_discounted_price = $request->product_price - (($discount->discount_percent * $request->product_price) / 100);
         $product->brand_id = $request->brand_id ;
         $product->discount_id = $request->discount_id;
 
@@ -62,6 +65,7 @@ class ProductController extends Controller
         $features = json_decode($sub_category->feature_names);
         $features_array = array();
         foreach ($features as $key => $value) {
+            $value = preg_replace('/\s+/', '', $value);
             $input = 'product_'.$value;
             $features_array[$value] = $request->$input;
         }
@@ -88,13 +92,7 @@ class ProductController extends Controller
             }
             
         }
-       
-        // $product-> = $request-> ;
-        // $product-> = $request-> ;
-        // $product-> = $request-> ;
-        // $product-> = $request-> ;
-        // $product-> = $request-> ;
-        // $product-> = $request-> ;
+        return Redirect()->back()->with('status', 'Product added successfully!');
     }
 
     /**

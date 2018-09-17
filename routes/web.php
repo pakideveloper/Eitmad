@@ -50,6 +50,13 @@ Route::resource('admin/discount','admin\ecommerce\DiscountController');
 Route::resource('admin/region','admin\ecommerce\RegionController');
 //Region end
 
+// Area
+Route::resource('admin/area','admin\ecommerce\AreaController');
+//Area end
+// fetching cities on selecting country
+Route::get('admin/area/cities/{id}/cities.json','admin\ecommerce\CityController@cities');
+// fetching cities on selecting country
+
 // Route::get('/register', function () {
 //     return view('frontend/ecommerce/modules/registration/register');
 // });
