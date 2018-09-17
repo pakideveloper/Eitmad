@@ -118,6 +118,7 @@
                                                         <th >Brand</th>
 														<th >Discount Id</th>
 														<th >other_features</th>
+                                                        <th>Actions</th>
 													</tr>
 												</thead>
 												<tbody>
@@ -133,6 +134,7 @@
                                                         <td>{{$product->brand->brand_name}}</td>
                                                         <td>{{$product->discount->discount_name}}</td>
 														<td><button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#full-width-modal{{$product->id}}">Click here</button></td>
+                                                        <td><a href="{{url('/admin/products')}}/{{$product->id}}/edit">Edit</a></td>
 													</tr>
                                                     
                                             	@endforeach
