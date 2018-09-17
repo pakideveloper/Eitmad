@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\admin\ecommerce;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-use App\City;
-use App\Region;
+use App\Area;
 use App\country;
 
-class CityController extends Controller
+class AreaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +15,9 @@ class CityController extends Controller
      */
     public function index()
     {
-    $cities =City::all();
-    return view('admin/ecommerce/modules/Cities/viewcities',compact('cities'));
-    }
-
-     public function cities($id){
-        return City::where('country_id',$id)->get();
-
+        $areas = Area::all();
+          $countries = country::all();
+        return view('admin/ecommerce/modules/areas/index', compact('areas', 'countries'));
     }
 
     /**
@@ -33,9 +27,8 @@ class CityController extends Controller
      */
     public function create()
     {
-        $regions = Region::all();
-        $countries = country::all();
-        return view('admin/ecommerce/modules/Cities/addcities',compact('regions','countries'));
+         $countries = country::all();
+         return view('admin/ecommerce/modules/areas/create', compact('countries'));
     }
 
     /**
@@ -46,13 +39,20 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        $cities = new City();
-        $cities->city_name = $request->city_name;
-        $cities->city_code = $request->city_code;
-        $cities->country_id = $request->c_name;
-        $cities->region_id = $request->region;
-        $cities->save();
-       return Redirect()->back()->with('status', 'City added successfully!');
+       $this->validation($request);
+      
+       
+        $area= new Area();
+        $area->area_name =$request -> Input('area_name');
+        $area->area_code =$request -> Input('area_code');
+        $area->city_id =$request -> Input('city_id');
+       
+
+        $area ->save();
+
+        
+          //Alert::success('Inserted', 'Record Inserted successfully');    
+        return Redirect()->back()->with('status', 'Area added successfully!');
     }
 
     /**
@@ -74,10 +74,7 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        $cities = City::find($id);
-        $regions = Region::all();
-         $countries = country::all();
-        return view('admin/ecommerce/modules/Cities/editcities', compact('cities','regions','countries'));
+        //
     }
 
     /**
@@ -89,16 +86,7 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cities = City::find($id);
-        $cities->city_name = $request->city_name;
-        $cities->city_code = $request->city_code;
-        $cities->region_id = $request->region;
-        
-        $cities->update();
-         return Redirect()->back()->with('status', 'City updated successfully!');
-
-        
-      
+        //
     }
 
     /**
@@ -109,9 +97,24 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        $cities = City::find($id);
-      $cities->delete();
+        $area= Area::find($id);
+        
+        $area->delete();
+       // Alert::success('Deleted', 'Record deleted successfully');
+        return Redirect()->back()->with('status', 'Area deleted successfully!');
+    }
 
-       return Redirect()->back()->with('status', 'City Deleted successfully!');
+    public function validation(Request $request)
+    {
+         $messages = [
+            'area_name.required' => 'please insert area name.',
+            'city_id.required' => 'please select city.'
+            
+        ];
+        $this->validate($request, [
+            'area_name' => 'required',
+            'city_id' => 'required'          
+        ],$messages);
+
     }
 }

@@ -103,6 +103,15 @@
                                     
                                 </ul>
                             </li>
+                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Areas</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                    <li><a href="{{url('/admin/area')}}/create">Add Area</a></li>
+                                   
+                                    <li><a href="{{url('/admin/area')}}">View All</a></li>
+                                </ul>
+                            </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-diamond"></i><span class="badge badge-danger pull-right">New</span> <span> Forms </span></a>
