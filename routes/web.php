@@ -43,6 +43,10 @@ Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController')
 Route::resource('admin/discount','admin\ecommerce\DiscountController');
 //Discount end
 
+// Region
+Route::resource('admin/region','admin\ecommerce\RegionController');
+//Region end
+
 // Route::get('/register', function () {
 //     return view('frontend/ecommerce/modules/registration/register');
 // });

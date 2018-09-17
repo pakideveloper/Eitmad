@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
         <!-- App title -->
-        <title>DISCOUNTS-ADMIN PANEL - EITMAD</title>
+        <title>REGIONS-ADMIN PANEL - EITMAD</title>
 
         <!-- Table Responsive css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/plugins/responsive-table/css/rwd-table.min.css" rel="stylesheet" type="text/css" media="screen">
@@ -24,7 +24,7 @@
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
         <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.css">
+        <link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.css">
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -75,7 +75,7 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
-                	 @if (session('status'))
+                     @if (session('status'))
                         <div class="alert alert-success" style="margin-bottom: 0px;">
                             {{ session('status') }}
                         </div>
@@ -84,106 +84,101 @@
 
 
                         <div class="row">
-							<div class="col-xs-12">
-								<div class="page-title-box">
-                                    <h4 class="page-title">All Discounts </h4>
+                            <div class="col-xs-12">
+                                <div class="page-title-box">
+                                    <h4 class="page-title">All Regions </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">EITMAD</a>
                                         </li>
                                         <li>
-                                            <a href="#">Discounts </a>
+                                            <a href="#">Regions </a>
                                         </li>
                                         <li class="active">
-                                            All Discounts
+                                            All Regions
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
-							</div>
-						</div>
+                            </div>
+                        </div>
                         <!-- end row -->
 
 
                         <div class="row">
-							<div class="col-sm-12">
-								<div class="card-box">
+                            <div class="col-sm-12">
+                                <div class="card-box">
 
-									<div class="table-rep-plugin">
-										<div class="table-responsive" data-pattern="priority-columns">
-											<table id="tech-companies-1" class="table  table-striped">
-												<thead>
-													<tr>
-														<th>ID</th>
-														<th data-priority="1">Discount Name</th>
-														<th data-priority="3">Discount Percentage %</th>
-														<th data-priority="1">Discount Type</th>
-														<th data-priority="1">Actions</th>
-														
-													</tr>
-												</thead>
-												<tbody>
-													@foreach($discounts as $discount)
-													<tr>
-														<th>{{$discount->id}}</th>
-														<td>{{$discount->discount_name}}</td>
-														<td>{{$discount->discount_percent}}</td>
-														<td>{{$discount->discount_type}}</td>
-														<td>
-															 <a href="" data-toggle="modal" data-target="#con-close-modal{{$discount-> id}}" style="float: left; ">
+                                    <div class="table-rep-plugin">
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table  table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th data-priority="1">Region Name</th>
+                                                        <th data-priority="3">Country</th>
+                                                        <th data-priority="1">Actions</th>
+                                                        
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach($regions as $region)
+                                                    <tr>
+                                                        <th>{{$region->id}}</th>
+                                                        <th>{{$region->region_name}}</th>
+                                                        <td>{{$region->country_id}}</td>
+                                                        
+                                                        <td>
+                                                             <a href="" data-toggle="modal" data-target="#con-close-modal{{$region-> id}}" style="float: left; ">
                                                                 <i class="fa fa-pencil" style=""></i>
                                                             </a>
                                                             
                                                                  
-                                                                <i  onclick="return deleteFunction({{$discount->id}});" class="fa fa-trash-o" style="cursor: pointer; margin-left: 10px;"></i>
-                                                                 <form id="delete_form{{$discount->id}}" action="{{ url('admin/discount',[$discount->id]) }}" method="post">
+                                                                <i  onclick="return deleteFunction({{$region->id}});" class="fa fa-trash-o" style="cursor: pointer; margin-left: 10px;"></i>
+                                                                 <form id="delete_form{{$region->id}}" action="{{ url('admin/region',[$region->id]) }}" method="post">
                                                                 {{ csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                
             
                                                             </form>
-														</td>
-														
-													</tr>
+                                                        </td>
+                                                        
+                                                    </tr>
 
-													<!-- Discount Edit Modal -->
-													<div id="con-close-modal{{$discount-> id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                    <!-- Region Edit Modal -->
+                                                    <div id="con-close-modal{{$region-> id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    <h4 class="modal-title">Edit Discount Details</h4>
+                                                    <h4 class="modal-title">Edit Region</h4>
                                                 </div>
-                                                 <form action="{{url('admin/discount')}}/{{$discount->id}}" method="post" enctype="multipart/form-data" onsubmit="return submitForm({{$discount->id}});">
+                                                 <form action="{{url('admin/region')}}/{{$region->id}}" method="post" enctype="multipart/form-data" onsubmit="return submitForm({{$region->id}});">
                                                      <input type="hidden" name="_token" value="<?php  echo csrf_token(); ?>">
                                                      {{ method_field('PUT')}}
                                                 <div class="modal-body">
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="field-1" class="control-label">Discount Name</label>
-                                                                <input type="text" class="form-control" id="discount_name{{$discount->id}}"  name="discount_name" value="{{$discount->discount_name}}">
-                                                                  <span class="help-block" id="name_err_{{$discount->id}}">
+                                                                <label for="region_name" class="control-label">Region Name</label>
+                                                                <input type="text" class="form-control" id="region_name{{$region->id}}"  name="region_name" value="{{$region->region_name}}">
+                                                                  <span class="help-block" id="name_err_{{$region->id}}">
                                                                          
                                                                     </span>
                                                             </div>
-                                                        </div>
-                                                        <div class="col-md-12">
                                                             <div class="form-group">
-                                                                <label for="field-1" class="control-label">Discount Type</label>
-                                                                <input type="text" class="form-control" id="field-1"  name="discount_type" value="{{$discount->discount_type}}">
-
+                                                                <label for="country_id">Select Country</label>
+                                                                <select class="form-control" name="country_id">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    
+                                                                </select>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label for="field-1" class="control-label">Discount Percentage</label>
-                                                                <input type="number" min="1" max="100" class="form-control" id="discount_percent{{$discount->id}}"  name="discount_percent" value="{{$discount->discount_percent}}">
-                                                                  <span class="help-block" id="percent_err_{{$discount->id}}">
-                                                                         
-                                                                    </span>
-                                                            </div>
-                                                        </div>
+                                                        
+                                                       
                                                        
                                                     </div>
                                                                                
@@ -196,17 +191,17 @@
                                             </div>
                                         </div>
                                     </div>
-													@endforeach
-												</tbody>
-											</table>
-										</div>
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
 
-									</div>
+                                    </div>
 
-								</div>
-							</div>
-						</div>
-						<!-- end row -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
 
 
 
@@ -318,10 +313,10 @@
         <script type="text/javascript">
         var submitForm = function(id){
 
-        var dn= $('#discount_name'+id).val();
-        if(dn == ""){
+        var rn= $('#region_name'+id).val();
+        if(rn == ""){
         /*alert('Please Enter First Name');*/
-        var errorContent = '<strong class="error" style="color:red">Please enter discount name</strong>';
+        var errorContent = '<strong class="error" style="color:red">Please enter region name</strong>';
         $('#name_err_'+id).html(errorContent).show();
         //document.getElementById('loginEmail').style.borderColor = "red";
         return false;
@@ -329,17 +324,7 @@
         //document.getElementById('loginEmail').style.borderColor = "green";
         $('#name_err_'+ id).html(errorContent).hide();
         }
-        var dp= $('#discount_percent'+id).val();
-        if(dp == ""){
-        /*alert('Please Enter First Name');*/
-        var errorContent = '<strong class="error" style="color:red">Please enter discount percentage.</strong>';
-        $('#percent_err_'+id).html(errorContent).show();
-        //document.getElementById('loginEmail').style.borderColor = "red";
-        return false;
-        }else{
-        //document.getElementById('loginEmail').style.borderColor = "green";
-        $('#percent_err_'+ id).html(errorContent).hide();
-        }
+        
         }
         </script>
 
