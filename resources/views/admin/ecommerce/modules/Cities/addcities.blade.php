@@ -86,6 +86,11 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                    @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 
@@ -141,6 +146,22 @@
                                                         @endif
                                                              
                                                     </div>
+
+                                                    <div class="form-group">
+                                                    <label for="country">Country Name *:</label>
+                                                    <select id="country" name="c_name" class="form-control" required="">
+                                                        <option > Choose Country Name</option>
+                                                        @foreach($countries as $country)
+                                                        
+                                                        <option value="{{$country->id}}">{{$country->country_name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                     @if ($errors->has('country_name'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('country_name') }}.</li></ul>
+                                                        @endif
+                                                </div>
+
+
 
                                                     <div class="form-group">
                                                     <label for="region">Region Name *:</label>
