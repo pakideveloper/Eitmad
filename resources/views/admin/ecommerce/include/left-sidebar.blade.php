@@ -44,7 +44,7 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Product </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('products')}}/create">Create</a></li>
+                                    <li><a href="{{url('/admin/products')}}/create">Create</a></li>
                                     <li><a href="ui-grid.html">View All</a></li>
                                 </ul>
                             </li>

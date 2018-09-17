@@ -179,14 +179,18 @@
                                                     <label for="brand"></label>
                                                     <select name="brand_id" id="brand" class="form-control">
                                                         <option value="">Select Brand</option>
-                                                        <option value=""></option>
+                                                        @foreach($brands as $brand)
+                                                        <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="form-group m-b-20">
                                                     <label for="discount"></label>
                                                     <select name="discount_id" id="discount" class="form-control">
                                                         <option value="">Select Discount</option>
-                                                        <option value=""></option>
+                                                         @foreach($discounts as $discount)
+                                                        <option value="{{$discount->id}}">{{$discount->discount_name}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="form-group m-b-20"">

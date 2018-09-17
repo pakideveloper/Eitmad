@@ -8,6 +8,8 @@ use App\Product;
 use App\Product_Category;
 use App\Product_Sub_Category;
 use App\Product_File;
+use App\Brand;
+use App\Discount;
 
 class ProductController extends Controller
 {
@@ -31,8 +33,9 @@ class ProductController extends Controller
         $categories = Product_Category::all();
         $sub_categories = Product_Sub_Category::all();
         $brands = Brand::all();
-        
-        return view ('admin/ecommerce/modules/product/create', compact('categories', 'sub_categories'));
+        $discounts = Discount::all();
+
+        return view ('admin/ecommerce/modules/product/create', compact('categories', 'sub_categories','brands','discounts'));
     }
 
     /**
@@ -52,8 +55,8 @@ class ProductController extends Controller
         $product->product_quantity = $request->product_quantity ;
         $product->sub_category_id = $request->sub_category_id ;
         $product->product_discounted_price = '1' ;
-        $product->brand_id = '1' ;
-        $product->discount_id = '2' ;
+        $product->brand_id = $request->brand_id ;
+        $product->discount_id = $request->discount_id;
 
         $sub_category = Product_Sub_Category::find($product->sub_category_id);
         $features = json_decode($sub_category->feature_names);
