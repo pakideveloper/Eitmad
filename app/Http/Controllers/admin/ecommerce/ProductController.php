@@ -46,9 +46,12 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
-        // $this->storeValidation();
+    {   
+        if ($request->sub_category_id) {
+            $this->storeValidation_second($request , $request->sub_category_id);
+        }
+        // die;
+        $this->storeValidation($request);
         $product = new Product();
         $product->product_name = $request->product_name ;
         $product->product_size = $request->product_size ;
@@ -225,5 +228,69 @@ class ProductController extends Controller
         $sub_category = Product_Sub_Category::find($id);
         $features = json_decode($sub_category->feature_names);
         return $features;
+    }
+    public function storeValidation(Request $request){
+        $messages = [
+            'product_name.required' => 'please enter product name',
+            'product_size.required' => 'please enter size',
+            'product_colour.required' => 'please enter product color',
+            'product_price.required' => 'please enter product price',
+            'product_quantity.required' => 'please enter product quantity',
+            'sub_category_id.required' => 'please select product category',
+            'product_discounted_price.required' => 'please select iscount type',
+            'brand_id.required' => 'please select brand ',
+            'images.required' => 'please select at least one image',
+            
+        ];
+        $this->validate($request, [
+            'product_name' => 'required',
+            'product_size' => 'required',
+            'product_colour' => 'required',
+            'product_price' => 'required',
+            'product_quantity' => 'required',
+            'sub_category_id' => 'required',
+            'product_discounted_price' => 'required', 
+            'brand_id' => 'required',            
+            'images' => 'required|unique:projects',            
+        ],$messages);
+    }
+
+    public function storeValidation_second(Request $request, $id){
+        $messages = [
+            'product_name.required' => 'please enter product name',
+            'product_size.required' => 'please enter size',
+            'product_colour.required' => 'please enter product color',
+            'product_price.required' => 'please enter product price',
+            'product_quantity.required' => 'please enter product quantity',
+            'sub_category_id.required' => 'please select product category',
+            'product_discounted_price.required' => 'please select iscount type',
+            'brand_id.required' => 'please select brand ',
+            'images.required' => 'please select at least one image',
+            
+        ];
+        $input_name_array = [
+            'product_name' => 'required',
+            'product_size' => 'required',
+            'product_colour' => 'required',
+            'product_price' => 'required',
+            'product_quantity' => 'required',
+            'sub_category_id' => 'required',
+            'product_discounted_price' => 'required', 
+            'brand_id' => 'required',            
+            'images' => 'required|unique:projects',            
+        ];
+        
+        $sub_category = Product_Sub_Category::find($id);
+        $features = json_decode($sub_category->feature_names);
+        $features_array = array();
+        foreach ($features as $key => $value) {
+            $re_value = preg_replace('/\s+/', '', $value);
+            $input = 'product_'.$re_value;
+            $messages[$input] = "please enter".$value." ";
+            $input_name_array[$input] = "required";
+        }
+        
+
+        $this->validate($request, $input_name_array ,$messages);
     }
 }
