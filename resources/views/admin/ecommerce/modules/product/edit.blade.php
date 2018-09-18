@@ -381,7 +381,10 @@
                     success: function(response){
                         if(response.code ===200) {
                             $('.faClose'+file_id).hide(500);
-                            $('.image'+file_id).hide(500);
+                            $('.image'+file_id).animate({
+                                left: [ "+=50", "swing" ],
+                                opacity: [ 0.25, "linear" ]
+                            }, 300 );
                         }                          
                     },
                 });
