@@ -123,7 +123,7 @@
 										 <div class="row">
 										 	<div class="col-sm-12 col-xs-12 col-md-6">
 										 	 	<div class="p-20">
-                                    <form action="{{url('categories')}}/{{$categories->id}}" method="post">
+                                    <form action="{{url('/admin/categories')}}/{{$categories->id}}" method="post">
                                         {{ csrf_field()}}
                                         {{ method_field('PUT')}}
                                        <div class="form-group">

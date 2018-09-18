@@ -8,7 +8,7 @@
 				<div class="col-sm-3 col-md-3 col-xs-12">
 					<!-- logo start here-->
 					<div id="logo">
-						<a href="index.html">
+						<a href="{{url('home')}}">
 							<img class="img-responsive logochange" alt="logo" title="logo" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/logo.png" />
 						</a>
 					</div>

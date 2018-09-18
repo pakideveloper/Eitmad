@@ -34,10 +34,10 @@ Route::resource('/admin/brands','admin\ecommerce\BrandController');
 Route::resource('/admin/products','admin\ecommerce\ProductController');
 Route::get('/admin/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
 Route::post('/admin/products/deleteFile','admin\ecommerce\ProductController@deleteFile');
-Route::resource('/categories','admin\ecommerce\ProductCategoryController');
-Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController');
-Route::resource('admin/countries','admin\ecommerce\CountryController');
-Route::resource('admin/cities','admin\ecommerce\CityController');
+Route::resource('/admin/categories','admin\ecommerce\ProductCategoryController');
+Route::resource('/admin/subcategories','admin\ecommerce\ProductSubCategoryController');
+Route::resource('/admin/countries','admin\ecommerce\CountryController');
+Route::resource('/admin/cities','admin\ecommerce\CityController');
 // Route::get('/viewcategory', function () {
 //     return view('admin/ecommerce/modules/categories/viewCategories');
 // });
@@ -77,6 +77,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 //////////////////JOB PORTAL LINKS//////////////////
 
 ///frontend links//
+Route::get('/home', function () {
+    return view('frontend/general/index');
+});
+
+Route::get('/Ecommerce', function () {
+    return view('frontend/ecommerce/modules/index');
+});
+
+
 Route::get('/jobportal', function () {
     return view('frontend/JobPortal/index');
 });
@@ -96,3 +105,6 @@ Route::get('/contactus', function () {
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
+
+Route::get('/categories','Ecommerce\CategoryController@categories');
+

@@ -18,7 +18,7 @@
     	<div class="right-bg"></div>
       
     	<div class="container">
-      	<a class="logo" href="index.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a>
+      	<a class="logo" href="{{url('home')}}"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a>
         
         <!--Language / Currency Switchers-->
         <ul class="switchers">
@@ -54,9 +54,15 @@
               </ul>
             </li>
           	<li class="has-submenu"><a href="{{ url('shop') }}">Shop<i class="fa fa-chevron-down"></i></a>
+              <?php
+                                 
+                                 $categories=App\Product_Category::all();
+                                 ?>
             	<ul class="submenu">
-              	<li><a href="shop-filters-left-3cols.html">Shop - Filters Left 3 Cols</a></li>
-              	<li><a href="shop-filters-left-2cols.html">Shop - Filters Left 2 Cols</a></li>
+                @foreach($categories as $category)
+              	<li><a href="shop-filters-left-3cols.html">{{$category->category_name}}</a></li>
+                @endforeach
+              	<!-- <li><a href="shop-filters-left-2cols.html">Shop - Filters Left 2 Cols</a></li>
               	<li><a href="shop-filters-right-3cols.html">Shop - Filters Right 3 Cols</a></li>
               	<li><a href="shop-filters-right-2cols.html">Shop - Filters Right 2 Cols</a></li>
               	<li><a href="shop-no-filters-4cols.html">Shop - No Filters 4 Cols</a></li>
@@ -65,7 +71,7 @@
                 <li><a href="shop-single-item-v2.html">Shop - Single Item Vers 2</a></li>
                 <li><a href="shopping-cart.html">Shopping Cart</a></li>
                 <li><a href="checkout.html">Checkout Page</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li> -->
               </ul>
             </li>
           	<li class="has-submenu"><a href="blog-sidebar-right.html">Blog<i class="fa fa-chevron-down"></i></a>
