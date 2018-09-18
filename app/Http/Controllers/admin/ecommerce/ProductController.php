@@ -237,7 +237,7 @@ class ProductController extends Controller
             'product_price.required' => 'please enter product price',
             'product_quantity.required' => 'please enter product quantity',
             'sub_category_id.required' => 'please select product category',
-            'product_discounted_price.required' => 'please select iscount type',
+            'discount_id.required' => 'please select iscount type',
             'brand_id.required' => 'please select brand ',
             'images.required' => 'please select at least one image',
             
@@ -249,7 +249,7 @@ class ProductController extends Controller
             'product_price' => 'required',
             'product_quantity' => 'required',
             'sub_category_id' => 'required',
-            'product_discounted_price' => 'required', 
+            'discount_id' => 'required', 
             'brand_id' => 'required',            
             'images' => 'required',            
         ],$messages);
@@ -265,7 +265,7 @@ class ProductController extends Controller
             'product_price.required' => 'please enter product price',
             'product_quantity.required' => 'please enter product quantity',
             'sub_category_id.required' => 'please select product category',
-            'product_discounted_price.required' => 'please select iscount type',
+            'discount_id.required' => 'please select iscount type',
             'brand_id.required' => 'please select brand ',
             'images.required' => 'please select at least one image',
             
@@ -277,7 +277,7 @@ class ProductController extends Controller
             'product_price' => 'required',
             'product_quantity' => 'required',
             'sub_category_id' => 'required',
-            'product_discounted_price' => 'required', 
+            'discount_id' => 'required', 
             'brand_id' => 'required',            
             'images' => 'required',            
         ];

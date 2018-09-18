@@ -84,6 +84,8 @@
                     <div class="alert alert-danger" style="margin-bottom: 0px;">
                             {{ $errors->first("product_battery") }}
                         </div>                                                                                                                  @endif 
+
+
                     <div class="container">
 
 
@@ -170,32 +172,7 @@
                                         </div>
                                         <div class="col-sm-12 col-xs-12 col-md-6">
                                             <div class="p-20">
-                                                <div id="features_div">
-                                                    @if(old('sub_category_id'))
-            <?php 
-            $sub_category = App\Product_Sub_Category::find(old('sub_category_id'));
-                        $features = json_decode($sub_category->feature_names);
-            ?>
-
-
-            @foreach($features as $feature)
-            <?php
-            $input_name = 'product_'.$feature;
-            $input_name = preg_replace('/\s+/', '', $input_name);
-            ?>
-                                            <div class="form-group {{$input_name}} {{$errors->has($input_name) ? 'has-error' : ''}}">
-                                                <label for="product_{{$feature}}">Product {{$feature}}<span class="text-danger">*</span></label> 
-                                                <input type="text" name="{{$input_name}}" parsley-trigger="change" placeholder="Enter product size" class="form-control" id="product_{{$feature}}" value="{{ old($input_name)}}">
-                                                @if ($errors->has($input_name))
-                                                <ul class="parsley-errors-list filled" id="parsley-id-5">
-                                                    <li class="parsley-required">{{ $errors->first($input_name) }}.
-                                                    </li>
-                                                </ul>
-                                                @endif
-                                            </div>
-                                            @endforeach
-                                            @endif
-                                                </div>
+                                                
                                                 <!-- @foreach($sub_categories  as $sub_category)
                                                     @foreach(json_decode($sub_category->feature_names) as $input )
                                                     {{$input}}
@@ -228,6 +205,33 @@
                                                     @if ($errors->has('sub_category_id'))
                                                         <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('sub_category_id') }}.</li></ul>
                                                     @endif
+                                                </div>
+
+                                                <div id="features_div">
+                                                    @if(old('sub_category_id'))
+            <?php 
+            $sub_category = App\Product_Sub_Category::find(old('sub_category_id'));
+                        $features = json_decode($sub_category->feature_names);
+            ?>
+
+
+            @foreach($features as $feature)
+            <?php
+            $input_name = 'product_'.$feature;
+            $input_name = preg_replace('/\s+/', '', $input_name);
+            ?>
+                                            <div class="form-group {{$input_name}} {{$errors->has($input_name) ? 'has-error' : ''}}">
+                                                <label for="product_{{$feature}}">Product {{$feature}}<span class="text-danger">*</span></label> 
+                                                <input type="text" name="{{$input_name}}" parsley-trigger="change" placeholder="Enter product size" class="form-control" id="product_{{$feature}}" value="{{ old($input_name)}}">
+                                                @if ($errors->has($input_name))
+                                                <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                                    <li class="parsley-required">{{ $errors->first($input_name) }}.
+                                                    </li>
+                                                </ul>
+                                                @endif
+                                            </div>
+                                            @endforeach
+                                            @endif
                                                 </div>
                                                 <div class="form-group m-b-20 {{$errors->has('brand_id') ? 'has-error' : ''}}">
                                                     <label for="brand"></label>
@@ -405,14 +409,9 @@
             // var id;
             $('#sub_category_id').change(function(){
                 id = this.value;
-<<<<<<< HEAD
                 $("#features_div").html('');
-                $.get('http://localhost/Eitmad/admin/products/' + this.value + '/features', function(features){
-                     
-=======
                 $.get(this.value + '/features', function(features){
-                    $("#features_div").html(''); 
->>>>>>> 1836412f0aca3cf754feeca15614b50c11e15bff
+                     
                         $.each(features, function(index, feature) { 
                         feature_s = feature.replace(/\s+/g, '');                             
                             content = '<div class="form-group ">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'"  }}">                                                   </div>'                        
