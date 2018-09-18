@@ -86,7 +86,16 @@ class AreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $area=Area::find($id);
+        $area->area_name=$request->input('area_name');
+         $area->area_code=$request->input('area_code');
+        $area->city_id=$request->input('city_id');
+       
+    
+        $area->update();
+
+        // Alert::success('Updated', 'Record Updated successfully');  
+       return Redirect()->back()->with('status', 'Area updated successfully!');
     }
 
     /**

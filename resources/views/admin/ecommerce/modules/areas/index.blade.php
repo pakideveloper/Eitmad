@@ -377,7 +377,9 @@
         });
 var fetchcities = function(id){
             //alert(id);
-             $.get('cities/' + this.value + '/cities.json', function(cities)
+            var country_id = $('#country'+id).val();
+           // alert(country_id);
+             $.get('area/cities/' + country_id + '/cities.json', function(cities)
                 {
                     console.log(cities);
                     var $city_id = $('#city_id'+id);
