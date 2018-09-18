@@ -80,9 +80,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @if ($errors->has("product_operatingsystem"))  
+                    @if ($errors->has("product_battery"))  
                     <div class="alert alert-danger" style="margin-bottom: 0px;">
-                            {{ $errors->first("product_operatingsystem") }}
+                            {{ $errors->first("product_battery") }}
                         </div>                                                                                                                  @endif 
                     <div class="container">
 
@@ -171,7 +171,30 @@
                                         <div class="col-sm-12 col-xs-12 col-md-6">
                                             <div class="p-20">
                                                 <div id="features_div">
-                                                    
+                                                    @if(old('sub_category_id'))
+            <?php 
+            $sub_category = App\Product_Sub_Category::find(old('sub_category_id'));
+                        $features = json_decode($sub_category->feature_names);
+            ?>
+
+
+            @foreach($features as $feature)
+            <?php
+            $input_name = 'product_'.$feature;
+            $input_name = preg_replace('/\s+/', '', $input_name);
+            ?>
+                                            <div class="form-group {{$input_name}} {{$errors->has($input_name) ? 'has-error' : ''}}">
+                                                <label for="product_{{$feature}}">Product {{$feature}}<span class="text-danger">*</span></label> 
+                                                <input type="text" name="{{$input_name}}" parsley-trigger="change" placeholder="Enter product size" class="form-control" id="product_{{$feature}}" value="{{ old($input_name)}}">
+                                                @if ($errors->has($input_name))
+                                                <ul class="parsley-errors-list filled" id="parsley-id-5">
+                                                    <li class="parsley-required">{{ $errors->first($input_name) }}.
+                                                    </li>
+                                                </ul>
+                                                @endif
+                                            </div>
+                                            @endforeach
+                                            @endif
                                                 </div>
                                                 <!-- @foreach($sub_categories  as $sub_category)
                                                     @foreach(json_decode($sub_category->feature_names) as $input )
@@ -211,7 +234,11 @@
                                                     <select name="brand_id" id="brand" class="form-control">
                                                         <option value="">Select Brand</option>
                                                         @foreach($brands as $brand)
+                                                        @if(old('brand_id') == $brand->id)
+                                                        <option value="{{$brand->id}}" selected>{{$brand->brand_name}}</option>
+                                                        @else
                                                         <option value="{{$brand->id}}">{{$brand->brand_name}}</option>
+                                                        @endif
                                                         @endforeach
                                                     </select>
                                                     @if ($errors->has('brand_id'))
@@ -364,17 +391,12 @@
 
         <!-- page specific js -->
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/pages/jquery.fileuploads.init.js"></script>
-
+      
         <script type="text/javascript">
-            $.get('http://localhost/Eitmad/admin/products/1/features', function(features){
-                    $("#features_div").html(''); 
-                        $.each(features, function(index, feature) { 
-                        feature_s = feature.replace(/\s+/g, '');                             
-                            content = '<div class="form-group {{$errors->has("product_operatingsystem") ? 'has-error' : ''}}">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'" value="{{ old("product_operatingsystem") }}">@if ($errors->has("product_operatingsystem"))                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first("product_operatingsystem") }}.</li></ul>                                                        @endif                                                    </div>'                        
-                            $("#features_div").append(content);
-                                                    
-                        });
-                });
+
+
+            
+            
 
             // var submit_content = JSON.parse(sessionStorage.getItem('submit_content'))
             // $("#features_div").append(submit_content);
@@ -383,11 +405,12 @@
             // var id;
             $('#sub_category_id').change(function(){
                 id = this.value;
+                $("#features_div").html('');
                 $.get('http://localhost/Eitmad/admin/products/' + this.value + '/features', function(features){
-                    $("#features_div").html(''); 
+                     
                         $.each(features, function(index, feature) { 
                         feature_s = feature.replace(/\s+/g, '');                             
-                            content = '<div class="form-group {{$errors->has("product_operatingsystem") ? 'has-error' : ''}}">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'" value="{{ old("product_operatingsystem") }}">@if ($errors->has("product_operatingsystem"))                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first("product_operatingsystem") }}.</li></ul>                                                        @endif                                                    </div>'                        
+                            content = '<div class="form-group ">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'"  }}">                                                   </div>'                        
                             $("#features_div").append(content);
                                                     
                         });

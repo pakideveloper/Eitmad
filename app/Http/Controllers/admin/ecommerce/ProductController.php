@@ -256,6 +256,8 @@ class ProductController extends Controller
     }
 
     public function storeValidation_second(Request $request, $id){
+        // echo $request->product_operatingsystem ;
+        // die();
         $messages = [
             'product_name.required' => 'please enter product name',
             'product_size.required' => 'please enter size',
@@ -279,6 +281,8 @@ class ProductController extends Controller
             'brand_id' => 'required',            
             'images' => 'required|unique:projects',            
         ];
+
+
         
         $sub_category = Product_Sub_Category::find($id);
         $features = json_decode($sub_category->feature_names);
@@ -286,10 +290,12 @@ class ProductController extends Controller
         foreach ($features as $key => $value) {
             $re_value = preg_replace('/\s+/', '', $value);
             $input = 'product_'.$re_value;
-            $messages[$input] = "please enter".$value." ";
+            $messages[$input] = "please enter ".$value." ";
             $input_name_array[$input] = "required";
         }
-        
+        // print_r($input_name_array);
+        // die;
+
 
         $this->validate($request, $input_name_array ,$messages);
     }
