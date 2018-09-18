@@ -405,9 +405,14 @@
             // var id;
             $('#sub_category_id').change(function(){
                 id = this.value;
+<<<<<<< HEAD
                 $("#features_div").html('');
                 $.get('http://localhost/Eitmad/admin/products/' + this.value + '/features', function(features){
                      
+=======
+                $.get(this.value + '/features', function(features){
+                    $("#features_div").html(''); 
+>>>>>>> 1836412f0aca3cf754feeca15614b50c11e15bff
                         $.each(features, function(index, feature) { 
                         feature_s = feature.replace(/\s+/g, '');                             
                             content = '<div class="form-group ">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'"  }}">                                                   </div>'                        
