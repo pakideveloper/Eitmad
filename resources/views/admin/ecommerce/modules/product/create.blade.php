@@ -383,7 +383,7 @@
             // var id;
             $('#sub_category_id').change(function(){
                 id = this.value;
-                $.get('http://localhost/Eitmad/admin/products/' + this.value + '/features', function(features){
+                $.get(this.value + '/features', function(features){
                     $("#features_div").html(''); 
                         $.each(features, function(index, feature) { 
                         feature_s = feature.replace(/\s+/g, '');                             

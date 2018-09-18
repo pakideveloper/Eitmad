@@ -251,7 +251,7 @@ class ProductController extends Controller
             'sub_category_id' => 'required',
             'product_discounted_price' => 'required', 
             'brand_id' => 'required',            
-            'images' => 'required|unique:projects',            
+            'images' => 'required',            
         ],$messages);
     }
 
@@ -277,7 +277,7 @@ class ProductController extends Controller
             'sub_category_id' => 'required',
             'product_discounted_price' => 'required', 
             'brand_id' => 'required',            
-            'images' => 'required|unique:projects',            
+            'images' => 'required',            
         ];
         
         $sub_category = Product_Sub_Category::find($id);
