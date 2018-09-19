@@ -136,11 +136,11 @@
                                                 echo $monthName; // March?>
                                                 {{ Carbon\Carbon::parse($Vbrand->updated_at)->format('d,Y') }}</td> 
                                                         <td>
-                                                             <a href="{{url('admin/brands')}}/{{$Vbrand->id}}/edit" style="float: left;">
+                                                             <a href="{{url('/ecommerce/admin/brands')}}/{{$Vbrand->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$Vbrand->id}}" 
-                                                                action="{{url('admin/brands')}}/{{$Vbrand->id}}" method="post">
+                                                                action="{{url('/ecommerce/admin/brands')}}/{{$Vbrand->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  

@@ -135,7 +135,7 @@
                                                             
                                                                  
                                                                 <i  onclick="return deleteFunction({{$region->id}});" class="fa fa-trash-o" style="cursor: pointer; margin-left: 10px;"></i>
-                                                                 <form id="delete_form{{$region->id}}" action="{{ url('admin/region',[$region->id]) }}" method="post">
+                                                                 <form id="delete_form{{$region->id}}" action="{{ url('/ecommerce/admin/region',[$region->id]) }}" method="post">
                                                                 {{ csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                
@@ -153,7 +153,7 @@
                                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                     <h4 class="modal-title">Edit Region</h4>
                                                 </div>
-                                                 <form action="{{url('admin/region')}}/{{$region->id}}" method="post" enctype="multipart/form-data" onsubmit="return submitForm({{$region->id}});">
+                                                 <form action="{{url('/ecommerce/admin/region')}}/{{$region->id}}" method="post" enctype="multipart/form-data" onsubmit="return submitForm({{$region->id}});">
                                                      <input type="hidden" name="_token" value="<?php  echo csrf_token(); ?>">
                                                      {{ method_field('PUT')}}
                                                 <div class="modal-body">

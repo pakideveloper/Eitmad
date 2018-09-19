@@ -145,11 +145,11 @@
                                                         <td>{{$city->created_at}}</td>
                                                         <td>{{$city->updated_at}}</td> 
                                                         <td>
-                                                            <a href="{{url('/admin/cities')}}/{{$city->id}}/edit" style="float: left;">
+                                                            <a href="{{url('/ecommerce/admin/cities')}}/{{$city->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$city->id}}" 
-                                                                action="{{url('/admin/cities')}}/{{$city->id}}" method="post">
+                                                                action="{{url('/ecommerce/admin/cities')}}/{{$city->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  

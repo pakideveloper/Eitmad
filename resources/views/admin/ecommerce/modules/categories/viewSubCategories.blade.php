@@ -143,11 +143,11 @@
                                                         <td>{{$subcategory->created_at}}</td>
                                                         <td>{{$subcategory->updated_at}}</td>
                                                         <td>
-                                                            <a href="{{url('/admin/subcategories')}}/{{$subcategory->id}}/edit"  style="float: left;">
+                                                            <a href="{{url('/ecommerce/admin/subcategories')}}/{{$subcategory->id}}/edit"  style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                            <form id="delete-form{{$subcategory->id}}" 
-                                                                action="{{url('/admin/subcategories')}}/{{$subcategory->id}}" method="post">
+                                                                action="{{url('/ecommerce/admin/subcategories')}}/{{$subcategory->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  

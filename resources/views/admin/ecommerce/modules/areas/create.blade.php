@@ -107,7 +107,7 @@
                                  
                                     <div class="row">
                         				<div class="col-md-6 m-t-50">
-                        					<form action="{{url('/admin/area')}}" method="post" enctype="multipart/form-data" onsubmit="return submitForm();">
+                        					<form action="{{url('/ecommerce/admin/area')}}" method="post" enctype="multipart/form-data" onsubmit="return submitForm();">
                                                 {{csrf_field()}}
 	                                            <div class="form-group{{ $errors->has('area_name') ? ' has-error' : '' }}">
 	                                                <label for="area_name">Area Name</label>

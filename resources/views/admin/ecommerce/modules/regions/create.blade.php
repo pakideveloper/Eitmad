@@ -107,7 +107,7 @@
                                  
                                     <div class="row">
                         				<div class="col-md-6 m-t-50">
-                        					<form action="{{url('/admin/region')}}" method="post" enctype="multipart/form-data">
+                        					<form action="{{url('/ecommerce/admin/region')}}" method="post" enctype="multipart/form-data">
                                                 {{csrf_field()}}
 	                                            <div class="form-group{{ $errors->has('region_name') ? ' has-error' : '' }}">
 	                                                <label for="region_name">Region Name</label>

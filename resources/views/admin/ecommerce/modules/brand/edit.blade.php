@@ -108,7 +108,7 @@
 
                                             <h4 class="header-title m-t-0">Edit Brand</h4>
                                             
-                                            <form action="{{url('admin/brands/')}}/{{$brand->id}}" method="post" enctype="multipart/form-data" >
+                                            <form action="{{url('/ecommerce/admin/brands/')}}/{{$brand->id}}" method="post" enctype="multipart/form-data" >
                                                     {{csrf_field()}}
                                                     {{ method_field('PUT')}}
                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('brand_name') ? 'has-error' : ''}}">

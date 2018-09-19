@@ -117,7 +117,7 @@
 
                                             <h4 class="header-title m-t-0">Create New Brand</h4>
                                             
-                                                <form action="{{url('/admin/brands')}}" method="post" enctype="multipart/form-data" >
+                                                <form action="{{url('/ecommerce/admin/brands')}}" method="post" enctype="multipart/form-data" >
                                                     {{csrf_field()}}
                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('brand_name') ? 'has-error' : ''}}">
                                                         <label for="Brand Name">Brand Name<span class="text-danger">*</span></label>

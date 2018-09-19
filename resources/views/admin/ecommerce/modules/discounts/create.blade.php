@@ -107,7 +107,7 @@
                                  
                                     <div class="row">
                         				<div class="col-md-6 m-t-50">
-                        					<form action="{{url('/admin/discount')}}" method="post" enctype="multipart/form-data">
+                        					<form action="{{url('/ecommerce/admin/discount')}}" method="post" enctype="multipart/form-data">
                                                 {{csrf_field()}}
 	                                            <div class="form-group{{ $errors->has('discount_name') ? ' has-error' : '' }}">
 	                                                <label for="exampleInputEmail1">Discount Name</label>
