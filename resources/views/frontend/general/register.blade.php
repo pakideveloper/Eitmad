@@ -249,9 +249,9 @@
                 </li>
               </ul>
             </li> -->
-          	<li><a href="shop-filters-left-3cols.html">E-Commerce Portal</a></li>
-          	<li><a href="{{ url('jobportal') }}">Job Portal</a></li>
-          	<li><a href="shop-filters-left-3cols.html">Educational Portal</a></li>
+          	<li><a href="{{ url('ecommerce') }}">E-Commerce Portal</a></li>
+            <li><a href="{{ url('jobportal') }}">Job Portal</a></li>
+            <li><a href="shop-filters-left-3cols.html">Educational Portal</a></li>
           	<!-- <li><a href="shop-filters-left-3cols.html">TV sets</a></li> -->
           </ul>
         </nav>
