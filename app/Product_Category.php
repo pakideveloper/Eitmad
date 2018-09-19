@@ -12,6 +12,6 @@ class Product_Category extends Model
     // ];
 
  	public function sub_categories(){
-		return $this->hasMany('App\Product_Sub_Category','id', 'product_category_id');
+		return $this->hasMany('App\Product_Sub_Category','product_category_id', 'id');
 	}
 }

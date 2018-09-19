@@ -108,12 +108,9 @@
                 @endforeach -->
                 @foreach($categories as $category)
               	<li class="has-submenu"><a href="#">{{$category->category_name}}</a><!--Class "has-submenu" for adding carret and dropdown-->
-                  <?php
-                                 
-                                 $subcategories=App\Product_Sub_Category::all();
-                                 ?>
+                  
                 	<ul class="sub-submenu">
-                    @foreach($subcategories as $subcategory)
+                    @foreach($category->sub_categories as $subcategory)
                     <li><a href="#"></a>{{$subcategory->sub_category_name}}</li>
                      @endforeach
                     <!-- <li><a href="#">iPhone 4s</a></li>
@@ -122,17 +119,7 @@
                   </ul>
                 </li>
                  @endforeach
-              	<li><a href="#">HTC</a></li>
-              	<li class="has-submenu"><a href="#">Samsung</a>
-                	<ul class="sub-submenu">
-                    <li><a href="#">Galaxy Note 3</a></li>
-                    <li><a href="#">Galaxy S5</a></li>
-                    <li><a href="#">Galaxy S3 Neo</a></li>
-                    <li><a href="#">Galaxy Gear</a></li>
-                    <li><a href="#">Galaxy S Duos 2</a></li>
-                  </ul>
-                </li>
-              	<li><a href="#">BlackBerry</a></li>
+              	
                 <li class="offer">
                 	<div class="col-1">
                   	<p class="p-style2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
