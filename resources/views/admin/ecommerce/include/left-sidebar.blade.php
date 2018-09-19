@@ -37,15 +37,15 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Brand </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('admin/brands')}}/create">Create</a></li>
-                                    <li><a href="{{url('admin/brands')}}">View All</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/brands')}}/create">Create</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/brands')}}">View All</a></li>
                                 </ul>
                             </li>
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Product </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('/admin/products')}}/create">Create</a></li>
-                                    <li><a href="{{url('/admin/products')}}">View All</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/products')}}/create">Create</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/products')}}">View All</a></li>
                                 </ul>
                             </li>
 
@@ -53,10 +53,10 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Categories</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/admin/categories')}}/create">add parent category</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/categories')}}/create">add parent category</a></li>
                                     <li><a href="{{url('/admin/subcategories')}}/create">add sub category</a></li>
-                                    <li><a href="{{url('/admin/categories')}}">View All Categories</a></li>
-                                    <li><a href="{{url('/admin/subcategories')}}">View All SubCategories</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/categories')}}">View All Categories</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/subcategories')}}">View All SubCategories</a></li>
                                 </ul>
                             </li>
 
@@ -64,18 +64,18 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Discounts</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/admin/discount')}}/create">Add Discount</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/discount')}}/create">Add Discount</a></li>
                                   
-                                    <li><a href="{{url('/admin/discount')}}">View All</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/discount')}}">View All</a></li>
                                 </ul>
                             </li>
                              <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Regions</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/admin/region')}}/create">Add Region</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/region')}}/create">Add Region</a></li>
                                    
-                                    <li><a href="{{url('/admin/region')}}">View All</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/region')}}">View All</a></li>
                                 </ul>
                             </li>
 
@@ -87,8 +87,8 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-email"></i><span> Country </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('/admin/countries')}}/create">Add</a></li>
-                                    <li><a href="{{url('/admin/countries')}}">View</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/countries')}}/create">Add</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/countries')}}">View</a></li>
                                     <!-- <li><a href="email-compose.html"> Compose Mail</a></li> -->
                                 </ul>
                             </li>
@@ -97,8 +97,8 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-heart-outline"></i><span> City </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{url('/admin/cities')}}/create">Add</a></li>
-                                    <li><a href="{{url('/admin/cities')}}">View</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/cities')}}/create">Add</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/cities')}}">View</a></li>
                                     
                                     
                                 </ul>
@@ -107,9 +107,9 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Areas</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/admin/area')}}/create">Add Area</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/area')}}/create">Add Area</a></li>
                                    
-                                    <li><a href="{{url('/admin/area')}}">View All</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/area')}}">View All</a></li>
                                 </ul>
                             </li>
 

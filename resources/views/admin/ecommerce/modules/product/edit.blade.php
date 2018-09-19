@@ -111,7 +111,7 @@
                                 <div class="card-box">
 
                                     <div class="row">
-                                        <form action="{{url('/admin/products')}}/{{$product->id}}" method="post" enctype="multipart/form-data">
+                                        <form action="{{url('/ecommerce/admin/products')}}/{{$product->id}}" method="post" enctype="multipart/form-data">
                                             {{csrf_field()}}
                                             {{ method_field('PUT')}}
                                         <div class="col-sm-12 col-xs-12 col-md-6">
@@ -154,7 +154,7 @@
                                                         <div class="col-xs-6">
                                                            
                                                             <!-- copy -->
-                                                            <center><img class="image{{$file->id}}" src="{{URL::to('public/admin')}}/upload/products/{{$file->product_file_name}}" style="width: 162px; height: 150px; padding-bottom: 19px;">
+                                                            <center><img class="image{{$file->id}}" src="{{URL::to('public/admin')}}/ecommerce/upload/products/{{$file->product_file_name}}" style="width: 162px; height: 150px; padding-bottom: 19px;">
                                                                 </center>
                                                             <center><span id="{{$file->id}}" class=" close-image faClose{{$file->id}}" style="cursor: pointer; color: red">Delete</span></center>
                                                         </div>
@@ -373,7 +373,7 @@
                 if (confirm('Are you sure you want to delete this?')) {
                 $.ajax(
                 {
-                    url: '{{ url('/admin/products/deleteFile')}}',
+                    url: '{{ url('/ecommerce/admin/products/deleteFile')}}',
                     type: 'post',              
                     data: {
                         "file_id": file_id,
@@ -397,7 +397,7 @@
                     $("#features_div").append(old_content);
                     return false; 
                 }
-                $.get('http://localhost/Eitmad/admin/products/' + this.value + '/features', function(features){
+                $.get('http://localhost/Eitmad/ecommerce/admin/products/' + this.value + '/features', function(features){
                     var old_content = $("#features_div").html();
                     sessionStorage.setItem('old_content', JSON.stringify(old_content));
                      

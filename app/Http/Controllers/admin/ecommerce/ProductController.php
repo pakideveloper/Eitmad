@@ -84,7 +84,7 @@ class ProductController extends Controller
                 $file_name = uniqid().$file_name;
                 $file_name = preg_replace('/\s+/', '', $file_name);
                 $file_type = $image->getClientOriginalExtension();
-                $image -> move(public_path().'/admin/upload/products', $file_name);
+                $image -> move(public_path().'/admin/ecommerce/upload/products', $file_name);
                 $file_size = $image->getClientSize();
                 $file_size = $file_size/1000;
                 $file_size = $file_size.' '.'kb';
@@ -168,7 +168,7 @@ class ProductController extends Controller
                 $file_name = uniqid().$file_name;
                 $file_name = preg_replace('/\s+/', '', $file_name);
                 $file_type = $image->getClientOriginalExtension();
-                $image -> move(public_path().'/admin/upload/products', $file_name);
+                $image -> move(public_path().'/admin/ecommerce/upload/products', $file_name);
                 $file_size = $image->getClientSize();
                 $file_size = $file_size/1000;
                 $file_size = $file_size.' '.'kb';
@@ -193,7 +193,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $files = Product_File::where('product_id', $id)->get();
         foreach ($files as $key => $value) {
-            $dir = public_path()."/admin/upload/products/";
+            $dir = public_path()."/admin/ecommerce/upload/products/";
             $dirHandle = opendir($dir);
             // echo $dir;
             // die();
@@ -213,7 +213,7 @@ class ProductController extends Controller
     {
         $file = Product_File::find($request->file_id);
         $file_name=$file->product_file_name;
-        $dir = public_path()."/admin/upload/products/";        
+        $dir = public_path()."/admin/ecommerce/upload/products/";        
         $dirHandle = opendir($dir);
         while ($fil = readdir($dirHandle)) {
             if($fil==$file_name) {
