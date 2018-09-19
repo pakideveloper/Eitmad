@@ -121,13 +121,13 @@
                  @endforeach
               	
                 <li class="offer">
-                	<div class="col-1">
+                	<!-- <div class="col-1">
                   	<p class="p-style2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  </div>
-                  <div class="col-2">
+                  </div> -->
+                  <!-- <div class="col-2">
                   	<img src="img/offers/menu-drodown-offer.jpg" alt="Special Offer"/>
                   	<a class="btn btn-block" href="#"><span>584$</span>Special offer</a>
-                  </div>
+                  </div> -->
                 </li>
               </ul>
             </li>

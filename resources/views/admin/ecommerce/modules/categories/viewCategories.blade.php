@@ -139,7 +139,7 @@
                                                         <td>{{$category->created_at}}</td>
                                                         <td>{{$category->updated_at}}</td> 
                                                         <td>
-                                                            <a href="{{url('/ecommerce/admin/categories')}}/{{$category->id}}/edit" style="float: left;">
+                                                            <a href="{{url('/ecommerce/admin/categories')}}/{{\Crypt::encrypt($category->id)}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$category->id}}" 

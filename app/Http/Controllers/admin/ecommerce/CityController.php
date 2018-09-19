@@ -74,6 +74,7 @@ class CityController extends Controller
      */
     public function edit($id)
     {
+        $id = \Crypt::decrypt($id);
         $cities = City::find($id);
         $regions = Region::all();
          $countries = country::all();

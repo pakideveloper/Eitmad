@@ -63,6 +63,7 @@ class ProductCategoryController extends Controller
      */
     public function edit($id)
     {
+         $id = \Crypt::decrypt($id);
          $categories = Product_Category::find($id);
         
         return view('admin/ecommerce/modules/categories/editcategory', compact('categories','id'));

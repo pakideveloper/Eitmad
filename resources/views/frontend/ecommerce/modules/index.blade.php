@@ -106,47 +106,54 @@
         	<h2>Browse categories</h2>
         	<div class="row">
           	<!--Category-->
+           <?php
+                                 
+                                 $categories=App\Product_Category::all();
+                                 ?>
+           @foreach($categories as $category)
           	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
+               
             	<a href="#">
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/1.jpg" alt="1"/>
-                <p>Category name</p>
+                <p>{{$category->category_name}}</p>
               </a>
             </div>
+            @endforeach
           	<!--Category-->
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
+          	<!-- <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
             	<a href="#">
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/2.jpg" alt="2"/>
                 <p>Category name</p>
               </a>
             </div>
-          	<!--Category-->
+          	
           	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
             	<a href="#">
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/3.jpg" alt="3"/>
                 <p>Category name</p>
               </a>
             </div>
-          	<!--Category-->
+          	
           	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
             	<a href="#">
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/4.jpg" alt="4"/>
                 <p>Category name</p>
               </a>
             </div>
-          	<!--Category-->
+          	
           	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
             	<a href="#">
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/5.jpg" alt="5"/>
                 <p>Category name</p>
               </a>
             </div>
-          	<!--Category-->
+          	
           	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
             	<a href="#">
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/6.jpg" alt="5"/>
                 <p>Category name</p>
               </a>
-            </div>
+            </div> -->
           </div>
         </div>
       </section><!--Categories Close-->
