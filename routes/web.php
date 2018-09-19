@@ -26,9 +26,9 @@ Route::get('/admin2', function () {
 //     return view('frontend/ecommerce/modules/index');
 // });
 
-Route::group(['middleware'=>'role:admin'], function(){
+// Route::group(['middleware'=>'role:admin'], function(){
 
-});
+// });
 
 
 // Route::get('/viewcategory', function () {
