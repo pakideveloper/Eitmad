@@ -54,15 +54,12 @@
               </ul>
             </li>
           	<li class="has-submenu"><a href="{{ url('shop') }}">Shop<i class="fa fa-chevron-down"></i></a>
-              <?php
-                                 
-                                 $categories=App\Product_Category::all();
-                                 ?>
+              
             	<ul class="submenu">
-                @foreach($categories as $category)
-              	<li><a href="shop-filters-left-3cols.html">{{$category->category_name}}</a></li>
-                @endforeach
-              	<!-- <li><a href="shop-filters-left-2cols.html">Shop - Filters Left 2 Cols</a></li>
+                
+              	
+                
+              	<li><a href="shop-filters-left-2cols.html">Shop - Filters Left 2 Cols</a></li>
               	<li><a href="shop-filters-right-3cols.html">Shop - Filters Right 3 Cols</a></li>
               	<li><a href="shop-filters-right-2cols.html">Shop - Filters Right 2 Cols</a></li>
               	<li><a href="shop-no-filters-4cols.html">Shop - No Filters 4 Cols</a></li>
@@ -71,7 +68,7 @@
                 <li><a href="shop-single-item-v2.html">Shop - Single Item Vers 2</a></li>
                 <li><a href="shopping-cart.html">Shopping Cart</a></li>
                 <li><a href="checkout.html">Checkout Page</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li> -->
+                <li><a href="wishlist.html">Wishlist</a></li>
               </ul>
             </li>
           	<li class="has-submenu"><a href="blog-sidebar-right.html">Blog<i class="fa fa-chevron-down"></i></a>
@@ -100,17 +97,31 @@
           	<li class="hide-sm"><a href="support.html">Support</a></li>
           </ul>
           <ul class="catalog">
-          	<li class="has-submenu"><a href="shop-filters-left-3cols.html">Phones<i class="fa fa-chevron-down"></i></a>
+          	<li class="has-submenu"><a href="shop-filters-left-3cols.html">Categories<i class="fa fa-chevron-down"></i></a>
+              <?php
+                                 
+                                 $categories=App\Product_Category::all();
+                                 ?>
             	<ul class="submenu">
-              	<li><a href="#">Nokia</a></li>
-              	<li class="has-submenu"><a href="#">iPhone</a><!--Class "has-submenu" for adding carret and dropdown-->
+               <!--  @foreach($categories as $category)
+              	<li><a href="#">{{$category->category_name}}</a></li>
+                @endforeach -->
+                @foreach($categories as $category)
+              	<li class="has-submenu"><a href="#">{{$category->category_name}}</a><!--Class "has-submenu" for adding carret and dropdown-->
+                  <?php
+                                 
+                                 $subcategories=App\Product_Sub_Category::all();
+                                 ?>
                 	<ul class="sub-submenu">
-                    <li><a href="#">iPhone 4</a></li>
-                    <li><a href="#">iPhone 4s</a></li>
+                    @foreach($subcategories as $subcategory)
+                    <li><a href="#"></a>{{$subcategory->sub_category_name}}</li>
+                     @endforeach
+                    <!-- <li><a href="#">iPhone 4s</a></li>
                     <li><a href="#">iPhone 5c</a></li>
-                    <li><a href="#">iPhone 5s</a></li>
+                    <li><a href="#">iPhone 5s</a></li> -->
                   </ul>
                 </li>
+                 @endforeach
               	<li><a href="#">HTC</a></li>
               	<li class="has-submenu"><a href="#">Samsung</a>
                 	<ul class="sub-submenu">

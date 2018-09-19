@@ -77,6 +77,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //////////////////JOB PORTAL LINKS//////////////////
 
 ///frontend links//
+
 Route::get('/home', function () {
     return view('frontend/general/index');
 });
@@ -84,6 +85,8 @@ Route::get('/home', function () {
 Route::get('/Ecommerce', function () {
     return view('frontend/ecommerce/modules/index');
 });
+
+
 
 
 Route::get('/jobportal', function () {
