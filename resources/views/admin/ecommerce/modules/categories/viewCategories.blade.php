@@ -139,11 +139,11 @@
                                                         <td>{{$category->created_at}}</td>
                                                         <td>{{$category->updated_at}}</td> 
                                                         <td>
-                                                            <a href="{{url('categories')}}/{{$category->id}}/edit" style="float: left;">
+                                                            <a href="{{url('/admin/categories')}}/{{$category->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$category->id}}" 
-                                                                action="{{url('categories')}}/{{$category->id}}" method="post">
+                                                                action="{{url('/admin/categories')}}/{{$category->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  

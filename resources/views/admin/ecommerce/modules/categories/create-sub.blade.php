@@ -123,7 +123,7 @@
 										 <div class="row">
 										 	<div class="col-sm-12 col-xs-12 col-md-6">
 										 	 	<div class="p-20">
-                                    <form action="{{url('subcategories')}}" method="post">
+                                    <form action="{{url('/admin/subcategories')}}" method="post">
                                         {{ csrf_field()}}
                                         <div class="form-group">
                                                     <label for="parentcategory">Choose Parent Category *:</label>
