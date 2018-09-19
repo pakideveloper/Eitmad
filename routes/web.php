@@ -30,6 +30,9 @@ Route::group(['middleware'=>'role:admin'], function(){
 
 });
 
+<<<<<<< HEAD
+
+=======
 Route::resource('/admin/brands','admin\ecommerce\BrandController');
 Route::resource('/admin/products','admin\ecommerce\ProductController');
 Route::get('/admin/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
@@ -38,24 +41,13 @@ Route::resource('/admin/categories','admin\ecommerce\ProductCategoryController')
 Route::resource('/admin/subcategories','admin\ecommerce\ProductSubCategoryController');
 Route::resource('/admin/countries','admin\ecommerce\CountryController');
 Route::resource('/admin/cities','admin\ecommerce\CityController');
+>>>>>>> f1c97ba68b3137820a0e77d933deaf8b037dbf7e
 // Route::get('/viewcategory', function () {
 //     return view('admin/ecommerce/modules/categories/viewCategories');
 // });
 
 
-// Discount
-Route::resource('admin/discount','admin\ecommerce\DiscountController');
-//Discount end
 
-// Region
-Route::resource('admin/region','admin\ecommerce\RegionController');
-//Region end
-
-// Area
-Route::resource('admin/area','admin\ecommerce\AreaController');
-//Area end
-// fetching cities on selecting country
-Route::get('admin/area/cities/{id}/cities.json','admin\ecommerce\CityController@cities');
 // fetching cities on selecting country
 
 // Route::get('/register', function () {
@@ -66,7 +58,7 @@ Route::get('admin/area/cities/{id}/cities.json','admin\ecommerce\CityController@
 //     return view('index');
 // });
  // Route::get('/register', 'Auth\RegisterController@register');
- // Route::get('/login', 'Auth\LoginController@login');
+ Route::get('/login', 'Auth\LoginController@login');
 Auth::routes();
 
 
@@ -108,6 +100,9 @@ Route::get('/contactus', function () {
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
+<<<<<<< HEAD
+=======
 
 Route::get('/categories','Ecommerce\CategoryController@categories');
 
+>>>>>>> f1c97ba68b3137820a0e77d933deaf8b037dbf7e
