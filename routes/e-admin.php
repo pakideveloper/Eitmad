@@ -13,6 +13,10 @@
 Route::get('/test', function () {
     echo "string";
 });
+
+Route::get('/', function () {
+    return view('admin/ecommerce/modules/index');
+});
 Route::resource('/brands','admin\ecommerce\BrandController');
 Route::resource('/products','admin\ecommerce\ProductController');
 Route::get('/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
