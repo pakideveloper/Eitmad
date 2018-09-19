@@ -64,6 +64,11 @@ Route::get('/ecommerce', function () {
 });
 
 
+Route::get('/ecommerce', function () {
+    return view('frontend/ecommerce/modules/index');
+});
+
+
 Route::get('/home', function () {
     return view('frontend/general/index');
 });
