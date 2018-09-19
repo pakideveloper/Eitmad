@@ -10,4 +10,8 @@ class Product_Category extends Model
     // protected $fillable = [
     //     'category_name'
     // ];
+
+ 	public function sub_categories(){
+		return $this->hasMany('App\Product_Sub_Category','id', 'product_category_id');
+	}
 }
