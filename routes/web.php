@@ -30,18 +30,7 @@ Route::group(['middleware'=>'role:admin'], function(){
 
 });
 
-<<<<<<< HEAD
 
-=======
-Route::resource('/admin/brands','admin\ecommerce\BrandController');
-Route::resource('/admin/products','admin\ecommerce\ProductController');
-Route::get('/admin/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
-Route::post('/admin/products/deleteFile','admin\ecommerce\ProductController@deleteFile');
-Route::resource('/admin/categories','admin\ecommerce\ProductCategoryController');
-Route::resource('/admin/subcategories','admin\ecommerce\ProductSubCategoryController');
-Route::resource('/admin/countries','admin\ecommerce\CountryController');
-Route::resource('/admin/cities','admin\ecommerce\CityController');
->>>>>>> f1c97ba68b3137820a0e77d933deaf8b037dbf7e
 // Route::get('/viewcategory', function () {
 //     return view('admin/ecommerce/modules/categories/viewCategories');
 // });
@@ -70,6 +59,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 ///frontend links//
 
+Route::get('/ecommerce', function () {
+    return view('frontend/ecommerce/modules/index');
+});
+
+
 Route::get('/home', function () {
     return view('frontend/general/index');
 });
@@ -77,6 +71,7 @@ Route::get('/home', function () {
 Route::get('/Ecommerce', function () {
     return view('frontend/ecommerce/modules/index');
 });
+
 
 
 
@@ -100,9 +95,3 @@ Route::get('/contactus', function () {
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
-<<<<<<< HEAD
-=======
-
-Route::get('/categories','Ecommerce\CategoryController@categories');
-
->>>>>>> f1c97ba68b3137820a0e77d933deaf8b037dbf7e
