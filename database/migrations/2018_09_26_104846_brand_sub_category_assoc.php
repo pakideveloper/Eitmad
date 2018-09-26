@@ -13,9 +13,16 @@ class BrandSubCategoryAssoc extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('brand_subCategory_assoc', function (Blueprint $table) {
+            $table->integer('brand_id')->unsigned();
+            $table->integer('sub_category_id')->unsigned();
+
+            $table->foreign('brand_id')->references('id')->on('brands')
+                ->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('sub_category_id')->references('id')->on('product_sub_categories')
+                ->onUpdate('cascade')->onDelete('cascade');
+
+            $table->primary(['brand_id', 'sub_category_id']);
         });
     }
 
