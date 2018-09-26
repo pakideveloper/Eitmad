@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('frontend/JobPortal/index');
 });
+
+Route::get('/employers', function () {
+    return view('frontend/JobPortal/pages/employers');
+});
+Route::get('/employerdetail', function () {
+    return view('frontend/JobPortal/pages/employerdetail');
+});
+Route::get('/aboutportal', function () {
+    return view('frontend/JobPortal/pages/AboutPortal');
+});
+Route::get('/contactus', function () {
+    return view('frontend/JobPortal/pages/ContactUs');
+});
+Route::get('/addjob', function () {
+    return view('frontend/JobPortal/pages/AddJob');
+});

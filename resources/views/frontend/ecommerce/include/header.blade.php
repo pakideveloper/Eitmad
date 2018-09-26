@@ -111,7 +111,7 @@
                   
                 	<ul class="sub-submenu">
                     @foreach($category->sub_categories as $subcategory)
-                    <li><a href="#"></a>{{$subcategory->sub_category_name}}</li>
+                    <li><a href="#">{{$subcategory->sub_category_name}}</a></li>
                      @endforeach
                     <!-- <li><a href="#">iPhone 4s</a></li>
                     <li><a href="#">iPhone 5c</a></li>
