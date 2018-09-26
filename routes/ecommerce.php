@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('frontend/ecommerce/modules/index');
 });
+Route::get('/products', function () {
+	$products = App\Product::latest()->get();
+    return view('frontend/ecommerce/modules/products/products',compact('products'));
+});

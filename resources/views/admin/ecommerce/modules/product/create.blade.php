@@ -116,7 +116,7 @@
                                 <div class="card-box">
 
                                     <div class="row">
-                                        <form action="{{url('/admin/products')}}" method="post" enctype="multipart/form-data" id="form">
+                                        <form action="{{url('/ecommerce/admin/products')}}" method="post" enctype="multipart/form-data" id="form">
                                             {{csrf_field()}}
                                         <div class="col-sm-12 col-xs-12 col-md-6">
 
@@ -190,7 +190,7 @@
                                                         @foreach($categories  as $category)
                                                             <optgroup label="{{$category->category_name}}">
                                                                 @foreach($sub_categories as $sub_category)
-                                                                    @if($category->id == $sub_category->id)
+                                                                    @if($category->id == $sub_category->product_category_id)
                                                                     @if(old('sub_category_id') == $sub_category->id)
                                                                     <option value="{{$sub_category->id}}" selected>{{$sub_category->sub_category_name}}</option>
                                                                     @else
