@@ -13,7 +13,7 @@ $(document).ready(function(e) {
 		colorTile.removeClass('current');
 		$(this).addClass('current');
 		var color = $(this).attr('data-color');
-		$('head link.color-scheme').attr('href', 'css/colors/color-' + color + '.css');
+		$('head link.color-scheme').attr('href', 'http://localhost/Eitmad/public/frontend/ecommerce/assets/css/colors/color-' + color + '.css');
 		e.preventDefault();
 	});
 	
