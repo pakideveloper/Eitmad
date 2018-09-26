@@ -80,7 +80,7 @@ class ProductSubCategoryController extends Controller
      */
     public function edit($id)
     {
-
+              $id = \Crypt::decrypt($id);
 
         $subcategories = Product_Sub_Category::find($id);
          $categories = Product_Category::all();

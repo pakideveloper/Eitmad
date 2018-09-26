@@ -61,6 +61,7 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
+         $id = \Crypt::decrypt($id);
          $countries = country::find($id);
         
         return view('admin/ecommerce/modules/Countries/editcountry', compact('countries','id'));

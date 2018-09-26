@@ -143,7 +143,7 @@
                                                         <td>{{$subcategory->created_at}}</td>
                                                         <td>{{$subcategory->updated_at}}</td>
                                                         <td>
-                                                            <a href="{{url('/ecommerce/admin/subcategories')}}/{{$subcategory->id}}/edit"  style="float: left;">
+                                                            <a href="{{url('/ecommerce/admin/subcategories')}}/{{\Crypt::decrypt($subcategory->id)}}/edit"  style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                            <form id="delete-form{{$subcategory->id}}" 
