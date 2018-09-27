@@ -59,6 +59,15 @@
                                     <li><a href="{{url('/ecommerce/admin/subcategories')}}">View All SubCategories</a></li>
                                 </ul>
                             </li>
+                                <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Roles </span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{url('/ecommerce/admin/roles/create')}}">Create new</a></li>
+                                    <!-- <li><a href="{{url('/ecommerce/admin/roles')}}">View All</a></li>  
+                                     -->  
+                                    <li><a href="{{url('/ecommerce/admin/roles')}}">View All</a></li>                   
+                                </ul>
+                            </li>
 
                              <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Discounts</span> <span class="menu-arrow"></span></a>

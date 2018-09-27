@@ -35,25 +35,7 @@
   <body>
   
   	<!--Color Switcher-->
-    <div class="color-switcher group animated">
-    	<div class="toggle"><i class="fa fa-cog"></i></div>
-    	<div class="color">
-      	<a class="current" style="background-image:url(public/Ecommerce_Frontend/assets/color-switcher/img/default.png);" href="#" data-color="default"></a>
-        <span>#2ba8db<br/>#a3c756</span>
-      </div>
-    	<div class="color">
-      	<a style="background-image:url(color-switcher/img/scheme2.png);" href="#" data-color="scheme2"></a>
-        <span>#a1b0ca<br/>#e7807f</span>
-      </div>
-    	<div class="color">
-      	<a style="background-image:url(color-switcher/img/scheme3.png);" href="#" data-color="scheme3"></a>
-        <span>#4bb5c1<br/>#bfa995</span>
-      </div>
-    	<div class="color">
-      	<a style="background-image:url(color-switcher/img/scheme4.png);" href="#" data-color="scheme4"></a>
-        <span>#73cbbe<br/>#c7b07b</span>
-      </div>
-    </div><!--Color Switcher End-->
+   
   
   	<!--Login Modal-->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
