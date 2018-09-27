@@ -492,12 +492,12 @@ header .search-form {
 }
 .hero-slider .overlay,
 .hero-static .overlay {
-  background: url(../../img/overlays/overlay-success.png) repeat;
+  background: url("public/frontend/ecommerce/assets/img/overlays/overlay-success.png") repeat;
 }
 .info-block-image .overlay,
 .media-link .overlay,
 .gallery-widget .gallery-grid .gallery-item a .overlay {
-  background: url(../../img/overlays/overlay-primary.png) repeat;
+  background: url("public/frontend/ecommerce/assets/img/overlays/overlay-primary.png") repeat;
 }
 .switchers li {
   color: #a3c756;
