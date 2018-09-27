@@ -262,6 +262,15 @@
                                                     @endif
                                                 </div>
                                                 <div class="form-group m-b-20 {{$errors->has('images') ? 'has-error' : ''}}">
+                                                    <label for="">Title Image</label>
+                                                    <div class="col-sm-12 padding-left-0 padding-right-0">
+                                                            <input type="file" name="title_image" id="filer_input3">
+                                                            @if ($errors->has('title_image'))
+                                                                <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('title_image') }}.</li></ul>
+                                                            @endif
+                                                    </div>
+                                                </div>
+                                                <div class="form-group m-b-20 {{$errors->has('images') ? 'has-error' : ''}}">
                                                     <label for="">Upload Images</label>
                                                     <div class="col-sm-12 padding-left-0 padding-right-0">
                                                             <input type="file" name="images[]" id="filer_input2"
@@ -395,6 +404,7 @@
 
         <!-- page specific js -->
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/pages/jquery.fileuploads.init.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.product.init.js"></script>
       
         <script type="text/javascript">
 

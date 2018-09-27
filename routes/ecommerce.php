@@ -18,3 +18,6 @@ Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));
 });
+Route::get('/single-product', function () {
+    return view('frontend/ecommerce/modules/products/single-product');
+});
