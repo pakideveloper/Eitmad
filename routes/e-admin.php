@@ -26,6 +26,15 @@ Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController')
 Route::resource('/countries','admin\ecommerce\CountryController');
 Route::resource('/cities','admin\ecommerce\CityController');
 
+Route::Resource('/roles','admin\ecommerce\RoleController');
+//Route::Resource('/roles','admin\ecommerce\SysController');
+
+
+/*Route::get('abc', function(){
+	return view('admin/ecommerce/modules/roles/index');
+
+}); */
+
 
 // Discount
 Route::resource('/discount','admin\ecommerce\DiscountController');
