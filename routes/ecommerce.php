@@ -18,6 +18,11 @@ Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));
 });
+
+Route::get('/single-product', function () {
+    return view('frontend/ecommerce/modules/products/single-product');
+});
+
 Route::get('/shoppingcart', function () {
     return view('frontend/ecommerce/modules/shopping-cart/cart');
 });
@@ -30,3 +35,4 @@ Route::get('/blog', function () {
 Route::get('/singleblog', function () {
     return view('frontend/ecommerce/modules/blog/single_blog');
 });
+
