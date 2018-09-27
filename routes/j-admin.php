@@ -12,5 +12,5 @@
 */
 //usama
 Route::get('/', function () {
-    echo "job admin";
+    return view('admin/job/modules/index');
 });
