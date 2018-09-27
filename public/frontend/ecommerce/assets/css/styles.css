@@ -11176,7 +11176,7 @@ header .search-form .close-search:hover {
   position: absolute;
   width: 100%;
   min-height: 100%;
-  background: url(../img/overlays/overlay-success.png) repeat;
+  background: url(public/frontend/ecommerce/assets/img/overlays/overlay-success.png) repeat;
   top: 0;
   left: 0;
   z-index: 2;
@@ -11304,7 +11304,7 @@ header .search-form .close-search:hover {
   filter: alpha(opacity=0);
   width: 33px;
   height: 17px;
-  background: url(../masterslider/style/arrow.png) no-repeat;
+  background: url(public/frontend/ecommerce/assets/masterslider/style/arrow.png) no-repeat;
   margin-left: -16px;
   border: none !important;
 }
@@ -11529,7 +11529,7 @@ header .search-form .close-search:hover {
   position: absolute;
   width: 100%;
   min-height: 100%;
-  background: url(../img/overlays/overlay-primary.png) repeat;
+  background: url(public/frontend/ecommerce/assets/img/overlays/overlay-primary.png) repeat;
   top: 0;
   left: 0;
   z-index: 1;
@@ -14339,7 +14339,7 @@ header .search-form .close-search:hover {
   width: 100%;
   min-height: 100%;
   text-align: center;
-  background: url(../img/overlays/overlay-primary.png) repeat;
+  background: url(public/frontend/ecommerce/assets/img/overlays/overlay-primary.png) repeat;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: opacity 0.3s ease;
@@ -14758,7 +14758,7 @@ header .search-form .close-search:hover {
   min-height: 100%;
   top: 0;
   left: 0;
-  background: url(../img/overlays/overlay-primary.png) repeat;
+  background: url(public/frontend/ecommerce/assets/img/overlays/overlay-primary.png) repeat;
   opacity: 0;
   filter: alpha(opacity=0);
   -webkit-transition: opacity 0.3s ease;
@@ -15211,10 +15211,10 @@ header .search-form .close-search:hover {
   border: none;
   bottom: -36px;
   margin-left: -16px;
-  background: url(../img/arrow-down.png) no-repeat;
+  background: url(public/frontend/ecommerce/assets/img/arrow-down.png) no-repeat;
 }
 .popover.top > .arrow:hover {
-  background: transparent url(../img/arrow-down.png) no-repeat;
+  background: transparent url(public/frontend/ecommerce/assets/img/arrow-down.png) no-repeat;
 }
 .popover.top > .arrow:after {
   display: none;

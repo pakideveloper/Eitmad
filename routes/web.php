@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('frontend/general/index');
 });
 
-// Route::get('/admin', function () {
-//     return view('admin/ecommerce/modules/index');
-// });
+Route::get('/admin', function () {
+    return view('admin/ecommerce/modules/index');
+});
 Route::get('/admin2', function () {
     return view('admin/ecommerce/modules/index2');
 });
