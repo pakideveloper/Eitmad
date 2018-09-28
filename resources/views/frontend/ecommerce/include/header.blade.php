@@ -44,7 +44,7 @@
         <!--Main Menu-->
         <nav class="menu">
           <ul class="main">
-          	<li class="has-submenu"><a href="index.html">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
+          	<li class="has-submenu"><a href="{{url('/ecommerce')}}">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
             	<ul class="submenu">
               	<li><a href="index.html">Home - Slideshow</a></li>
               	<li><a href="home-fullscreen.html">Home - Fullscreen Slider</a></li>
@@ -66,17 +66,17 @@
               	<li><a href="shop-no-filters-3cols.html">Shop - No Filters 3 Cols</a></li>
                 <li><a href="shop-single-item-v1.html">Shop - Single Item Vers 1</a></li>
                 <li><a href="shop-single-item-v2.html">Shop - Single Item Vers 2</a></li>
-                <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                <li><a href="{{url('/ecommerce/shoppingcart')}}">Shopping Cart</a></li>
                 <li><a href="checkout.html">Checkout Page</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="{{url('/ecommerce/wishlist')}}">Wishlist</a></li>
               </ul>
             </li>
-          	<li class="has-submenu"><a href="blog-sidebar-right.html">Blog<i class="fa fa-chevron-down"></i></a>
-            	<ul class="submenu">
+          	<li class="has-submenu"><a href="{{url('/ecommerce/blog')}}">Blog<i class="fa fa-chevron-down"></i></a>
+            	<!-- <ul class="submenu">
               	<li><a href="blog-sidebar-left.html">Blog - Sidebar Left</a></li>
               	<li><a href="blog-sidebar-right.html">Blog - Sidebar Right</a></li>
               	<li><a href="blog-single.html">Blog - Single Post</a></li>
-              </ul>
+              </ul> -->
             </li>
           	<li class="has-submenu"><a href="#">Pages<span class="label">NEW</span><i class="fa fa-chevron-down"></i></a>
             	<ul class="submenu">
@@ -142,11 +142,11 @@
         <div class="toolbar group">
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
           <div class="middle-btns">
-            <a class="btn-outlined-invert" href="wishlist.html"><i class="icon-heart"></i> <span>Wishlist</span></a>
+            <a class="btn-outlined-invert" href="{{url('/ecommerce/wishlist')}}"><i class="icon-heart"></i> <span>Wishlist</span></a>
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
           </div>
           <div class="cart-btn">
-          	<a class="btn btn-outlined-invert" href="shopping-cart.html"><i class="icon-shopping-cart-content"></i><span>3</span></a>
+          	<a class="btn btn-outlined-invert" href="{{url('/ecommerce/shoppingcart')}}"><i class="icon-shopping-cart-content"></i><span>3</span></a>
             
             <!--Cart Dropdown-->
             <div class="cart-dropdown">
