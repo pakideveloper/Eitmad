@@ -142,13 +142,32 @@
                                                             @endif
                                                     </div>
                                                 </div>
-
                                             </div>
-                                             
-
                                         </div>
-
-                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                                <div class="p-20">
+                                                    <label>Select Categories</label>
+                                                        <div class="row">
+                                                            <div class="col-xs-6">
+                                                                @foreach($subcategories as $key=>$category)
+                                                                <?php $key = $key+2; ?>
+                                                                @if($key%2 == 0 )   
+                                                               <div class="checkbox checkbox-primary m-b-15">
+                                                             <input id="checkbox_c{{$category->id}}" name="categories[]" value="{{$category->id}}" 
+                                                             type="checkbox" >
+                                                             <label>{{$category->sub_category_name}} </label>
+                                                                </div>
+                                                                @endif 
+                                                                @endforeach 
+                                                            </div> <!-- end col -->
+                                                            
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end col -->
+                                                    </div>
+                                                </div>
+                                                <!-- end class p-20 -->
+                                            </div> <!-- end col -->
                                     <div class="form-group text-left m-b-0">
                                                         <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit">
                                                             Submit
