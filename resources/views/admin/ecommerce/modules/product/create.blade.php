@@ -132,6 +132,14 @@
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('product_name') }}.</li></ul>
                                                         @endif
                                                     </div>
+                                                    <div class="form-group {{$errors->has('product_description') ? 'has-error' : ''}}" >
+                                                        <label for="product-name">Product Description<span class="text-danger">*</span></label>
+                                                        <input type="text" name="product_description" parsley-trigger="change" 
+                                                               placeholder="Enter product name" class="form-control" id="userName" value="{{ old('product_description') }}">
+                                                        @if ($errors->has('product_description'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('product_description') }}.</li></ul>
+                                                        @endif
+                                                    </div>
                                                     <div class="form-group {{$errors->has('product_size') ? 'has-error' : ''}}">
                                                         <label for="product_size">Product Size<span class="text-danger">*</span></label>
                                                         <input type="text" name="product_size" parsley-trigger="change"

@@ -46,7 +46,12 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {  
+    
+    // echo $check;
+    // die();
+        // print_r($request->files);
+        // die;
         if ($request->sub_category_id) {
             $this->storeValidation_second($request , $request->sub_category_id);
         }
@@ -54,6 +59,7 @@ class ProductController extends Controller
         $this->storeValidation($request);
         $product = new Product();
         $product->product_name = $request->product_name ;
+        $product->product_description = $request->product_description ;
         $product->product_size = $request->product_size ;
         $product->product_colour = $request->product_colour ;
         $product->product_price = $request->product_price ;
@@ -73,7 +79,32 @@ class ProductController extends Controller
             $features_array[$value] = $request->$input;
         }
         $product->other_features = json_encode($features_array);
+        
+        $slug = $this->makeSlug($product->product_name); 
+        $product->slug = $slug;
+
         $product->save();
+
+        $title_image = $request->title_image[0];
+        if ($request->title_image) {
+            $product_file = new Product_File();
+            $product_file->product_id = $product->id;                
+            $file_name = $title_image -> getClientOriginalName();
+            $file_name = uniqid().$file_name;
+            $file_name = preg_replace('/\s+/', '', $file_name);
+            $file_type = $title_image->getClientOriginalExtension();
+            $title_image -> move(public_path().'/admin/ecommerce/upload/products', $file_name);
+            $file_size = $title_image->getClientSize();
+            $file_size = $file_size/1000;
+            $file_size = $file_size.' '.'kb';
+            $product_file->product_file_name = $file_name;
+            $product_file->product_file_size = $file_size;
+            $product_file->product_file_extension = $file_type;
+            $product_file -> save();
+        }
+        $product = Product::find($product->id);
+        $product->title_img_id = $product_file->id;
+        $product->update();
 
         if ($request->images) {
             $images = $request->images;
@@ -138,6 +169,7 @@ class ProductController extends Controller
         
         $product = Product::find($id);
         $product->product_name = $request->product_name ;
+        $product->product_description = $request->product_description ;
         $product->product_size = $request->product_size ;
         $product->product_colour = $request->product_colour ;
         $product->product_price = $request->product_price ;
@@ -232,6 +264,7 @@ class ProductController extends Controller
     public function storeValidation(Request $request){
         $messages = [
             'product_name.required' => 'please enter product name',
+            'product_description.required' => 'please enter product name',
             'product_size.required' => 'please enter size',
             'product_colour.required' => 'please enter product color',
             'product_price.required' => 'please enter product price',
@@ -244,6 +277,7 @@ class ProductController extends Controller
         ];
         $this->validate($request, [
             'product_name' => 'required',
+            'product_description' => 'required',
             'product_size' => 'required',
             'product_colour' => 'required',
             'product_price' => 'required',
@@ -260,6 +294,7 @@ class ProductController extends Controller
         // die();
         $messages = [
             'product_name.required' => 'please enter product name',
+            'product_description.required' => 'please enter product name',
             'product_size.required' => 'please enter size',
             'product_colour.required' => 'please enter product color',
             'product_price.required' => 'please enter product price',
@@ -272,6 +307,7 @@ class ProductController extends Controller
         ];
         $input_name_array = [
             'product_name' => 'required',
+            'product_description' => 'required',
             'product_size' => 'required',
             'product_colour' => 'required',
             'product_price' => 'required',
@@ -298,5 +334,20 @@ class ProductController extends Controller
 
 
         $this->validate($request, $input_name_array ,$messages);
+    }
+
+    public function makeSlug($title){
+        $reg="/\s/"; 
+        $rep="-"; 
+        $slug=preg_replace($reg, $rep,$title);
+        $product = Product::where('slug', $slug)->first();
+        $increament = 1;
+
+        while ($product != null) {
+            $slug = $slug.'-'.$increament;
+            $increament++;
+            $product = Product::where('slug', $slug)->first();
+        }
+        return $slug;
     }
 }

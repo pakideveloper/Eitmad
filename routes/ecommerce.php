@@ -19,8 +19,9 @@ Route::get('/products', function () {
     return view('frontend/ecommerce/modules/products/products',compact('products'));
 });
 
-Route::get('/single-product', function () {
-    return view('frontend/ecommerce/modules/products/single-product');
+Route::get('/single-product/{slug}', function ($slug) {
+	$product = App\Product::where('slug', $slug)->first();
+    return view('frontend/ecommerce/modules/products/single-product',compact('product'));
 });
 
 Route::get('/shoppingcart', function () {
