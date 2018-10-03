@@ -19,4 +19,7 @@ class Product extends Model
     public function files(){
         return $this->hasMany('App\Product_File');
     }
+    public function title_image(){
+        return $this->hasOne('App\Product_File','id', 'title_img_id');
+    }
 }

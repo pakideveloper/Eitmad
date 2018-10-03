@@ -303,36 +303,20 @@
             <div class="col-lg-6 col-md-6">
             	<div class="prod-gal master-slider" id="prod-gal">
               	<!--Slide1-->
+                @foreach($product->files as $file)
                 <div class="ms-slide">
-                	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/1.jpg" alt="Lorem ipsum"/>
-                  <img class="ms-thumb" src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/th_1.jpg" alt="thumb" />
+                	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/admin/ecommerce/upload/products')}}/{{$file->product_file_name}}" alt="Lorem ipsum"/>
+                  <img class="ms-thumb" src="{{URL::to('public/admin/ecommerce/upload/products')}}/{{$file->product_file_name}}" alt="thumb" />
                 </div>
-              	<!--Slide2-->
-                <div class="ms-slide">
-                	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/2.jpg" alt="Lorem ipsum"/>
-                  <img class="ms-thumb" src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/th_2.jpg" alt="thumb" />
-                </div>
-              	<!--Slide3-->
-                <div class="ms-slide">
-                	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/3.jpg" alt="Lorem ipsum"/>
-                  <img class="ms-thumb" src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/th_3.jpg" alt="thumb" />
-                </div>
-              	<!--Slide4-->
-                <div class="ms-slide">
-                	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/4.jpg" alt="Lorem ipsum"/>
-                  <img class="ms-thumb" src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/th_4.jpg" alt="thumb" />
-                </div>
-              	<!--Slide5-->
-                <div class="ms-slide">
-                	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/5.jpg" alt="Lorem ipsum"/>
-                  <img class="ms-thumb" src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/product-gallery/th_5.jpg" alt="thumb" />
-                </div>
+                @endforeach
+              	
+              	
               </div>
             </div>
             
             <!--Product Description-->
             <div class="col-lg-6 col-md-6">
-              <h1>Nikon 1 J2</h1>
+              <h1>{{$product->product_name}}</h1>
               <div class="rate">
                 <span class="active"></span>
                 <span class="active"></span>
@@ -340,8 +324,8 @@
                 <span></span>
                 <span></span>
               </div>
-              <div class="old-price">815,00 $</div>
-              <div class="price">715,00 $</div>
+              <div class="old-price">Rs. {{$product->product_name}}</div>
+              <div class="price">Rs. {{$product->product_name}}</div>
               <div class="buttons group">
                 <div class="qnt-count">
                   <a class="incr-btn" href="#">-</a>
@@ -351,7 +335,7 @@
                 <a class="btn btn-primary btn-sm" id="addItemToCart" href="#"><i class="icon-shopping-cart"></i>Add to cart</a>
                 <a class="btn btn-success btn-sm" href="#"><i class="icon-heart"></i>Add to wishlist</a>
               </div>
-              <p class="p-style2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+              <p class="p-style2">{{$product->product_description}}</p>
               <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-5">
                   <h3>Tell friedns</h3>

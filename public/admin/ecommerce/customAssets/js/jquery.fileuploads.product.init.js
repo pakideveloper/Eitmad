@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     //Example 2
     $('#filer_input3').filer({
-        limit: 3,
+        limit: 2,
         maxSize: 3,
         extensions: ['jpg', 'jpeg', 'png', 'gif', 'psd'],
         changeInput: true,
