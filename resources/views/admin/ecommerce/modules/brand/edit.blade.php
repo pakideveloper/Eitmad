@@ -145,26 +145,52 @@
                                         </div>
 
                                     </div>
-                                     <div class="col-md-6">
+                                      <div class="col-md-6">
                                                 <div class="p-20">
                                                     <label>Select Categories</label>
                                                         <div class="row">
                                                             <div class="col-xs-6">
-                                                                @foreach($subcategories as $key=>$category)
+                                                                @foreach($brand->category_assoc as $key=>$category_assoc_one)
                                                                 <?php $key = $key+2; ?>
-                                                                @if($key%2 == 0 )   
+                                                                @if($key%2 == 0 ) 
                                                                <div class="checkbox checkbox-primary m-b-15">
-                                                             <input id="checkbox_c{{$category->id}}" name="categories[]" value="{{$category->id}}" 
+                                                             <input id="checkbox_c{{$category_assoc_one->category->id}}" name="subcategories[]" value="{{$category_assoc_one->category->id}}" 
                                                              type="checkbox" >
-                                                             <label>{{$category->sub_category_name}} </label>
+                                                             <label for="checkbox_c{{$category_assoc_one->category->id}}" >{{$category_assoc_one->sub_category_name}} </label>
                                                                 </div>
                                                                 @endif 
                                                                 @endforeach 
                                                             </div> <!-- end col -->
-                                                            
+
+                                                             <div class="col-xs-6">
+                                                                @foreach($brand->category_assoc as $key=>$category_assoc_one)
+                                                                <?php $key = $key+2; ?>
+                                                                @if($key%2 != 0 ) 
+                                                               <div class="checkbox checkbox-primary m-b-15">
+                                                             <input id="checkbox_c{{$category_assoc_one->category->id}}" name="categories[]" value="{{$category_assoc_one->category->id}}" 
+                                                             type="checkbox" >
+                                                             <label for="checkbox_c{{$category_assoc_one->category->id}}">{{$category_assoc_one->sub_category_name}} </label>
+                                                            </div>
+                                                                @endif 
+                                                                @endforeach 
                                                             </div> <!-- end col -->
+                                                              @foreach($subcategories as $key=>$category)
+                                                                @if(!in_array($category->id, $existing_c) )
+                                                            <div class="col-xs-6 ds" style="">
+                                                               
+                                                                <div class="checkbox checkbox-primary m-b-15">
+                                                                    <input id="checkbox_c{{$category->id}}" type="checkbox" name="categories[]" value="{{$category->id}}">
+                                                                    <label for="checkbox_c{{$category->id}}">
+                                                                        {{$category->sub_category_name}}
+                                                                    </label>
+                                                                </div>
+                                                                                                                
+                                                            </div> <!-- end col -->
+                                                            @endif 
+                                                            @endforeach
                                                         </div> <!-- end col -->
-                                                    </div>
+                                                </div> <!-- end col -->
+                                        </div>
                                     <div class="text-center">
                                             <button type="submit" class="btn btn-success waves-effect waves-light">Update</button>
                                             
