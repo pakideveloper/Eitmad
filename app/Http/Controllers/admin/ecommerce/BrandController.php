@@ -96,8 +96,6 @@ class BrandController extends Controller
     {
          $brand = Brand::find($id);
          $subcategories= Product_Sub_Category::all();
-         print_r($subcategories);
-         die();
          $project_categories =  DB::table('brand_subcategory_assoc')
         ->where('brand_subcategory_assoc.brand_id', '=' , $brand->id)
         ->join('product_sub_categories', 'product_sub_categories.id' , '=' , 'brand_subcategory_assoc.sub_category_id')
