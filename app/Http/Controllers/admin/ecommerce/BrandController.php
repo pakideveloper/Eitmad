@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Brand;
+use App\Brand_Sub_Category_Assoc;
+use App\Product_Sub_Category;
 use File;
 class BrandController extends Controller
 {
@@ -27,7 +29,8 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('admin/ecommerce/modules/brand/create'); 
+         $subcategories = Product_Sub_Category::all();
+        return view('admin/ecommerce/modules/brand/create',compact('subcategories')); 
     }
 
     /**
@@ -38,25 +41,36 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
+    
         $this->storeValidate($request);
-        $brand = new Brand();
+        $brand = new Brand(); 
+        $subcategories = new Product_Sub_Category();
         $brand->brand_name = $request->brand_name;
-
-
+        $subcategories->sub_category_id = $request->sub_category_id;
         $file_name = $request->file['0'] -> getClientOriginalName();
         $file_name = uniqid().$file_name;
         $file_name = preg_replace('/\s+/', '', $file_name);
         $file_type = $request->file['0']->getClientOriginalExtension();
-        $request->file['0'] -> move(public_path().'/admin/upload/brands', $file_name);
+        $request->file['0'] -> move(public_path().'/admin/upload/brands',$file_name);
         $file_size = $request->file['0']->getClientSize();
         $file_size = $file_size/1000;
         $file_size = $file_size.' '.'kb';
         $brand->brand_logo = $file_name;
         $brand->brand_logo_size = $file_size;
         $brand->brand_logo_file_type = $file_type;
-        // print_r($brand);
-        // die();
         $brand->save();
+         if ($request->subcategories) 
+        {
+            foreach ($request->subcategories as $key => $value) 
+            {
+                $Brand_Sub_Category_Assoc = new Brand_Sub_Category_Assoc();
+                $Brand_Sub_Category_Assoc->sub_category_id = $value;
+                $Brand_Sub_Category_Assoc->brand_id = $brand->id;
+                $Brand_Sub_Category_Assoc->save();
+                
+                // print_r($request->Brand_Sub_Category_Assoc);
+            }
+        }   
         return Redirect()->back()->with('status', 'Brand created successfully!');
     }
 
@@ -96,7 +110,8 @@ class BrandController extends Controller
         $brand = Brand::find($id);
         $brand->brand_name = $request->brand_name;
 
-        if ($request->file['0']) {
+        if ($request->file['0'])
+        {
             $file_name = $request->file['0'] -> getClientOriginalName();
             $file_name = uniqid().$file_name;
             $file_name = preg_replace('/\s+/', '', $file_name);
