@@ -14,6 +14,22 @@
 Route::get('/', function () {
     return view('frontend/ecommerce/modules/index');
 });
+Route::get('/items', function () {
+	// $product = new stdClass;
+	// $product = json_encode($product);
+	// // print_r($product);
+	// return $product;
+	// die();
+	// CartProvider::instance('shopping')->destroy();
+    $cart_items = CartProvider::instance('shopping')->getCartItems();
+    	print_r($cart_items);
+    	die();
+    foreach ($cart_items as $key => $value) {
+    	echo $key;
+    	echo "<br>";
+    	print_r( $value->name);
+    }
+});
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));
@@ -36,4 +52,6 @@ Route::get('/blog', function () {
 Route::get('/singleblog', function () {
     return view('frontend/ecommerce/modules/blog/single_blog');
 });
+
+Route::post('/product/addToCart', 'Ecommerce\Cart\CartController@addToCart');
 

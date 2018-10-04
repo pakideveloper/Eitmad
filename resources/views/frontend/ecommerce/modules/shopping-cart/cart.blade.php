@@ -87,58 +87,25 @@
                   <th>Quantity</th>
                   <th>Total</th>
                 </tr>
-                <!--Item-->
-                <tr class="item first">
-                	<td class="thumb"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/shopping-cart-thumb-1.jpg" alt="Nikon D4S"/></a></td>
-                  <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">Nikon D4S</a></td>
-                  <td class="price">715,00 $</td>
-                  <td class="qnt-count">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">-</a>
-                    <input class="quantity form-control" type="text" value="2">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">+</a>
-                  </td>
-                  <td class="total">2715,00 $</td>
-                  <td class="delete"><i class="icon-delete"></i></td>
-                </tr>
-                <!--Item-->
-                <tr class="item">
-                	<td class="thumb"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/shopping-cart-thumb-2.jpg" alt="Nikkor 11-27.5"/></a></td>
-                  <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">Nikkor</a></td>
-                  <td class="price">715,00 $</td>
-                  <td class="qnt-count">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">-</a>
-                    <input class="quantity form-control" type="text" value="2">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">+</a>
-                  </td>
-                  <td class="total">2715,00 $</td>
-                  <td class="delete"><i class="icon-delete"></i></td>
-                </tr>
+                <?php
+                  $cart_items = CartProvider::instance('shopping')->getCartItems();
+                  ?>
+                @foreach($cart_items as $cart_item)
                 <!--Item-->
                 <tr class="item">
                 	<td class="thumb"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/shopping-cart-thumb-1.jpg" alt="Nikon D4S"/></a></td>
-                  <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">Nikon D4S</a></td>
-                  <td class="price">715,00 $</td>
+                  <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">{{$cart_item->name}}</a></td>
+                  <td class="price">Rs. {{$cart_item->price}}</td>
                   <td class="qnt-count">
                     <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">-</a>
                     <input class="quantity form-control" type="text" value="2">
                     <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">+</a>
                   </td>
-                  <td class="total">2715,00 $</td>
+                  <td class="total">Rs. {{$cart_item->subtotal}}</td>
                   <td class="delete"><i class="icon-delete"></i></td>
                 </tr>
+                @endforeach
                 <!--Item-->
-                <tr class="item">
-                	<td class="thumb"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/shopping-cart-thumb-2.jpg" alt="Nikkor 11-27.5"/></a></td>
-                  <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">Nikkor</a></td>
-                  <td class="price">715,00 $</td>
-                  <td class="qnt-count">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">-</a>
-                    <input class="quantity form-control" type="text" value="2">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">+</a>
-                  </td>
-                  <td class="total">2715,00 $</td>
-                  <td class="delete"><i class="icon-delete"></i></td>
-                </tr>
               </table>
             </div>
             
