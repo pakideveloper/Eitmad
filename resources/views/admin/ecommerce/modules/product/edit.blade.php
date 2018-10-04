@@ -126,6 +126,11 @@
                                                                placeholder="Enter product name" class="form-control" id="userName" value="{{$product->product_name}}">
                                                     </div>
                                                     <div class="form-group">
+                                                        <label for="product-name">Product Description<span class="text-danger">*</span></label>
+                                                        <input type="text" name="product_description" parsley-trigger="change" 
+                                                               placeholder="Enter product name" class="form-control" id="userName" value="{{$product->product_description}}">
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label for="product_size">Product Size<span class="text-danger">*</span></label>
                                                         <input type="text" name="product_size" parsley-trigger="change"
                                                                placeholder="Enter product size" class="form-control" id="product_size" value="{{$product->product_size}}">
