@@ -63,8 +63,8 @@ class RoleController extends Controller
             $role -> attachPermission($value);
         }
 
-        Alert::success('Created.','feature created successfully');
-        return Redirect()->back();
+        // Alert::success('Created.','feature created successfully');
+        return Redirect()->back()->with('status', 'Role created successfully!');
     }
 
     /**
