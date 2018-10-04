@@ -17,6 +17,7 @@ Route::get('/test', function () {
 Route::get('/', function () {
     return view('admin/ecommerce/modules/index');
 });
+
 Route::resource('/brands','admin\ecommerce\BrandController');
 Route::resource('/products','admin\ecommerce\ProductController');
 Route::get('/products/{id}/features','admin\ecommerce\ProductController@getFeatures');
@@ -25,8 +26,9 @@ Route::resource('/categories','admin\ecommerce\ProductCategoryController');
 Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController');
 Route::resource('/countries','admin\ecommerce\CountryController');
 Route::resource('/cities','admin\ecommerce\CityController');
-
 Route::Resource('/roles','admin\ecommerce\RoleController');
+Route::resource('/mainsliders','admin\ecommerce\MainSliderController');
+
 //Route::Resource('/roles','admin\ecommerce\SysController');
 
 

@@ -12,8 +12,10 @@
 */
 //usama
 Route::get('/', function () {
-    return view('frontend/ecommerce/modules/index');
+	$mainslider = App\Main_Slider::latest()->get();
+    return view('frontend/ecommerce/modules/index',compact('mainslider'));
 });
+
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));
