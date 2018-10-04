@@ -492,19 +492,58 @@ $(document).ready(function(e) {
 	/*Added To Cart Message + Action (For Demo Purpose)
 	**************************************************/
 	$addToCartBtn.click(function(){
-		$addedToCartMessage.removeClass('visible');
-		var $itemName = $(this).parent().parent().find('h1').text();
-		var $itemPrice = $(this).parent().parent().find('.price').text();
-		var $itemQnty = $(this).parent().find('#quantity').val();
-		var $cartTotalItems = parseInt($('.cart-btn a span').text()) +1;
-		$addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + 'was successfully added to your cart.');
-		$('.cart-dropdown table').append(
-			'<tr class="item"><td><div class="delete"></div><a href="#">' + $itemName + 
-			'<td><input type="text" value="' + $itemQnty +
-			'"></td><td class="price">' + $itemPrice + '</td>' 
-		);
-		$('.cart-btn a span').text($cartTotalItems);
-		$addedToCartMessage.addClass('visible');
+		$.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+		var product_id = $('#product_id').val();
+		
+		$.ajax(
+                {
+                    url: 'http://localhost/Eitmad/ecommerce/product/addToCart',
+                    type: 'post',              
+                    data: {
+                        "product_id": product_id,
+                    },
+                    success: function(response){
+                    	response = JSON.parse(response);
+                    	var cas = response.status;
+                    	switch(cas)
+                    	{
+                    		case 'new':
+                    			console.log(response);
+		                        $addedToCartMessage.removeClass('visible');
+								var $itemName = $(this).parent().parent().find('h1').text();
+								var $itemPrice = $(this).parent().parent().find('.price').text();
+								var $itemQnty = $(this).parent().find('#quantity').val();
+								var $cartTotalItems = parseInt($('.cart-btn a span').text()) +1;
+								$addedToCartMessage.find('p').text('"' + response.name + '"' + '  ' + 'was successfully added to your cart.');
+								$('.cart-dropdown table').append(
+									'<tr class="item"><td><div class="delete"></div><a href="#">' + response.name + 
+									'<td><input type="text" id="head_quantity'+response.discount_id+'" value="' + response.quantity +
+									'"></td><td class="price">' + response.price + '</td>' 
+								);
+								$('.cart-btn a span').text(response.totalItems);
+								$addedToCartMessage.addClass('visible');
+								break;
+							case 'old':
+								console.log(response);
+		                        $addedToCartMessage.removeClass('visible');
+								// var $itemName = $(this).parent().parent().find('h1').text();
+								// var $itemPrice = $(this).parent().parent().find('.price').text();
+								$('#head_quantity'+response.discount_id).val(response.quantity);
+								$('#head_total').val(response.total);
+								$('#head_total_quantity').html(response.total_quantity);
+								$addedToCartMessage.find('p').text('"' + response.name + '"' + '  ' + 'was updated to your cart.');
+								
+								$addedToCartMessage.addClass('visible');
+								break;
+                    	}
+                    	                          
+                    },//responce ending
+                });//ajax ending
+		
 	});
 	
 	/*Promo Labels Popovers

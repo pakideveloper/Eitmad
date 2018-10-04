@@ -146,8 +146,11 @@
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
           </div>
           <div class="cart-btn">
-          	<a class="btn btn-outlined-invert" href="{{url('/ecommerce/shoppingcart')}}"><i class="icon-shopping-cart-content"></i><span>3</span></a>
+          	<a class="btn btn-outlined-invert" href="{{url('/ecommerce/shoppingcart')}}"><i class="icon-shopping-cart-content"></i><span id="head_total_quantity">{{CartProvider::instance('shopping')->getQuantity()}}</span></a>
             
+            <?php
+            $cart_items = CartProvider::instance('shopping')->getCartItems();
+            ?>
             <!--Cart Dropdown-->
             <div class="cart-dropdown">
               <span></span><!--Small rectangle to overlap Cart button-->
@@ -158,21 +161,13 @@
                     <th>Quantity</th>
                     <th>Price</th>
                   </tr>
+                  @foreach($cart_items as $cart_item)
                   <tr class="item">
-                    <td><div class="delete"></div><a href="#">Good Joo-Joo Surfb</a></td>
-                    <td><input type="text" value="1"></td>
-                    <td class="price">89 005 $</td>
+                    <td><div class="delete"></div><a href="#">{{$cart_item->name}}</a></td>
+                    <td><input type="text" id="head_quantity{{\Crypt::decrypt($cart_item->id)}}" value="{{$cart_item->quantity}}"></td>
+                    <td class="price">Rs. {{$cart_item->price}}</td>
                   </tr>
-                  <tr class="item">
-                    <td><div class="delete"></div><a href="#">Good Joo-Joo Item</a></td>
-                    <td><input type="text" value="2"></td>
-                    <td class="price">4 300 $</td>
-                  </tr>
-                  <tr class="item">
-                    <td><div class="delete"></div><a href="#">Good Joo-Joo</a></td>
-                    <td><input type="text" value="5"></td>
-                    <td class="price">84 $</td>
-                  </tr>
+                  @endforeach
                 </table>
               </div>
               <div class="footer group">
@@ -180,7 +175,7 @@
                   <a class="btn btn-outlined-invert" href="checkout.html"><i class="icon-download"></i>Checkout</a>
                   <a class="btn btn-outlined-invert" href="shopping-cart.html"><i class="icon-shopping-cart-content"></i>To cart</a>
                 </div>
-                <div class="total">93 389 $</div>
+                <div class="total" id="head_total">{{CartProvider::instance('shopping')->total}}</div>
               </div>
             </div><!--Cart Dropdown Close-->
           </div>
