@@ -129,7 +129,9 @@
                     </tr>
                   </table>
                   <input type="submit" class="btn btn-primary btn-sm btn-block" name="update-cart" value="Update shopping cart">
-                  <input type="submit" class="btn btn-success btn-block" name="to-checkout" value="Proceed to checkout">
+                  <a href="{{url('/ecommerce/checkout')}}" style="text-decoration: none !important;">
+                  <button type="button" class="btn btn-success btn-block" name="to-checkout" value="" onclick="">Proceed to checkout</button>
+                </a>
                 </div>
                 <h3>Have a coupon?</h3>
                 <div class="coupon">

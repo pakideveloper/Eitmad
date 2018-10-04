@@ -46,6 +46,9 @@ Route::get('/shoppingcart', function () {
 Route::get('/wishlist', function () {
     return view('frontend/ecommerce/modules/wishlist/wishlist');
 });
+// Route::get('/checkout', function () {
+//     return view('frontend/ecommerce/modules/CheckOut/checkout');
+// });
 Route::get('/blog', function () {
     return view('frontend/ecommerce/modules/blog/blog');
 });
@@ -54,4 +57,6 @@ Route::get('/singleblog', function () {
 });
 
 Route::post('/product/addToCart', 'Ecommerce\Cart\CartController@addToCart');
+Route::Resource('/checkout', 'Ecommerce\CheckoutController');
+
 
