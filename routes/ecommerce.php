@@ -23,12 +23,12 @@ Route::get('/items', function () {
 	// CartProvider::instance('shopping')->destroy();
     $cart_items = CartProvider::instance('shopping')->getCartItems();
     	print_r($cart_items);
-    	die();
-    foreach ($cart_items as $key => $value) {
-    	echo $key;
-    	echo "<br>";
-    	print_r( $value->name);
-    }
+    	// die();
+    // foreach ($cart_items as $key => $value) {
+    // 	echo $key;
+    // 	echo "<br>";
+    // 	print_r( $value->name);
+    // }
 });
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
