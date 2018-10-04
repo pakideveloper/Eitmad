@@ -7,6 +7,7 @@ use App\country;
 use App\Order_Product;
 use DB;
 use Auth;
+use App\User;
 use App\Order;
 use App\Product;
 
@@ -21,12 +22,15 @@ class CheckoutController extends Controller
     public function index()
     {
         $countries = country::all();
+        $users  = User::find(Auth::user()->id);
+        // ::where('users.id','=',Auth::user()->id)->select('first_name');
+
         // $orderproducts = DB::table('order_products')
         //                             ->join('products','products.id','=','order_products.product_id')
         //                             ->join('orders', 'orders.id', '=', 'order_products.order_id')
         //                             ->where('orders.user_id','=',Auth::user()->id);
         $orderproducts = Order_Product::all();
-        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts'));
+        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users'));
     }
 
     /**

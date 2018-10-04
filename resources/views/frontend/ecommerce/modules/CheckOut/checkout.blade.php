@@ -158,13 +158,17 @@
                   </div>
                 </div>
                 <div class="row">
+                 
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    
                     <label for="co-first-name">First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="co-first-name" placeholder="First name" required>
+                    <input type="text" class="form-control" id="co-first-name" name="co-first-name" placeholder="First name" value = "{{$users->first_name}}" required>
+
                   </div>
+                 
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="co-last-name" placeholder="Last name" required>
+                    <input type="text" class="form-control" id="co-last-name" name="co-last-name" placeholder="Last name" value = "{{$users->last_name}}" required>
                   </div>
                 </div>
                 <div class="form-group">
@@ -172,8 +176,8 @@
                   <input type="text" class="form-control" id="co-company-name" name="co-company-name" placeholder="Company name">
                 </div>
                 <div class="form-group">
-                  <label for="co-str-adress">Adress *</label>
-                  <input type="text" class="form-control" id="co-str-adress" name="co-str-adress" placeholder="Street adress" required>
+                  <label for="co-str-adress">Address *</label>
+                  <input type="text" class="form-control" id="co-str-adress" name="co-str-adress" placeholder="Street adress" value = "{{$users->address}}" required>
                 </div>
                 <div class="form-group">
                   <label class="sr-only" for="co-appartment">Appartment</label>
@@ -218,27 +222,36 @@
               
               <!--Right Column-->
               <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4">
+               </span></a>
+            
+            <?php
+            $cart_items = CartProvider::instance('shopping')->getCartItems();
+            ?>
+
               	<h3>Your order</h3>
                 <table>
+                   @foreach($cart_items as $cart_item)
                 	<tr><th>Product</th></tr>
                   <tr>
-                    @foreach($orderproducts as $order->product)
-                  	<td class="name border">{{$order->product_name}}<span>x{{$order->order_product_quantity}}</span></td>
-                    <td class="price border">2715,00 $</td>
-                    @endforeach
+                   
+                  	<td class="name border">{{$cart_item->name}}<span>x{{$cart_item->quantity}}</span></td>
+                    <td class="price border">Rs. {{$cart_item->price}}</td>
+                   
                   </tr>
                   <tr>
                   	<td class="th">Cart subtotal</td>
-                    <td class="price">2715,00 $</td>
+                    <td class="price">{{$cart_item->subtotal}}</td>
                   </tr>
+                   
                   <tr>
                   	<td class="th border">Shipping</td>
                     <td class="align-r border">Free shipping</td>
                   </tr>
                   <tr>
                   	<td class="th">Order total</td>
-                    <td class="price">2715,00 $</td>
+                    <td class="price">Rs. {{$cart_item->total}}</td>
                   </tr>
+                  @endforeach
                 </table>
                 <div class="payment-method">
                 	<div class="radio light">
