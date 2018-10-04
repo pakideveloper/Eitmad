@@ -11,21 +11,21 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="http://www.starmarketingonline.com/wp-content/uploads/2016/06/favicon.png">
         <!-- App title -->
-        <title>StarMarketing</title>
+        <title>ROLES-ADMIN PANEL - EITMAD</title>
 
         <!-- Plugin Css-->
-        <link rel="stylesheet" href="{{URL::to('public/backendAssets')}}/plugins/magnific-popup/css/magnific-popup.css" />
-        <link rel="stylesheet" href="{{URL::to('public/backendAssets')}}/plugins/jquery-datatables-editable/datatables.css" />
+        <link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/magnific-popup/css/magnific-popup.css" />
+        <link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery-datatables-editable/datatables.css" />
 
         <!-- App css -->
-        <link href="{{URL::to('public/backendAssets')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/backendAssets')}}/assets/css/core.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/backendAssets')}}/assets/css/components.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/backendAssets')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/backendAssets')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/backendAssets')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/backendAssets')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="{{URL::to('public/backendAssets')}}/plugins/switchery/switchery.min.css">
+        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.css">
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/modernizr.min.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/modernizr.min.js"></script>
 
     </head>
 
@@ -161,7 +161,7 @@
 
                 </div> <!-- content -->
 
-                @include('backend/include/footer')
+                @include('admin/ecommerce/include/footer')
 
             </div>
 
@@ -176,7 +176,7 @@
 
 
             <!-- Right Sidebar -->
-            @include('backend/include/rightSidebar')
+            @include('admin/ecommerce/include/right-Sidebar')
             <!-- /Right-bar -->
 
         </div>
@@ -189,28 +189,28 @@
         </script>
 
         <!-- jQuery  -->
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/jquery.min.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/bootstrap.min.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/detect.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/fastclick.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/jquery.blockUI.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/waves.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/jquery.slimscroll.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/jquery.scrollTo.min.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/plugins/switchery/switchery.min.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.min.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/bootstrap.min.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/detect.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/fastclick.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.blockUI.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/waves.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.slimscroll.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.js"></script>
 
         <!-- Examples -->
-	    <script src="{{URL::to('public/backendAssets')}}/plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
-	    <script src="{{URL::to('public/backendAssets')}}/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
-	    <script src="{{URL::to('public/backendAssets')}}/plugins/datatables/dataTables.bootstrap.js"></script>
-	    <script src="{{URL::to('public/backendAssets')}}/plugins/tiny-editable/mindmup-editabletable.js"></script>
-	    <script src="{{URL::to('public/backendAssets')}}/plugins/tiny-editable/numeric-input-example.js"></script>
+	    <script src="{{URL::to('public/admin/ecommerce')}}/plugins/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+	    <script src="{{URL::to('public/admin/ecommerce')}}/plugins/jquery-datatables-editable/jquery.dataTables.js"></script>
+	    <script src="{{URL::to('public/admin/ecommerce')}}/plugins/datatables/dataTables.bootstrap.js"></script>
+	    <script src="{{URL::to('public/admin/ecommerce')}}/plugins/tiny-editable/mindmup-editabletable.js"></script>
+	    <script src="{{URL::to('public/admin/ecommerce')}}/plugins/tiny-editable/numeric-input-example.js"></script>
 
         <!-- App js -->
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/jquery.core.js"></script>
-        <script src="{{URL::to('public/backendAssets')}}/assets/js/jquery.app.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.core.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
 
-        <script src="{{URL::to('public/backendAssets')}}/assets/pages/jquery.datatables.editable.init.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/assets/pages/jquery.datatables.editable.init.js"></script>
 
 	    <script>
 			$('#mainTable').editableTableWidget().numericInputExample().find('td:first').focus();
@@ -224,8 +224,8 @@
 }
         </script>
         <!-- sweet alert -->
-         <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
-        @include('sweetalert::alert')
+        <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+ 
     </body>
 
 <!-- Mirrored from coderthemes.com/zircos/material-design/tables-editable.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:46:55 GMT -->

@@ -4,10 +4,10 @@ namespace App\Http\Controllers\admin\ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Role;
-//use App\Permission;
+use App\Permission;
 use Redirect; 
 use DB;
-//use Alert;
+use Alert;
 
 class RoleController extends Controller
 {
@@ -31,7 +31,7 @@ class RoleController extends Controller
     public function create()
     {
         $permissions=Permission::all();
-        return view('backend/modules/roles/create',compact('permissions'));
+        return view('admin/ecommerce/modules/roles/create',compact('permissions'));
     }
 
     /**
@@ -42,17 +42,29 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+        echo $request -> name  ;
+        echo $request -> display_name  ;
+        echo $request -> description  ;
+        //echo $request -> permission  ;
+        
+        
+        //die();
          $this->validate($request, [
+        
     'name' => 'required',
     'display_name' => 'required',
     'description' => 'required',
     'permission' => 'required',
     ]);
+
+         
         $role = Role::create($request -> except(['permissions','_token']));
         foreach ($request -> permission as $key => $value) {
             $role -> attachPermission($value);
         }
-        return Redirect()->back()->with('status', 'Role created successfully!');
+
+        Alert::success('Created.','feature created successfully');
+        return Redirect()->back();
     }
 
     /**
