@@ -15,9 +15,9 @@ Route::get('/', function () {
 	$mainslider = App\Main_Slider::latest()->get();
     return view('frontend/ecommerce/modules/index',compact('mainslider'));
 });
-<<<<<<< HEAD
 
-=======
+
+
 Route::get('/items', function () {
 	// $product = new stdClass;
 	// $product = json_encode($product);
@@ -34,7 +34,7 @@ Route::get('/items', function () {
     // 	print_r( $value->name);
     // }
 });
->>>>>>> 19437bb1444d9b16c9791a60a142d86d969afbcd
+
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));

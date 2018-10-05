@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\country;
+use App\City;
 use App\Order_Product;
 use DB;
 use Auth;
@@ -22,6 +23,7 @@ class CheckoutController extends Controller
     public function index()
     {
         $countries = country::all();
+        $cities = City::all();
         $users  = User::find(Auth::user()->id);
         // ::where('users.id','=',Auth::user()->id)->select('first_name');
 
@@ -30,7 +32,7 @@ class CheckoutController extends Controller
         //                             ->join('orders', 'orders.id', '=', 'order_products.order_id')
         //                             ->where('orders.user_id','=',Auth::user()->id);
         $orderproducts = Order_Product::all();
-        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users'));
+        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users','cities'));
     }
 
     /**
