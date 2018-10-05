@@ -27,7 +27,8 @@ Route::resource('/countries','admin\ecommerce\CountryController');
 Route::resource('/cities','admin\ecommerce\CityController');
 
 Route::Resource('/roles','admin\ecommerce\RoleController');
-//Route::Resource('/roles','admin\ecommerce\SysController');
+Route::Resource('/orders','admin\ecommerce\OrderController');
+
 
 
 /*Route::get('abc', function(){

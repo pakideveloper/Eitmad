@@ -89,7 +89,7 @@ class RoleController extends Controller
       $role = Role::find($id);
       $permissions = Permission::all();
       $role_permissions = $role->perms()->pluck('id','id')->toArray();
-      return view('backend/modules/roles/edit',compact(['role','permissions','role_permissions']));
+      return view('admin/ecommerce/modules/roles/edit',compact(['role','permissions','role_permissions']));
     }
 
     /**
@@ -120,8 +120,10 @@ class RoleController extends Controller
             $role -> attachPermission($value);
         }
 
-        Alert::success('Updated.','Feature updated successfully');
-        return Redirect('/admin/roles');
+       /* Alert::success('Updated.','Feature updated successfully');
+        return Redirect('/admin/roles');*/
+        return Redirect()->back()->with('status', 'Role updated successfully!');
+         
     }
 
     /**
@@ -135,8 +137,10 @@ class RoleController extends Controller
 
         DB::table('roles')->where('id',$id)->delete();
         
-       
+       /*
         Alert::success('Deleted.','Feature deleted successfully');
-        return Redirect()->back();
+        return Redirect()->back();*/
+         return Redirect()->back()->with('status', 'Role deleted successfully!');
+
     }
 }
