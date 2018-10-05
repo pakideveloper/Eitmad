@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   
@@ -71,14 +72,15 @@
       	<div class="master-slider" id="hero-slider">
         
         	<!--Slide 1-->
+          @foreach($mainslider as $Vmainslider)
         	<div class="ms-slide" data-delay="7">
           	<div class="overlay"></div>
-          	<img src="{{URL::to('public/frontend/ecommerce/assets')}}//masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/hero/slideshow/slide_1.jpg" alt="Nikon D4S"/>
-            <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="top(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">Nikon D4S</h2>
-            <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="back(500)" data-duration="700" data-delay="500" data-ease="easeOutQuad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
+          	<img src="{{url::to('public/admin/upload/mainsliders')}}/{{$Vmainslider->image_name}}" data-src="{{url::to('public/admin/upload/mainsliders')}}/{{$Vmainslider->image_name}}" alt=""/>
+            <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="top(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">{{$Vmainslider->title}}</h2>
+            <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="back(500)" data-duration="700" data-delay="500" data-ease="easeOutQuad">{{$Vmainslider->description}}</p>
             <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="bottom(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1845$</span>Buy it now</a></div>
           </div>
-          
+          @endforeach
         	<!--Slide 2-->
         	<div class="ms-slide" data-delay="7">
             <span class="overlay"></span>

@@ -508,20 +508,40 @@ $(document).ready(function(e) {
                     },
                     success: function(response){
                     	response = JSON.parse(response);
-                    	console.log(response.name);
-                        $addedToCartMessage.removeClass('visible');
-						var $itemName = $(this).parent().parent().find('h1').text();
-						var $itemPrice = $(this).parent().parent().find('.price').text();
-						var $itemQnty = $(this).parent().find('#quantity').val();
-						var $cartTotalItems = parseInt($('.cart-btn a span').text()) +1;
-						$addedToCartMessage.find('p').text('"' + response.name + '"' + '  ' + 'was successfully added to your cart.');
-						$('.cart-dropdown table').append(
-							'<tr class="item"><td><div class="delete"></div><a href="#">' + response.name + 
-							'<td><input type="text" value="' + response.quantity +
-							'"></td><td class="price">' + response.price + '</td>' 
-						);
-						$('.cart-btn a span').text(response.totalItems);
-						$addedToCartMessage.addClass('visible');                          
+                    	var cas = response.status;
+                    	switch(cas)
+                    	{
+                    		case 'new':
+                    			console.log(response);
+		                        $addedToCartMessage.removeClass('visible');
+								var $itemName = $(this).parent().parent().find('h1').text();
+								var $itemPrice = $(this).parent().parent().find('.price').text();
+								var $itemQnty = $(this).parent().find('#quantity').val();
+								$('#head_total').html(response.total);
+								var $cartTotalItems = parseInt($('.cart-btn a span').text()) +1;
+								$addedToCartMessage.find('p').text('"' + response.name + '"' + '  ' + 'was successfully added to your cart.');
+								$('.cart-dropdown table').append(
+									'<tr class="item"><td><div class="delete"></div><a href="#">' + response.name + 
+									'<td><input type="text" id="head_quantity'+response.discount_id+'" value="' + response.quantity +
+									'"></td><td class="price">' + response.price + '</td>' 
+								);
+								$('.cart-btn a span').text(response.totalItems);
+								$addedToCartMessage.addClass('visible');
+								break;
+							case 'old':
+								console.log(response);
+		                        $addedToCartMessage.removeClass('visible');
+								// var $itemName = $(this).parent().parent().find('h1').text();
+								// var $itemPrice = $(this).parent().parent().find('.price').text();
+								$('#head_quantity'+response.discount_id).val(response.quantity);
+								$('#head_total').html(response.total);
+								$('#head_total_quantity').html(response.total_quantity);
+								$addedToCartMessage.find('p').text('"' + response.name + '"' + '  ' + 'was updated to your cart.');
+								
+								$addedToCartMessage.addClass('visible');
+								break;
+                    	}
+                    	                          
                     },//responce ending
                 });//ajax ending
 		
