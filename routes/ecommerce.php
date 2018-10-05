@@ -12,8 +12,12 @@
 */
 //usama
 Route::get('/', function () {
-    return view('frontend/ecommerce/modules/index');
+	$mainslider = App\Main_Slider::latest()->get();
+    return view('frontend/ecommerce/modules/index',compact('mainslider'));
 });
+<<<<<<< HEAD
+
+=======
 Route::get('/items', function () {
 
 
@@ -35,7 +39,11 @@ Route::get('/items', function () {
     // 	print_r( $value->name);
     // }
 });
+<<<<<<< HEAD
 Route::get('/test','Ecommerce\Cart\CartController@test');
+=======
+>>>>>>> 19437bb1444d9b16c9791a60a142d86d969afbcd
+>>>>>>> 5f2bb333096846989ff94a8b12481c24128d86f9
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));
@@ -52,6 +60,9 @@ Route::get('/shoppingcart', function () {
 Route::get('/wishlist', function () {
     return view('frontend/ecommerce/modules/wishlist/wishlist');
 });
+// Route::get('/checkout', function () {
+//     return view('frontend/ecommerce/modules/CheckOut/checkout');
+// });
 Route::get('/blog', function () {
     return view('frontend/ecommerce/modules/blog/blog');
 });
@@ -60,4 +71,6 @@ Route::get('/singleblog', function () {
 });
 
 Route::post('/product/addToCart', 'Ecommerce\Cart\CartController@addToCart');
+Route::Resource('/checkout', 'Ecommerce\CheckoutController');
+
 
