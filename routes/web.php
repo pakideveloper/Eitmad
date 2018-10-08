@@ -16,12 +16,12 @@ Route::get('/', function () {
     return view('frontend/general/index',compact('mainslider'));
 });
 
-Route::get('/admin', function () {
-    return view('admin/ecommerce/modules/index');
-});
-Route::get('/admin2', function () {
-    return view('admin/ecommerce/modules/index2');
-}); 
+// Route::get('/admin', function () {
+//     return view('admin/ecommerce/modules/index');
+// });
+// Route::get('/admin2', function () {
+//     return view('admin/ecommerce/modules/index2');
+// }); 
 
 
 // Route::get('/ecommerce', function () {
