@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use CartProvider;
 use Syscover\ShoppingCart\Item;
 use App\Product;
+use Session;
 
 class CartController extends Controller
 {
@@ -51,6 +52,7 @@ class CartController extends Controller
 		    	$object->quantity = '1';
 		    	$object->status = 'new';
 		    	$object->totalItems = $total_quantity;
+		    	$object->total = CartProvider::instance('shopping')->total;
 				$object = json_encode($object);
 
 		    	return $object;
@@ -78,5 +80,31 @@ class CartController extends Controller
     	
 
 
+    }
+
+    public function test(){
+    	// CartProvider::instance('test')->destroy();
+    	$object = new \stdClass();
+    	$object->rowId = '23233nm34m3n4m3n'; 
+    	$object->name = 'name'; 
+    	$object->price = '100'; 
+    	$object->quantity = '3'; 
+    	$object->total = '300'; 
+    	// Session::set('mySession') = $object;
+    	// Session::set('variableName', $object);
+    	session(['key' => $object]);
+    	// $sess = Session::get('mySession'); 
+    	// print_r($sess);
+    	// if(CartProvider::instance('test')->add(new Item('293ad', 'Product 1', 1, 9.99))){
+    	// 	echo "hogya";
+    	// }
+	// $product = new stdClass;
+	// $product = json_encode($product);
+	// // print_r($product);
+	// return $product;
+	// die();
+	// CartProvider::instance('shopping')->destroy();
+    $cart_items = session('key');
+    	print_r($cart_items);
     }
 }
