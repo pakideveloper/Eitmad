@@ -18,6 +18,10 @@ Route::get('/', function () {
 });
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 258a9cacce413dc02024be87c19f4e64c349d6cf
 Route::get('/items', function () {
 
 
@@ -40,6 +44,7 @@ Route::get('/items', function () {
     // }
 });
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 Route::get('/test','Ecommerce\Cart\CartController@test');
@@ -47,6 +52,10 @@ Route::get('/test','Ecommerce\Cart\CartController@test');
 >>>>>>> 19437bb1444d9b16c9791a60a142d86d969afbcd
 >>>>>>> 5f2bb333096846989ff94a8b12481c24128d86f9
 >>>>>>> f7b8788a2003255a39273cfce6d922ca52234dff
+=======
+
+Route::get('/test','Ecommerce\Cart\CartController@test');
+>>>>>>> 258a9cacce413dc02024be87c19f4e64c349d6cf
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));
