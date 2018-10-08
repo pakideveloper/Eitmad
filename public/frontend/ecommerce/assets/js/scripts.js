@@ -517,6 +517,7 @@ $(document).ready(function(e) {
 								var $itemName = $(this).parent().parent().find('h1').text();
 								var $itemPrice = $(this).parent().parent().find('.price').text();
 								var $itemQnty = $(this).parent().find('#quantity').val();
+								$('#head_total').html(response.total);
 								var $cartTotalItems = parseInt($('.cart-btn a span').text()) +1;
 								$addedToCartMessage.find('p').text('"' + response.name + '"' + '  ' + 'was successfully added to your cart.');
 								$('.cart-dropdown table').append(
@@ -533,7 +534,7 @@ $(document).ready(function(e) {
 								// var $itemName = $(this).parent().parent().find('h1').text();
 								// var $itemPrice = $(this).parent().parent().find('.price').text();
 								$('#head_quantity'+response.discount_id).val(response.quantity);
-								$('#head_total').val(response.total);
+								$('#head_total').html(response.total);
 								$('#head_total_quantity').html(response.total_quantity);
 								$addedToCartMessage.find('p').text('"' + response.name + '"' + '  ' + 'was updated to your cart.');
 								

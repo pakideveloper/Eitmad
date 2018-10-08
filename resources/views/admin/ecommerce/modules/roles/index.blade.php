@@ -75,6 +75,11 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                       @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 
@@ -133,7 +138,7 @@
 	                                            <td>{{$role -> display_name}}</td>
 	                                            <td>{{$role -> description}}</td>
 	                                            <td class="actions">                                               
-                                                    <a  href="{{URL::to('/admin/roles')}}/{{$role -> id}}/edit">
+                                                    <a  href="{{URL::to('/ecommerce/admin/roles')}}/{{$role-> id}}/edit">
                                                         <i class="fa fa-pencil"></i>
                                                     </a>
 	                                                
@@ -141,7 +146,7 @@
                                                         <i  onclick="return deleteRole({{$role->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
                                                     </a>                                                            
 	                                            </td>
-                                                <form id="delete-form{{$role->id}}" action="{{url('/admin/roles')}}/{{$role->id}}" method="post">
+                                                <form id="delete-form{{$role->id}}" action="{{url('ecommerce/admin/roles')}}/{{$role->id}}" method="post">
                                                     {{csrf_field() }}
                                                     {{ method_field('DELETE') }}
                                                 </form>
