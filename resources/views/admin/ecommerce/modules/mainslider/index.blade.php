@@ -115,6 +115,7 @@
                                                         <th>Id</th>
                                                         <th data-priority="1">Title</th>
                                                         <th data-priority="1">Descrition</th>
+                                                        <th data-priority="1">Slider Type</th>
                                                         <th data-priority="3">Created at</th>
                                                         <th data-priority="1">Updated at</th>
                                                         <th data-priority="3">Actions</th>                           
@@ -127,6 +128,7 @@
                                                         <td>{{$Vmainslider->id}}</td>
                                                         <th>{{$Vmainslider->title}}</th>
                                                         <th>{{$Vmainslider->description}}</th>
+                                                        <th>{{$Vmainslider->slider_type}}</th>
                                                         <td><?php $monthNum  = Carbon\Carbon::parse($Vmainslider->created_at)->format('m');
                                                 $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                                                 $monthName = $dateObj->format('F'); 

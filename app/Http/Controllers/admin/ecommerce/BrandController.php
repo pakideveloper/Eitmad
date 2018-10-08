@@ -30,6 +30,9 @@ class BrandController extends Controller
      */
     public function create()
     {
+
+        print_r($subcategories);
+        die();
         $subcategories = Product_Sub_Category::all();
         return view('admin/ecommerce/modules/brand/create',compact('subcategories')); 
     }
@@ -42,7 +45,7 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-    
+
         $this->storeValidate($request);
         $brand = new Brand(); 
         $subcategories = new Product_Sub_Category();

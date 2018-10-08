@@ -86,16 +86,16 @@
                             <div class="col-xs-12">
                                 <div class="page-title-box">
 
-                                    <h4 class="page-title">Brands </h4>
+                                    <h4 class="page-title">Main Slider </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Admin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Brands </a>
+                                            <a href="#">Main Slider </a>
                                         </li>
                                         <li class="active">
-                                            Create New Brand
+                                            Create New Main Slider
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -114,8 +114,7 @@
                                     <div class="row">
                                         
 
-                                            <h4 class="header-title m-t-0">Create New Brand</h4>
-                                            
+                                        <h4 class="header-title m-t-0">Create New Main Slider</h4>
                                                 <form action="{{url('/ecommerce/admin/mainsliders')}}/{{$mainslider->id}}" method="post" enctype="multipart/form-data" >
                                                     {{csrf_field()}}
                                                     {{ method_field('PUT')}}
@@ -134,6 +133,14 @@
                                                                placeholder="Enter Description" class="form-control" value="{{$mainslider->description}}">
                                                         @if ($errors->has('description'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('description') }}.</li></ul>
+                                                        @endif
+                                                    </div>
+                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('slider_type') ? 'has-error' : ''}}">
+                                                        <label for="Slider Type">Slider Type<span class="text-danger">*</span></label>
+                                                        <input type="text" name="slider_type" parsley-trigger="change"
+                                                        placeholder="Enter Slider Type" class="form-control" value="{{$mainslider->slider_type}}">
+                                                        @if ($errors->has('slider_type'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('slider_type') }}.</li></ul>
                                                         @endif
                                                     </div>
                                                     

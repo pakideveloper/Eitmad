@@ -15,9 +15,9 @@ class MainSliderController extends Controller
      */
     public function index()
     {
-       // $mainslider = Main_Slider::latest()->get();
-       // return view('/admin/ecommerce/modules/mainslider/index',compact('mainslider')); 
-        echo "string";
+       $mainslider = Main_Slider::latest()->get();
+       return view('/admin/ecommerce/modules/mainslider/index',compact('mainslider')); 
+        
     }
 
 
@@ -43,6 +43,7 @@ class MainSliderController extends Controller
         $mainslider = new Main_Slider();
         $mainslider->title = $request->title;
         $mainslider->description = $request->description;
+        $mainslider->slider_type = $request->slider_type;
         if ($request->file)
         {
         $file_name = $request->file-> getClientOriginalName();
@@ -100,7 +101,7 @@ class MainSliderController extends Controller
         $mainslider = Main_Slider::find($id);
         $mainslider->title = $request->title;
         $mainslider->description = $request->description;
-
+        $mainslider->slider_type = $request->slider_type;
         if ($request->file)
         {
         $file_name = $request->file -> getClientOriginalName();

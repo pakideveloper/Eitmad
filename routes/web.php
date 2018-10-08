@@ -12,7 +12,8 @@
 */
 //usama
 Route::get('/', function () {
-    return view('frontend/general/index');
+	$mainslider = App\Main_Slider::latest()->get();
+    return view('frontend/general/index',compact('mainslider'));
 });
 
 Route::get('/admin', function () {

@@ -81,23 +81,7 @@
             <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="bottom(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1845$</span>Buy it now</a></div>
           </div>
           @endforeach
-        	<!--Slide 2-->
-        	<div class="ms-slide" data-delay="7">
-            <span class="overlay"></span>
-          	<img src="{{URL::to('public/frontend/ecommerce/assets')}}//masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/hero/slideshow/slide_2.jpg" alt="Nest"/>
-            <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="bottom(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">Nest</h2>
-            <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="bottom(50,true)" data-duration="700" data-delay="500" data-ease="easeOutQuad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
-            <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="rotatebottom(30|90,long,br,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1640$</span>Buy it now</a></div>
-          </div>
-          
-        	<!--Slide 3-->
-        	<div class="ms-slide" data-delay="7">
-          	<div class="overlay"></div>
-          	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/frontend/ecommerce/assets')}}/img/hero/slideshow/slide_3.jpg" alt="3D Printer"/>
-            <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="left(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">3D Printer</h2>
-            <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="left(50,true)" data-duration="700" data-delay="500" data-ease="easeOutQuad">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea.</p>
-            <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="left(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>2500$</span>Buy it now</a></div>
-          </div>
+
           
         </div>
       </section><!--Hero Slider Close-->
@@ -721,13 +705,9 @@
       	<div class="container">
         	<h2>Brands in our shop</h2>
           <div class="inner">
-          	<a class="item" href="#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/jquery.png" alt="jQuery"/></a>
-            <a class="item" href="#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/wp.png" alt="WordPress"/></a>
-            <a class="item" href="#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/woo.png" alt="WooCommerce"/></a>
-            <a class="item" href="#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/android.png" alt="Android"/></a>
-            <a class="item" href="#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/macgasm.png" alt="Macgasm"/></a>
-            <a class="item" href="#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/dropbox.png" alt="Dropbox"/></a>
-          </div>
+            @foreach($brand as $Vbrand)
+          	<a class="item" href="#"><img src="{{url::to('public/admin/upload/brands')}}/{{$Vbrand->brand_logo}}" alt="jQuery"/></a>
+            @endforeach
         </div>
       </section><!--Brands Carousel Close-->
       
