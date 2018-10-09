@@ -1,5 +1,4 @@
 <?php
-// use CartProvider;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +14,11 @@ Route::get('/', function () {
 	$mainslider = App\Main_Slider::latest()->get();
     return view('frontend/ecommerce/modules/index',compact('mainslider'));
 });
-<<<<<<< HEAD
 
-=======
 Route::get('/items', function () {
 
-
-	CartProvider::instance('shopping')->destroy();
+    
+	// CartProvider::instance('shopping')->destroy();
 
 	// CartProvider::instance('test')->add(new Item('293ad', 'Product 1', 1, 9.99));
 	// $product = new stdClass;
@@ -39,11 +36,9 @@ Route::get('/items', function () {
     // 	print_r( $value->name);
     // }
 });
-<<<<<<< HEAD
+
 Route::get('/test','Ecommerce\Cart\CartController@test');
-=======
->>>>>>> 19437bb1444d9b16c9791a60a142d86d969afbcd
->>>>>>> 5f2bb333096846989ff94a8b12481c24128d86f9
+
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));
