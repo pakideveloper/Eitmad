@@ -75,6 +75,11 @@
             <div class="content-page">
                 <!-- Start content -->
                 <div class="content">
+                     @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <div class="container">
 
 
@@ -105,7 +110,7 @@
                                 <div class="card-box">
                                     <h4 class="header-title m-t-0">Edit role</h4>
 
-                                    <form action="{{URL::to('/admin/roles')}}/{{$role->id}}" method="POST">
+                                    <form action="{{URL::to('ecommerce/admin/roles')}}/{{$role->id}}" method="POST">
                                         {{csrf_field()}}
                                         {{ method_field('PUT')}}
                                         <div class="row">

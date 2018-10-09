@@ -9,22 +9,22 @@
         <meta name="author" content="Coderthemes">
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{URL::to('public/admin/ecommerce')}}/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{URL::to('public/admin/job')}}/assets/images/favicon.ico">
         <!-- App title -->
         <title>Eitmad</title>
         <!-- Jquery filer css -->
-        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+        <link href="{{URL::to('public/admin/job')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
+        <link href="{{URL::to('public/admin/job')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
 
         <!-- App css -->
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/core.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/components.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.css">
+        <link href="{{URL::to('public/admin/job')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{{URL::to('public/admin/job')}}/plugins/switchery/switchery.min.css">
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +33,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/modernizr.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/modernizr.min.js"></script>
 
     </head>
 
@@ -58,12 +58,12 @@
         <div id="wrapper">
 
             <!-- Top Bar Start -->
-             @include('admin.ecommerce.include.navbar')
+             @include('admin.job.include.navbar')
             <!-- Top Bar End -->
 
 
             <!-- ========== Left Sidebar Start ========== -->
-             @include('admin.ecommerce.include.left-sidebar')
+             @include('admin.job.include.left-sidebar')
             <!-- Left Sidebar End -->
 
 
@@ -84,16 +84,16 @@
                            <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Brands </h4>
+                                    <h4 class="page-title">Degree Levels </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Admin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Brands </a>
+                                            <a href="#">Degree Level </a>
                                         </li>
                                         <li class="active">
-                                            Brands List
+                                            Degree Level list
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -107,48 +107,44 @@
                                 <div class="card-box">
 
                                     <div class="table-rep-plugin">
-                                        <h4 class="m-t-0 header-title"><b>All Brands</b></h4>
+                                        <h4 class="m-t-0 header-title"><b>All Degree level</b></h4>
                                         <div class="table-responsive" data-pattern="priority-columns">
                                             <table id="tech-companies-1" class="table  table-striped">
                                                 <thead>
                                                     <tr>
                                                         <th>Id</th>
-                                                        <th data-priority="1">Title</th>
-                                                        <th data-priority="1">Descrition</th>
-                                                        <th data-priority="1">Slider Type</th>
+                                                        <th data-priority="1">Degree Level Name</th>
                                                         <th data-priority="3">Created at</th>
                                                         <th data-priority="1">Updated at</th>
                                                         <th data-priority="3">Actions</th>                           
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                   @foreach($mainslider as $Vmainslider)
+                                                   @foreach($degreelevel as $Vdegreelevel)
                                                     <tr>
                                                         
-                                                        <td>{{$Vmainslider->id}}</td>
-                                                        <th>{{$Vmainslider->title}}</th>
-                                                        <th>{{$Vmainslider->description}}</th>
-                                                        <th>{{$Vmainslider->slider_type}}</th>
-                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vmainslider->created_at)->format('m');
+                                                        <td>{{$Vdegreelevel->id}}</td>
+                                                        <th>{{$Vdegreelevel->degree_level_name}}</th>
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vdegreelevel->created_at)->format('m');
                                                 $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                                                 $monthName = $dateObj->format('F'); 
                                                 echo $monthName; // March?>
-                                                {{ Carbon\Carbon::parse($Vmainslider->created_at)->format('d,Y') }}</td>
-                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vmainslider->created_at)->format('m');
+                                                {{ Carbon\Carbon::parse($Vdegreelevel->created_at)->format('d,Y') }}</td>
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vdegreelevel->created_at)->format('m');
                                                 $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                                                 $monthName = $dateObj->format('F'); 
                                                 echo $monthName; // March?>
-                                                {{ Carbon\Carbon::parse($Vmainslider->updated_at)->format('d,Y') }}</td> 
+                                                {{ Carbon\Carbon::parse($Vdegreelevel->updated_at)->format('d,Y') }}</td> 
                                                         <td>
-                                                             <a href="{{url('/ecommerce/admin/mainsliders')}}/{{$Vmainslider->id}}/edit" style="float: left;">
+                                                             <a href="{{url('/jobs/admin/degree_levels')}}/{{$Vdegreelevel->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
-                                                            <form id="delete-form{{$Vmainslider->id}}" 
-                                                                action="{{url('/ecommerce/admin/mainsliders')}}/{{$Vmainslider->id}}" method="post">
+                                                            <form id="delete-form{{$Vdegreelevel->id}}" 
+                                                                action="{{url('/jobs/admin/degree_levels')}}/{{$Vdegreelevel->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  
-                                                                <i  onclick="return deleteCategory({{$Vmainslider->id}});" class="fa fa-trash-o" style="cursor: pointer;     margin-left: 10px;     color: red;"></i>
+                                                                <i  onclick="return deleteCategory({{$Vdegreelevel->id}});" class="fa fa-trash-o" style="cursor: pointer;     margin-left: 10px;     color: red;"></i>
                                                             </form>
                                                         </td>                     
                                                     </tr>
@@ -168,7 +164,7 @@
                 </div> <!-- content -->
 
 
-                @include('admin.ecommerce.include.footer')
+                @include('admin.job.include.footer')
             </div>
 
 
@@ -178,7 +174,7 @@
 
 
             <!-- Right Sidebar -->
-             @include('admin.ecommerce.include.right-sidebar')
+             @include('admin.job.include.right-sidebar')
             <!-- /Right-bar -->
 
         </div>
@@ -188,25 +184,25 @@
         </script>
 
         <!-- jQuery  -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.min.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/bootstrap.min.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/detect.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/fastclick.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.blockUI.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/waves.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.slimscroll.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.scrollTo.min.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/bootstrap.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/detect.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/fastclick.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.blockUI.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/waves.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.slimscroll.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/plugins/switchery/switchery.min.js"></script>
 
         <!-- Jquery filer js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/js/jquery.filer.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/plugins/jquery.filer/js/jquery.filer.min.js"></script>
 
         <!-- App js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.core.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.core.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.app.js"></script>
 
         <!-- page specific js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.mainslider.init.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/customAssets/js/jquery.fileuploads.brands.init.js"></script>
           <script type="text/javascript">
         var deleteCategory = function(id){
         if (confirm('Are you sure you want to delete this?')) {

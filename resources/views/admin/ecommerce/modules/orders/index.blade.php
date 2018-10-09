@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->
@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{URL::to('public/admin/ecommerce')}}/assets/images/favicon.ico">
         <!-- App title -->
-        <title>Zircos - Responsive Admin Dashboard Template</title>
+        <title>Eitmad</title>
         <!-- Jquery filer css -->
         <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
         <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
@@ -72,7 +72,8 @@
             <!-- Start right Content here -->
             <!-- ============================================================== -->
             <div class="content-page">
-            <!-- Start content -->
+                <!-- Start content -->
+                <!-- Start content -->
                 <div class="content">
                     @if (session('status'))
                         <div class="alert alert-success" style="margin-bottom: 0px;">
@@ -80,22 +81,19 @@
                         </div>
                     @endif
                     <div class="container">
-
-
-                        <div class="row">
+                           <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
-
-                                    <h4 class="page-title">Main Slider</h4>
+                                    <h4 class="page-title">orders </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Admin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Slider </a>
+                                            <a href="#">orders </a>
                                         </li>
                                         <li class="active">
-                                            Create New Slider
+                                            orders List
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -104,92 +102,67 @@
                         </div>
                         <!-- end row -->
 
-
                         <div class="row">
-
-                            <div class="col-xs-12">
-
+                            <div class="col-sm-12">
                                 <div class="card-box">
 
-                                    <div class="row">
-                                        
+                                    <div class="table-rep-plugin">
+                                        <h4 class="m-t-0 header-title"><b>All orders</b></h4>
+                                        <div class="table-responsive" data-pattern="priority-columns">
+                                            <table id="tech-companies-1" class="table  table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th data-priority="1">Brand Name</th>
+                                                        <th data-priority="3">Created at</th>
+                                                        <th data-priority="1">Updated at</th>
+                                                        <th data-priority="3">Actions</th>                           
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                   @foreach($brand as $Vbrand)
+                                                    <tr>
+                                                        
+                                                        <td>{{$Vbrand->id}}</td>
+                                                        <th>{{$Vbrand->brand_name}}</th>
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vbrand->created_at)->format('m');
+                                                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                                $monthName = $dateObj->format('F'); 
+                                                echo $monthName; // March?>
+                                                {{ Carbon\Carbon::parse($Vbrand->created_at)->format('d,Y') }}</td>
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vbrand->created_at)->format('m');
+                                                $dateObj   = DateTime::createFromFormat('!m', $monthNum);
+                                                $monthName = $dateObj->format('F'); 
+                                                echo $monthName; // March?>
+                                                {{ Carbon\Carbon::parse($Vbrand->updated_at)->format('d,Y') }}</td> 
+                                                        <td>
+                                                             <a href="{{url('/ecommerce/admin/orders')}}/{{$Vbrand->id}}/edit" style="float: left;">
+                                                                <i class="fa fa-pencil"></i>
+                                                            </a>
+                                                            <form id="delete-form{{$Vbrand->id}}" 
+                                                                action="{{url('/ecommerce/admin/orders')}}/{{$Vbrand->id}}" method="post">
+                                                                {{csrf_field() }}
+                                                                {{ method_field('DELETE') }}
+                                                                 
+                                                                <i  onclick="return deleteCategory({{$Vbrand->id}});" class="fa fa-trash-o" style="cursor: pointer;     margin-left: 10px;     color: red;"></i>
+                                                            </form>
+                                                        </td>                     
+                                                    </tr>
+                                                     @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
 
-                                            <h4 class="header-title m-t-0">Create New Slider</h4>
-                                            
-                                                <form action="{{url('/ecommerce/admin/mainsliders')}}" method="post" enctype="multipart/form-data" >
-                                                    {{csrf_field()}}
-                                                    <div class="p-20">
-                                                    <div class="form-group col-sm-6 col-md-6 {{$errors->has('title') ? 'has-error' : ''}}">
-                                                        <label for="Title">Title<span class="text-danger">*</span></label>
-                                                        <input type="text" name="title" parsley-trigger="change"
-                                                               placeholder="Enter Title" class="form-control" value="{{ old('title') }}">
-                                                        @if ($errors->has('title'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('title') }}.</li></ul>
-                                                        @endif
-                                                    </div>
-                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('description') ? 'has-error' : ''}}">
-                                                        <label for="Description">Description<span class="text-danger">*</span></label>
-                                                        <input type="text" name="description" parsley-trigger="change"
-                                                               placeholder="Enter Description" class="form-control" value="{{ old('description') }}">
-                                                        @if ($errors->has('description'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('description') }}.</li></ul>
-                                                        @endif
-                                                    </div>
-                                                    <div class="form-group col-sm-6 col-md-6 {{$errors->has('slider_type') ? 'has-error' : ''}}">
-                                                        <label for="Slider Type">Slider Type<span class="text-danger">*</span></label>
-                                                        <input type="text" name="slider_type" parsley-trigger="change"
-                                                               placeholder="Enter Slider Type" class="form-control" value="{{ old('slider_type') }}">
-                                                        @if ($errors->has('slider_type'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('slider_type') }}.</li></ul>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                    
-                                              
-                                           
-                            <div class="row m-t-50">
-                                        <div class="col-xs-12 col-sm-6 {{$errors->has('image_name') ? 'has-error' : ''}}">
-                                            <div class="p-20">
-                                                <div class="form-group clearfix">
-                                                    <label for="Image Name">Upload Image<span class="text-danger">*</span></label>
-                                                    <div class="col-sm-12 padding-left-0 padding-right-0">
-                                                            <input type="file" name="file" id="filer_input2"  >
-                                                             @if ($errors->has('file'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('file') }}.</li></ul>
-                                                            @endif
-                                                    </div>
-                                                </div>
-                                         </div>
                                     </div>
-                             </div>
-                        </div>
-                                                <!-- end class p-20 -->
-                     <!-- end col -->
-                                    <div class="form-group text-left m-b-0">
-                                                        <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit">
-                                                            Submit
-                                                        </button>
-                                                        <button type="reset" class="btn btn-default waves-effect m-l-5">
-                                                            Cancel
-                                                        </button>
-                                                    </div>
-                                  </form>
-                 
-                                    <!-- end row -->
 
-                                   
-                                    <!-- end row -->
-
-                                </div> <!-- end ard-box -->
-                            </div><!-- end col-->
-
+                                </div>
+                            </div>
                         </div>
                         <!-- end row -->
-                     </div>
-
                     </div> <!-- container -->
 
                 </div> <!-- content -->
+
 
                 @include('admin.ecommerce.include.footer')
             </div>
@@ -229,8 +202,15 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
 
         <!-- page specific js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.mainsliders.init.js"></script>
-        
+        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.orders.init.js"></script>
+          <script type="text/javascript">
+        var deleteCategory = function(id){
+        if (confirm('Are you sure you want to delete this?')) {
+        event.preventDefault();
+        document.getElementById('delete-form'+id).submit(); 
+        }           
+}
+        </script>
     </body>
 
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->

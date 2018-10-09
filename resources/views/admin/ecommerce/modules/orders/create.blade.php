@@ -72,7 +72,8 @@
             <!-- Start right Content here -->
             <!-- ============================================================== -->
             <div class="content-page">
-            <!-- Start content -->
+                <!-- Start content -->
+
                 <div class="content">
                     @if (session('status'))
                         <div class="alert alert-success" style="margin-bottom: 0px;">
@@ -83,25 +84,25 @@
 
 
                         <div class="row">
-                            <div class="col-xs-12">
-                                <div class="page-title-box">
+							<div class="col-xs-12">
+								<div class="page-title-box">
 
-                                    <h4 class="page-title">Main Slider </h4>
+                                    <h4 class="page-title">Brands </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Admin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Main Slider </a>
+                                            <a href="#">Brands </a>
                                         </li>
                                         <li class="active">
-                                            Create New Main Slider
+                                            Create New Brand
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
-                            </div>
-                        </div>
+							</div>
+						</div>
                         <!-- end row -->
 
 
@@ -114,65 +115,70 @@
                                     <div class="row">
                                         
 
-                                        <h4 class="header-title m-t-0">Create New Main Slider</h4>
-                                                <form action="{{url('/ecommerce/admin/mainsliders')}}/{{$mainslider->id}}" method="post" enctype="multipart/form-data" >
+                                            <h4 class="header-title m-t-0">Create New Brand</h4>
+                                            
+                                                <form action="{{url('/ecommerce/admin/brands')}}" method="post" enctype="multipart/form-data" >
                                                     {{csrf_field()}}
-                                                    {{ method_field('PUT')}}
-                                                    <div class="p-20">
-                                                    <div class="form-group col-sm-6 col-md-6 {{$errors->has('title') ? 'has-error' : ''}}">
-                                                        <label for="Title">Title<span class="text-danger">*</span></label>
-                                                        <input type="text" name="title" parsley-trigger="change"
-                                                               placeholder="Enter Title" class="form-control" value="{{$mainslider->title}}">
-                                                        @if ($errors->has('title'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('title') }}.</li></ul>
-                                                        @endif
-                                                    </div>
-                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('description') ? 'has-error' : ''}}">
-                                                        <label for="Description">Description<span class="text-danger">*</span></label>
-                                                        <input type="text" name="description" parsley-trigger="change"
-                                                               placeholder="Enter Description" class="form-control" value="{{$mainslider->description}}">
-                                                        @if ($errors->has('description'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('description') }}.</li></ul>
-                                                        @endif
-                                                    </div>
-                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('slider_type') ? 'has-error' : ''}}">
-                                                        <label for="Slider Type">Slider Type<span class="text-danger">*</span></label>
-                                                        <input type="text" name="slider_type" parsley-trigger="change"
-                                                        placeholder="Enter Slider Type" class="form-control" value="{{$mainslider->slider_type}}">
-                                                        @if ($errors->has('slider_type'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('slider_type') }}.</li></ul>
+                                                    <div class="form-group col-sm-6 col-md-6 {{$errors->has('brand_name') ? 'has-error' : ''}}">
+                                                        <label for="Brand Name">Brand Name<span class="text-danger">*</span></label>
+                                                        <input type="text" name="brand_name" parsley-trigger="change"
+                                                               placeholder="Enter Brand Name" class="form-control" value="{{ old('brand_name') }}">
+                                                        @if ($errors->has('brand_name'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('brand_name') }}.</li></ul>
                                                         @endif
                                                     </div>
                                                     
                                               
                                            
                             <div class="row m-t-50">
-                                        <div class="col-xs-12 col-sm-6 {{$errors->has('image_name') ? 'has-error' : ''}}">
+                                        <div class="col-xs-12 col-sm-6 {{$errors->has('brand_logo') ? 'has-error' : ''}}">
                                             <div class="p-20">
                                                 <div class="form-group clearfix">
-                                                    <label for="Image Name">Upload Image<span class="text-danger">*</span></label>
+                                                     <label for="Brand Logo size">Brand Logo<span class="text-danger">*</span></label>
                                                     <div class="col-sm-12 padding-left-0 padding-right-0">
-                                                            <input type="file" name="file" id="filer_input2"  >
+                                                            <input type="file" name="file" id="filer_input2"  multiple="multiple">
                                                              @if ($errors->has('file'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('file') }}.</li></ul>
                                                             @endif
                                                     </div>
                                                 </div>
-                                                <div class="images">
-                                                        <div></div>
-                                                        <div class="col-md-6">
-                                                            <!-- copy -->
-                                                            <img class="image{{$mainslider->id}}" src="{{URL::to('public/admin')}}/upload/mainsliders/{{$mainslider->image_name}}" style="width: 162px; padding-bottom: 30px;">
-                                                        </div>                       
-                                                    </div>      
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                                <div class="p-20">
+                                                    <label>Select Categories</label>
+                                                        <div class="row">
+                                                            <div class="col-xs-6">
+                                                                @foreach($subcategories as $key=>$category)
+                                                                <?php $key = $key+2; ?>
+                                                                @if($key%2 == 0 )   
+                                                               <div class="checkbox checkbox-primary m-b-15">
+                                                             <input id="checkbox_c{{$category->id}}" name="categories[]" value="{{$category->id}}" 
+                                                             type="checkbox" >
+                                                             <label>{{$category->sub_category_name}} </label>
+                                                                </div>
+                                                                @endif 
+                                                                @endforeach 
+                                                            </div> <!-- end col -->
+                                                             <div class="col-xs-6">
+                                                                @foreach($subcategories as $key=>$category)
+                                                                <?php $key = $key+2; ?>
+                                                                @if($key%2 != 0 )   
+                                                               <div class="checkbox checkbox-primary m-b-15">
+                                                             <input id="checkbox_c{{$category->id}}" name="categories[]" value="{{$category->id}}" 
+                                                             type="checkbox" >
+                                                             <label>{{$category->sub_category_name}} </label>
+                                                                </div>
+                                                                @endif 
+                                                                @endforeach 
+                                                            </div> <!-- end col -->
+                                                            </div> <!-- end col -->
+                                                        </div> <!-- end col -->
+                                                    </div>
                                                 </div>
-                                                
-                                         </div>
-                                    </div>
-                             </div>
-                        </div>
                                                 <!-- end class p-20 -->
-                     <!-- end col -->
+                            </div> <!-- end col -->
                                     <div class="form-group text-left m-b-0">
                                                         <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit">
                                                             Submit
@@ -188,12 +194,12 @@
                                    
                                     <!-- end row -->
 
-                                </div> <!-- end ard-box -->
+                        		</div> <!-- end ard-box -->
                             </div><!-- end col-->
 
                         </div>
                         <!-- end row -->
-                     </div>
+
 
                     </div> <!-- container -->
 
@@ -237,7 +243,7 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
 
         <!-- page specific js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.mainsliders.init.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.brands.init.js"></script>
         
     </body>
 

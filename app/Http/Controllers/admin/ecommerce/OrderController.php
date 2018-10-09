@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Ecommerce;
+
+namespace App\Http\Controllers\admin\ecommerce;
+//use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\country;
-use App\City;
-use App\Order_Product;
-use DB;
-use Auth;
-use App\User;
 use App\Order;
-use App\Product;
+use App\Permission;
+use Redirect; 
+use DB;
+use Alert;
 
 
-class CheckoutController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,17 +21,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        $countries = country::all();
-        $cities = City::all();
-        $users  = User::find(Auth::user()->id);
-        // ::where('users.id','=',Auth::user()->id)->select('first_name');
-
-        // $orderproducts = DB::table('order_products')
-        //                             ->join('products','products.id','=','order_products.product_id')
-        //                             ->join('orders', 'orders.id', '=', 'order_products.order_id')
-        //                             ->where('orders.user_id','=',Auth::user()->id);
-        $orderproducts = Order_Product::all();
-        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users','cities'));
+        $brand = Order::all();
+        return view('admin/ecommerce/modules/orders/index',compact('brand'));
     }
 
     /**

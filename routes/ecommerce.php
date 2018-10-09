@@ -12,9 +12,15 @@
 //usama
 Route::get('/', function () {
 	$mainslider = App\Main_Slider::latest()->get();
-    return view('frontend/ecommerce/modules/index',compact('mainslider'));
+    $brand = App\Brand::latest()->get();
+    return view('frontend/ecommerce/modules/index',compact('mainslider','brand'));
 });
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2b47437ebe9678c7317ace7b84aae5966c98d857
 Route::get('/items', function () {
 
     
@@ -36,9 +42,16 @@ Route::get('/items', function () {
     // 	print_r( $value->name);
     // }
 });
+<<<<<<< HEAD
 
 Route::get('/test','Ecommerce\Cart\CartController@test');
 
+=======
+Route::get('/test','Ecommerce\Cart\CartController@test');
+
+Route::get('/test','Ecommerce\Cart\CartController@test');
+
+>>>>>>> 2b47437ebe9678c7317ace7b84aae5966c98d857
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
     return view('frontend/ecommerce/modules/products/products',compact('products'));

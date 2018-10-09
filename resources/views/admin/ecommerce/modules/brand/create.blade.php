@@ -177,9 +177,8 @@
                                                         </div> <!-- end col -->
                                                     </div>
                                                 </div>
-                                                <!-- end class p-20 -->
-                            </div> <!-- end col -->
-                                    <div class="form-group text-left m-b-0">
+                                                <!-- end class p-20 --> 
+                                                <div class="form-group text-left m-b-0">
                                                         <button class="btn btn-primary waves-effect waves-light" type="submit" name="submit">
                                                             Submit
                                                         </button>
@@ -187,7 +186,9 @@
                                                             Cancel
                                                         </button>
                                                     </div>
-                                  </form>
+
+                            </div> <!-- end col -->
+                       </form>
                  
                                     <!-- end row -->
 
